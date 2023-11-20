@@ -12,13 +12,21 @@
 			description: 'Personal website and blog',
 			images: [
 				{
-					url: '',
+					url: '/og.png',
 					width: 800,
 					height: 600,
-					alt: 'Og Image Alt'
+					alt: 'Prabhu Kiran Konda'
 				}
 			],
 			siteName: 'Prabhu Kiran Konda'
+		}}
+		twitter={{
+			handle: '@prabhukirantwt',
+			cardType: 'summary_large_image',
+			title: 'Prabhu Kiran Konda | Home',
+			description: 'Personal website and Blog',
+			image: '/og.png',
+			imageAlt: 'Prabhu Kiran Konda'
 		}}
 	/>
 {/if}
