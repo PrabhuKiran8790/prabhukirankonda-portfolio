@@ -13,6 +13,9 @@ type socialsType = {
 	class?: string;
 };
 
+
+export const siteurl = 'https://prabhukirankonda.vercel.app'
+
 export const routes: routesType[] = [
 	{
 		name: 'Blog',

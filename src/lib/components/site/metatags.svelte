@@ -4,7 +4,23 @@
 </script>
 
 {#if $page.url.pathname == '/'}
-	<MetaTags title="Home | Prabhu Kiran Konda" />
+	<MetaTags
+		title="Home | Prabhu Kiran Konda"
+		openGraph={{
+			url: $page.url.href,
+			title: 'Prabhu Kiran Konda | Home',
+			description: 'Personal website and blog',
+			images: [
+				{
+					url: '',
+					width: 800,
+					height: 600,
+					alt: 'Og Image Alt'
+				}
+			],
+			siteName: 'Prabhu Kiran Konda'
+		}}
+	/>
 {/if}
 
 {#if $page.url.pathname == '/blog'}
