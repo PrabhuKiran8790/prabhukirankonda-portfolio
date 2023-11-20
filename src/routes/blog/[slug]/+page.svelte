@@ -1,20 +1,27 @@
 <script lang="ts">
-	import { Giscus } from '$lib/components/site/gicsus_';
 	import { dev } from '$app/environment';
+	import { page } from '$app/stores';
+	import {
+		PUBLIC_CATEGORY,
+		PUBLIC_CATEGORY_ID,
+		PUBLIC_GITHUB_REPO,
+		PUBLIC_GITHUB_REPO_ID,
+		PUBLIC_GITHUB_USERNAME
+	} from '$env/static/public';
 	import { BlogMetatags } from '$lib/components/site';
+	import { Giscus } from '$lib/components/site/gicsus_';
+	import X from '$lib/components/site/icons/X.svelte';
+	import Linkedin from '$lib/components/site/icons/linkedin.svelte';
 	import { Toc } from '$lib/components/site/table-of-contents';
 	import { Badge } from '$lib/components/ui/badge';
-	import Separator from '$lib/components/ui/separator/separator.svelte';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
+	import Separator from '$lib/components/ui/separator/separator.svelte';
 	import { localToGithubURL } from '$lib/config';
+	import { theme } from '$lib/stores.js';
 	import { formatDate } from '$lib/utils';
 	import { Calendar, MessageSquare, Share2, Tag } from 'lucide-svelte';
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
-	import { theme } from '$lib/stores.js';
-	import X from '$lib/components/site/icons/X.svelte';
-	import Linkedin from '$lib/components/site/icons/linkedin.svelte';
-	import { page } from '$app/stores';
 	export let data;
 
 	let { content, meta } = data;
@@ -131,12 +138,11 @@
 	</div>
 	<div class="px-3 md:container pb-24" id="comments">
 		<Giscus
-			repo="PrabhuKiran8790/sveltekit-portfolio"
-			repoId="R_kgDOKsxuHw"
-			category="General"
-			categoryId="DIC_kwDOKsxuH84CbDo2"
+			repo={`${PUBLIC_GITHUB_USERNAME}/${PUBLIC_GITHUB_REPO}`}
+			repoId={PUBLIC_GITHUB_REPO_ID}
+			category={PUBLIC_CATEGORY}
+			categoryId={PUBLIC_CATEGORY_ID}
 			mapping="pathname"
-			term="Welcome to @giscus/svelte component!"
 			strict="0"
 			reactionsEnabled="1"
 			emitMetadata="0"
