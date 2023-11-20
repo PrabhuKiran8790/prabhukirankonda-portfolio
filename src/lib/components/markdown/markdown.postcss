@@ -1,0 +1,107 @@
+[data-theme='default'] {
+	display: flex;
+	flex-direction: column;
+}
+
+[data-rehype-pretty-code-fragment] [data-line-numbers] > [data-line]::before {
+	@apply text-xs text-white/70;
+	counter-increment: line;
+	content: counter(line);
+	display: inline-block;
+	width: 1rem;
+	margin-right: 1rem;
+	text-align: right;
+}
+
+
+span[data-rehype-pretty-code-fragment] {
+	@apply inline-flex w-fit;
+
+}
+
+span[data-rehype-pretty-code-fragment] code {
+	@apply bg-zinc-800 rounded-md px-2 text-base;
+}
+
+
+p > code {
+	/* to style code element `` */
+	@apply bg-slate-200 dark:bg-zinc-700/70 px-1 rounded-md mx-1 border border-primary font-mono tracking-wide text-base;
+}
+
+
+[data-metadata] [data-code-copy] {
+	@apply top-16 !important;
+}
+
+
+[data-rehype-pretty-code-fragment] {
+	@apply relative;
+
+	& pre {
+		@apply overflow-x-auto py-2 text-base font-medium;
+	}
+
+	& code {
+		@apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0;
+		counter-reset: line;
+		box-decoration-break: clone;
+	}
+
+	& [data-line] {
+		@apply inline-block w-full basis-4 border-l-[3px] border-l-transparent py-0.5 pl-2 pr-5;
+	}
+
+
+	& [data-highlighted-line] {
+		@apply border-l-orange-500 dark:border-l-orange-800 bg-orange-500/[0.1];
+	}
+
+	& [data-chars-id] {
+		@apply pb-0.5 shadow-none;
+	}
+}
+
+[data-comp-preview] [data-rehype-pretty-code-fragment] {
+	& pre {
+		@apply mt-0 rounded-b-lg rounded-t-none;
+	}
+}
+
+
+[data-chars-id='ul'] {
+	@apply border-b border-b-green-500 font-bold !important;
+}
+
+[data-chars-id='hi'] {
+	@apply rounded bg-teal-700/60 p-1 font-bold !important;
+}
+
+[data-chars-id='rb'] {
+	@apply border-red-600 border rounded p-[2px] font-bold !important;
+}
+
+[data-chars-id='yb'] {
+	@apply border-yellow-600 border p-[2px] rounded font-bold !important;
+}
+
+
+[data-rehype-pretty-code-title] {
+	@apply mt-2 px-4 pt-6 text-sm font-medium;
+}
+
+[data-rehype-pretty-code-title] + pre {
+	@apply mt-2;
+}
+
+[data-callout] > p:last-child {
+	@apply mb-0 !important;
+}
+
+[data-comp-preview] + p {
+	@apply mt-6;
+}
+
+[data-metadata]:not(:has(pre)) {
+	display: none;
+}

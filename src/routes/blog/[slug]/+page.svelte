@@ -1,0 +1,148 @@
+<script lang="ts">
+	import { Giscus } from '$lib/components/site/gicsus_';
+	import { dev } from '$app/environment';
+	import { BlogMetatags } from '$lib/components/site';
+	import { Toc } from '$lib/components/site/table-of-contents';
+	import { Badge } from '$lib/components/ui/badge';
+	import Separator from '$lib/components/ui/separator/separator.svelte';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
+	import { localToGithubURL } from '$lib/config';
+	import { formatDate } from '$lib/utils';
+	import { Calendar, MessageSquare, Share2, Tag } from 'lucide-svelte';
+	import { onMount } from 'svelte';
+	import { fly } from 'svelte/transition';
+	import { theme } from '$lib/stores.js';
+	import X from '$lib/components/site/icons/X.svelte';
+	import Linkedin from '$lib/components/site/icons/linkedin.svelte';
+	import { page } from '$app/stores';
+	export let data;
+
+	let { content, meta } = data;
+
+	let isTocSticky = false;
+
+	function handleScroll() {
+		const scrollPosition = window.scrollY;
+		isTocSticky = scrollPosition > 200;
+	}
+	let theme_: string | undefined;
+	let element: HTMLElement | null;
+
+	onMount(() => {
+		theme_ = localStorage.getItem('mode')?.replace(/^"(.*)"$/, '$1');
+		element = document.getElementById('comments');
+
+		window.addEventListener('scroll', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	});
+
+	if (!dev && meta.image?.startsWith('/')) {
+		meta.image = localToGithubURL({ src: meta.image });
+	}
+</script>
+
+<BlogMetatags {meta} />
+
+<div class="md:container pt-6 md:pt-14 space-y-8">
+	<div class="flex flex-col items-center justify-center space-y-4">
+		<div class="flex items-center space-x-2 text-muted-foreground">
+			<Calendar class="h-4 w-4" />
+			<p class="font-semibold text-sm">{formatDate(meta.date, 'long')}</p>
+		</div>
+		<div>
+			<h1 class="text-2xl md:text-4xl font-bold px-4">
+				{meta.title}
+			</h1>
+		</div>
+		{#if meta.image}
+			<img
+				src={meta.image}
+				alt={meta.title}
+				loading="lazy"
+				class="w-full md:w-[90%] h-auto md:rounded-lg max-h-[550px]"
+			/>
+		{/if}
+		<div class="flex gap-2 items-center">
+			<Tag class="h-4 w-4" />
+			{#each meta.tags as tags}
+				<Badge class="rounded-md">{tags}</Badge>
+			{/each}
+		</div>
+	</div>
+	<Separator />
+	<div class="text-primary max-w-4xl w-full mx-auto p-4 relative">
+		<div class="mdsvex mb-20" id="mdsvex">
+			<svelte:component this={content} />
+		</div>
+		{#if isTocSticky}
+			<div
+				class="hidden md:block sticky bottom-10 w-full z-50"
+				in:fly={{ y: 1000 }}
+				out:fly={{ y: 1000 }}
+			>
+				<div class=" flex items-center justify-center">
+					<div
+						class="flex items-center justify-evenly rounded-l-full rounded-r-full border border-primary/50 bg-muted shadow-sm px-7 py-1 space-x-3"
+					>
+						<button
+							on:click={() => {
+								element?.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+							}}
+							class="hover:bg-gray-200 dark:hover:bg-zinc-900 p-1 rounded-full h-10 w-10 flex items-center justify-center"
+						>
+							<MessageSquare class="h-5 w-5" />
+						</button>
+						<Toc />
+						<button
+							class="hover:bg-gray-200 dark:hover:bg-zinc-900 p-1 rounded-full h-10 w-10 flex items-center justify-center"
+						>
+							<DropdownMenu.Root>
+								<DropdownMenu.Trigger>
+									<Share2 class="h-5 w-5" />
+								</DropdownMenu.Trigger>
+								<DropdownMenu.Content>
+									<DropdownMenu.Group>
+										<DropdownMenu.Label>Share</DropdownMenu.Label>
+										<DropdownMenu.Separator />
+										<DropdownMenu.Item
+											class="space-x-3"
+											href={`http://www.twitter.com/share?url=${$page.url}`}
+										>
+											<X />
+											<p>Twitter</p>
+										</DropdownMenu.Item>
+										<DropdownMenu.Item
+											class="space-x-2"
+											href={`https://www.linkedin.com/sharing/share-offsite/?url=${$page.url}`}
+										>
+											<Linkedin />
+											<p>LinkedIn</p>
+										</DropdownMenu.Item>
+									</DropdownMenu.Group>
+								</DropdownMenu.Content>
+							</DropdownMenu.Root>
+						</button>
+					</div>
+				</div>
+			</div>
+		{/if}
+	</div>
+	<div class="px-3 md:container pb-24" id="comments">
+		<Giscus
+			repo="PrabhuKiran8790/sveltekit-portfolio"
+			repoId="R_kgDOKsxuHw"
+			category="General"
+			categoryId="DIC_kwDOKsxuH84CbDo2"
+			mapping="pathname"
+			term="Welcome to @giscus/svelte component!"
+			strict="0"
+			reactionsEnabled="1"
+			emitMetadata="0"
+			inputPosition="top"
+			theme={$theme ? $theme : theme_}
+			lang="en"
+		/>
+	</div>
+</div>
