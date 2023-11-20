@@ -10,6 +10,14 @@ export type ProjectType = {
 
 export const projects: ProjectType[] = [
 	{
+		title: 'Personal Portfolio with Markdown Blog',
+		description:
+			'This website, prabhukirankonda.vercel.app is my personal website with a markdown blog written in SvelteKit and deployed using Vercel. Styled using Taiwind CSS and Shadcn-UI and completely written in TypeScript.',
+		href: 'https://prabhukirankonda.vercel.app',
+		image: '/sveltekit-portfolio.png',
+		techstack: ['SvelteKit', 'Tailwind', 'TypeScript']
+	},
+	{
 		title: 'Corgi-AI: Create anything with AI',
 		description:
 			'Corgi AI is a collection of AI tools for different usecases. It includes a chatGPT clone with streaming responses, Image Generation, Audio Generation, Image Restoration and PDF Chat(beta). It is a full fledged SaaS application with stripe payments. It is Deployed using Docker with a VPS hosting on fly.io',

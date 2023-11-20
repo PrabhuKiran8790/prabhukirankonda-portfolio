@@ -45,3 +45,6 @@ Currently I'm Learning `React` and `NextJS` to build modern web applications and
 - **_Weather Forecasting Using Radial Basis Function Neural Network in Warangal, India_**, MDPI Urban Science ([see here](https://www.mdpi.com/2413-8851/7/3/68))
 
 - **_Active Power Load Data Dimensionality Reduction Using Autoencoder_**, Springer ([see here](https://link.springer.com/chapter/10.1007/978-981-99-2066-2_22))
+
+---
+for React and Next JS version of this website, visit : [https://v1-prabhukirankonda.vercel.app/](https://v1-prabhukirankonda.vercel.app/)
