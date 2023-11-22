@@ -19,7 +19,7 @@
 				a software developer from India. I specialize in Python, Machine Learning, and full stack
 				development. I’m currently seeking software developer roles to further my career. In my free
 				time, I enjoy writing technical blogs and sharing my journey with others. If you'd like to
-				get in touch, feel free to react out to me.
+				get in touch, feel free to reach out to me.
 			</p>
 			<SocialButtons />
 		</div>
