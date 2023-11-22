@@ -23,8 +23,8 @@
 					<Minus class="w-48 h-9" />
 				</div>
 			</Sheet.Title>
-			<Sheet.Description class="p-0 text-primary">
-				<div class="flex flex-col space-y-9 pt-11">
+			<Sheet.Description class="py-6 text-primary">
+				<div class="flex flex-col space-y-9">
 					{#each routes as route}
 						<div>
 							<a
