@@ -18,7 +18,7 @@
 				<a
 					href={item.url}
 					class={cn(
-						'inline-block no-underline transition-colors hover:text-foreground rounded',
+						'inline-block no-underline transition-colors hover:text-foreground rounded w-full',
 						item.url === $page.url.hash
 							? 'font-medium text-foreground bg-primary/20 hover:bg-primary/20'
 							: 'text-muted-foreground'

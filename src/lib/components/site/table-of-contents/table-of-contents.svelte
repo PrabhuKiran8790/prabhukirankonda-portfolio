@@ -60,8 +60,8 @@
 	>
 		<BookOpen class="h-5 w-5" />
 	</DropdownMenu.Trigger>
-	<DropdownMenu.Content class="px-3 border border-primary">
-		<DropdownMenu.Group>
+	<DropdownMenu.Content class="px-3 border border-primary min-w-[200px]">
+		<DropdownMenu.Group class="w-full">
 			<DropdownMenu.Label>On this page</DropdownMenu.Label>
 			<DropdownMenu.Separator />
 			<div class="space-y-2">

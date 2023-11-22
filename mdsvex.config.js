@@ -75,7 +75,9 @@ const prettyCodeOptions = {
 					'javascript',
 					'bash',
 					'shell',
-					'python'
+					'python',
+					'java',
+					'md'
 				].includes(id);
 			})
 		});
