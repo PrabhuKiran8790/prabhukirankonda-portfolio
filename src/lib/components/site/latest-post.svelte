@@ -6,7 +6,6 @@
 	import { Button } from '$lib/components/ui/button';
 	import type { Post } from '$lib/types';
 	import { formatDate } from '$lib/utils';
-	import { goto } from '$app/navigation';
 	export let data: {
 		posts: Post[];
 	};
@@ -60,7 +59,7 @@
 						<Separator />
 						<div class="flex items-center justify-between p-2">
 							<div class="flex items-center gap-2">
-								<Calendar />
+								<Calendar class="h-4 w-4"/>
 								<h1>{formatDate(post.date)}</h1>
 							</div>
 							<div>
