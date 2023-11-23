@@ -50,10 +50,10 @@ it's got ton of features that you don't wanna miss out.
 
 - [MDsveX](https://mdsvex.pngwn.io/) to support markdown files so that you can write your blogs in markdown.
 - Custom Components
-- use of svelte components inside markdown
+- use svelte components inside markdown
     - example
     <div class="flex items-center gap-4">
-        try changing the theme
+        try changing the theme 👉
         <ThemeToggle />
     </div>
 - Table of Contents
