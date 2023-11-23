@@ -34,7 +34,7 @@
 			<h1 class="text-4xl font-bold">About Me</h1>
 		</div>
 	</div>
-	<div class="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
+	<div class="items-start space-y-14 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
 		<div class="flex flex-col items-center space-x-2 xl:sticky xl:top-32">
 			<img src={ProfilePicture} alt="Prabhu Kiran Konda" class="rounded-full h-56 w-56" />
 			<h3 class="pb-2 pt-4 text-2xl font-bold leading-8 tracking-tight">Prabhu Kiran Konda</h3>
