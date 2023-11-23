@@ -1,8 +1,9 @@
 <script lang="ts">
 	import toast from 'svelte-french-toast';
 	import { fly } from 'svelte/transition';
-	import { getLangIcons } from './language-icons/getLangIcons';
+	import { extensionMappings } from './language-icons/getLangIcons';
 	import { Copy, CopyCheck } from 'lucide-svelte';
+	import LangIcon from './language-icons/lang-icon.svelte';
 
 	let className: string | undefined | null = undefined;
 	// export { className as class };
@@ -39,10 +40,10 @@
 			</div>
 
 			<div class="text-center flex items-center justify-center gap-2">
-				<svelte:component
-					this={getLangIcons({ lang: title.split('.').pop() || '' })}
-					class="h-4 w-4"
-				/>
+				<!-- if language in extension mappings -->
+				{#if extensionMappings[title.split('.').pop() || '']}
+					<LangIcon extension={title.split('.').pop() || ''} />
+				{/if}
 				{title || ''}
 			</div>
 

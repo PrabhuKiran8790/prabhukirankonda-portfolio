@@ -53,7 +53,7 @@ it's got ton of features that you don't wanna miss out.
 - use svelte components inside markdown
     - example
     <div class="flex items-center gap-4">
-        try changing the theme 👉
+        try changing the theme  👉
         <ThemeToggle />
     </div>
 - Table of Contents

@@ -29,9 +29,6 @@
 				{project.title}
 			</h1>
 			<div class="flex gap-1 flex-wrap">
-				<!-- {#each project.techstack as tech}
-					<Badge class="rounded">{tech}</Badge>
-				{/each} -->
 				{#each getTechStack({ techstack: project.techstack }) as { name, icon, className, type }}
 					<Badge variant="outline" class="rounded-md border-primary/30 gap-2 py-1">
 						<p class="text-sm">{name}</p>
