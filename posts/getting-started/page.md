@@ -10,6 +10,7 @@ draft: false
 
 <script>
     import { ThemeToggle } from '$lib/components/site';
+    import Katex from 'svelte-katex'
 </script>
 
 
