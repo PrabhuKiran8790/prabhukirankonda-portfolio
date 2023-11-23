@@ -11,7 +11,7 @@
 		</div>
 		<div class="flex items-center gap-2">
 			<h1>Made with</h1>
-			<Svelte class="w-5 h-5 inline-block" />
+			<Svelte class="w-7 h-7 inline-block" />
 		</div>
 	</div>
 </div>
