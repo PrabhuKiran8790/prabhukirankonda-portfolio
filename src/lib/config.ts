@@ -55,7 +55,7 @@ const socials: socialsType[] = [
 		class: 'h-4 w-4'
 	},
 	{
-		href: '#',
+		href: '/Prabhu Kiran Konda Resume.pdf',
 		icon: FileText,
 		display: 'Resume'
 	}
