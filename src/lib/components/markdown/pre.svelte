@@ -2,7 +2,7 @@
 	import toast from 'svelte-french-toast';
 	import { fly } from 'svelte/transition';
 	import { extensionMappings } from './language-icons/getLangIcons';
-	import { Copy, CopyCheck } from 'lucide-svelte';
+	import { Check, Copy } from 'lucide-svelte';
 	import LangIcon from './language-icons/lang-icon.svelte';
 
 	let className: string | undefined | null = undefined;
@@ -69,7 +69,7 @@
 	</div>
 {:else}
 	<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-	<div class="relative mt-2">
+	<div class="relative my-5">
 		<pre
 			bind:this={codeElement}
 			tabindex="0"
@@ -77,11 +77,11 @@
 			class="rounded-lg bg-zinc-900 max-h-[450px] mt-[2px] border-2">
         <slot />
     </pre>
-		<div class="absolute right-2 top-2">
+		<div class="absolute right-3 top-3">
 			<button on:click={handleCopy} class="p-0 z-50 no-highlight">
 				{#if copyState}
 					<span in:fly={{ y: -4, delay: 50 }}>
-						<CopyCheck class="h-4 w-4 text-white" />
+						<Check class="h-4 w-4 text-white" />
 					</span>
 				{:else}
 					<span in:fly={{ y: 4, delay: 50 }}>

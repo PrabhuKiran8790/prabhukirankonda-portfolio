@@ -11,31 +11,26 @@
 	export let level = 1;
 </script>
 
-<ul class={cn('m-0 list-none', { 'pl-1': level !== 1 })}>
+<ul class={cn('m-0 list-none', { 'pl-4': level !== 1 })}>
 	{#if tree.items && tree.items.length}
 		{#each tree.items as item, i (i)}
-			<li class={cn('mt-0 pt-[2px]')}>
-				<a
-					href={item.url}
+			<li class={cn('pt-[4px]')}>
+				<DropdownMenu.Item
 					class={cn(
-						'inline-block no-underline transition-colors hover:text-foreground rounded w-full',
+						'px-2 cursor-pointer data-[highlighted]:bg-primary/10 py-1',
 						item.url === $page.url.hash
-							? 'font-medium text-foreground bg-primary/20 hover:bg-primary/20'
+							? 'bg-primary/10 text-primary border-l-[2.5px] border-primary'
 							: 'text-muted-foreground'
 					)}
+					href={item.url}
 				>
-					<DropdownMenu.Item class="px-2 cursor-pointer">{item.title}</DropdownMenu.Item>
-				</a>
+					{#if level > 1}
+						<CornerDownRight class={cn('-ml-1', 'mr-2', 'h-4 w-4 hover:text-foreground')} />
+					{/if}
+					{item.title}
+				</DropdownMenu.Item>
 				{#if item.items && item.items.length}
 					<div class="flex items-center">
-						<CornerDownRight
-							class={cn(
-								'ml-1',
-								item.url === $page.url.hash
-									? 'font-medium text-foreground'
-									: 'text-muted-foreground'
-							)}
-						/>
 						<svelte:self tree={item} level={level + 1} />
 					</div>
 				{/if}

@@ -50,17 +50,13 @@
 	});
 </script>
 
-<!-- <div class="space-y-2">
-	<Tree tree={filteredHeadingsList} />
-</div> -->
-
 <DropdownMenu.Root>
 	<DropdownMenu.Trigger
 		class="hover:bg-gray-200 dark:hover:bg-zinc-900 p-1 rounded-full h-10 w-10 flex items-center justify-center"
 	>
 		<BookOpen class="h-5 w-5" />
 	</DropdownMenu.Trigger>
-	<DropdownMenu.Content class="px-3 border border-primary min-w-[200px]">
+	<DropdownMenu.Content class="px-3 border border-primary min-w-[200px] pb-2">
 		<DropdownMenu.Group class="w-full">
 			<DropdownMenu.Label>On this page</DropdownMenu.Label>
 			<DropdownMenu.Separator />

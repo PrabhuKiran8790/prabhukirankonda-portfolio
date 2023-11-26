@@ -6,7 +6,7 @@ import { mdsvexOptions } from './mdsvex.config.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	extensions: ['.svelte', '.md'],
+	extensions: ['.svelte', '.md', '.svx'],
 	preprocess: [mdsvex(mdsvexOptions), vitePreprocess({})],
 
 	kit: {

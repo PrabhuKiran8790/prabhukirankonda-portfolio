@@ -86,10 +86,10 @@ const prettyCodeOptions = {
 
 /** @type {import('mdsvex').MdsvexOptions} */
 export const mdsvexOptions = {
-	extensions: ['.md'],
+	extensions: ['.md', '.svx'],
 	layout: {
-		_: resolve('./src/lib/components/markdown/layout.svelte'),
-		about: resolve('./src/lib/components/markdown/about-layout.svelte')
+		_: resolve('./src/lib/components/markdown/layout.svelte'), // default or fallback layout
+		about: resolve('./src/lib/components/markdown/about-layout.svelte') // named layout
 	},
 	// comment if not working
 	// highlight: {
