@@ -248,6 +248,26 @@ export type Post = {
 };
 ```
 
+### Code Blocks
+
+Syntax highlighting is made possible using shiki and [rehype-pretty-code](https://rehype-pretty-code.netlify.app/) plugin.
+
+a small example:
+
+````md
+```ts title="hello.ts" showLineNumbers {1} /Hello/#yb
+console.log("Hello")
+```
+````
+will render into
+
+```ts title="hello.ts" showLineNumbers {1} /Hello/#yb
+console.log("Hello")
+```
+
+you can change these styles in `markdown.postcss` file and `pre.svelte` file and for more information visit [rehype-pretty-code](https://rehype-pretty-code.netlify.app/)
+
+
 ## Blog Comments
 
 Comments are made possible using [Giscus](https://giscus.app/), a GitHub discussion based commenting system. Start by changing some environment variables to setup Giscus. In you `.env` file change the following variables. These environment variables are imported in `routes/blog/[slug]/+page.svelte`
