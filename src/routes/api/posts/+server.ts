@@ -1,7 +1,7 @@
 import type { Post } from '$lib/types';
 import { json, type RequestHandler } from '@sveltejs/kit';
-import { dev } from '$app/environment'
-import { localToGithubURL } from '$lib/config';
+import { dev } from '$app/environment';
+import { localToGithubURL } from '$lib/utils';
 
 const getPosts = async () => {
 	let posts: Post[] = [];
@@ -15,7 +15,8 @@ const getPosts = async () => {
 		if (file && typeof file === 'object' && 'metadata' in file && slug) {
 			const metadata = file.metadata as Omit<Post, 'slug'>;
 			const post = { ...metadata, slug } as Post;
-			if (post.image && !dev && post.image.startsWith('/')) {
+			if (post.image && !dev && post.image.startsWith('/posts')) {
+				// only convert if starts with /posts because assets in static folder will be processed by vite
 				post.image = localToGithubURL({ src: post.image });
 			}
 			!post.draft && posts.push(post);

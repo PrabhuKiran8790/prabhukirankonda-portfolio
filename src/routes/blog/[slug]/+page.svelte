@@ -16,7 +16,7 @@
 	import { Badge } from '$lib/components/ui/badge';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import Separator from '$lib/components/ui/separator/separator.svelte';
-	import { localToGithubURL } from '$lib/config';
+	import { localToGithubURL } from '$lib/utils';
 	import { theme } from '$lib/stores.js';
 	import { formatDate } from '$lib/utils';
 	import { Calendar, MessageSquare, Share2, Tag } from 'lucide-svelte';

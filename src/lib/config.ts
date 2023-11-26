@@ -13,9 +13,7 @@ type socialsType = {
 	class?: string;
 };
 
-
-export const siteurl = 'https://prabhukirankonda.vercel.app'
-
+// nav routes
 export const routes: routesType[] = [
 	{
 		name: 'Blog',
@@ -31,6 +29,7 @@ export const routes: routesType[] = [
 	}
 ];
 
+// social icons with links
 const socials: socialsType[] = [
 	{
 		href: 'https://github.com/prabhukiran8790',
@@ -72,8 +71,4 @@ export const githubConfig = {
 	username: 'PrabhuKiran8790',
 	repo: 'sveltekit-portfolio',
 	branch: 'main'
-};
-
-export const localToGithubURL = ({ src }: { src: string }) => {
-	return `https://raw.githubusercontent.com/${githubConfig.username}/${githubConfig.repo}/${githubConfig.branch}${src}`;
 };

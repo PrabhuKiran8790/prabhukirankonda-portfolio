@@ -77,3 +77,109 @@ it's got ton of features that you don't wanna miss out.
     ```
     - wondering what those equations are? Maxwells Equations 🙃
 - Mobile friendly interface
+
+## How to use?
+
+### Starting from home page
+
+in home page at `src/routes/+page.svelte` we have two components, `Hero` and `LatestPost`
+
+```svelte title="+page.svelte" showLineNumbers {8, 9}
+<script lang="ts">
+	import { Hero, LatestPost } from '$lib/components/site';
+	import type { PageData } from './$types';
+	export let data: PageData;
+</script>
+
+<div class="p-4">
+	<Hero />
+	<LatestPost {data} />
+</div>
+```
+
+here i'm not going with the sveltekit internals, i assume you know the basics.
+
+the `Hero` component render the profile picture, Intro and social icons. to chage the social icons, change `config.ts` file.
+
+```ts title="config.ts"
+import { LinkedIn, X } from '$lib/components/site/icons';
+import { FileText, Github, Mail } from 'lucide-svelte';
+
+type routesType = {
+	name: string;
+	link: string;
+};
+
+type socialsType = {
+	href: string;
+	icon: typeof Github;
+	display: string;
+	class?: string;
+};
+
+// nav routes
+export const routes: routesType[] = [
+	{
+		name: 'Blog',
+		link: '/blog'
+	},
+	{
+		name: 'Projects',
+		link: '/projects'
+	},
+	{
+		name: 'About',
+		link: '/about'
+	}
+];
+
+// social icons with links
+const socials: socialsType[] = [
+	{
+		href: 'https://github.com/prabhukiran8790',
+		icon: Github,
+		display: 'GitHub'
+	},
+	{
+		href: 'https://linkedin.com/in/PrabhuKiranKonda',
+		icon: LinkedIn,
+		display: 'LinkedIn'
+	},
+	{
+		href: 'https://x.com/prabhukirantwt',
+		icon: X,
+		display: 'Twitter',
+		class: 'h-4 w-4'
+	},
+	{
+		href: 'mailto:prabhukiran426@gmail.com',
+		icon: Mail,
+		display: 'Mail',
+		class: 'h-4 w-4'
+	},
+	{
+		href: '/Prabhu Kiran Konda Resume.pdf',
+		icon: FileText,
+		display: 'Resume'
+	}
+];
+
+export const getSocials = ({ exclude }: { exclude?: string } = {}): socialsType[] => {
+	if (exclude) {
+		return socials.filter((social) => social.display !== exclude);
+	}
+	return socials;
+};
+
+export const githubConfig = {
+	username: 'PrabhuKiran8790',
+	repo: 'sveltekit-portfolio',
+	branch: 'main'
+};
+```
+
+it's important to add your `githubConfig` in `config.ts` so that it can convert your local images that are in `posts/[slug]` folder to github url.
+
+![PDF Assistant](/posts/getting-started/PDF_Assistant.png)
+
+![PDF Assistant](/PDF_Assistant.png)
