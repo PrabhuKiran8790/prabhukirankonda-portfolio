@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
 	import type { ProjectType } from '$lib/projects';
-	import { cn } from '$lib/utils';
+	// import { cn } from '$lib/utils';
 	import { ArrowRight } from 'lucide-svelte';
-	import { getTechStack } from '.';
-	import { Badge } from '../ui/badge';
-	import Icons from './icons.svelte';
+	// import { getTechStack } from '.';
+	import { TechStackIcon } from '.';
+	// import { Badge } from '../ui/badge';
+	// import Icons from './icons.svelte';
+	// import { techStackArray } from '$lib/types';
 
 	export let project: ProjectType;
 
@@ -18,7 +20,6 @@
 	on:mouseleave={() => (hover = false)}
 	href={project.href}
 	target="_blank"
-	data-sveltekit-preload-data
 >
 	{#if project.image}
 		<img src={project.image} alt={project.title} class="rounded-md rounded-b-none" />
@@ -29,7 +30,7 @@
 				{project.title}
 			</h1>
 			<div class="flex gap-1 flex-wrap">
-				{#each getTechStack({ techstack: project.techstack }) as { name, icon, className, type }}
+				<!-- {#each getTechStack({ techstack: project.techstack }) as { name, icon, className, type }}
 					<Badge variant="outline" class="rounded-md border-primary/30 gap-2 py-1">
 						<p class="text-sm">{name}</p>
 						{#if type === 'external'}
@@ -38,6 +39,9 @@
 							<svelte:component this={Icons} {icon} class={cn('h-5 w-5', className)} />
 						{/if}
 					</Badge>
+				{/each} -->
+				{#each project.techstack as icon}
+					<TechStackIcon {icon} />
 				{/each}
 			</div>
 		</div>

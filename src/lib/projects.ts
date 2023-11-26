@@ -1,4 +1,4 @@
-import type { TechStack } from './components/site';
+import type { TechStack } from "./types";
 
 export type ProjectType = {
 	title: string;

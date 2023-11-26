@@ -1,16 +1,7 @@
 import { Svelte } from '$lib/components/site/icons';
-import type { ComponentType, SvelteComponent } from 'svelte';
+import type { LangIconsType } from '$lib/types';
 
-type extensionMappingsType = {
-	[key: string]: {
-		name?: string;
-		filename?: string;
-		className?: string;
-		customIcon?: ComponentType<SvelteComponent>;
-	};
-};
-
-export const extensionMappings: extensionMappingsType = {
+export const extensionMappings: LangIconsType = {
     // <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg" />
     
     /*
