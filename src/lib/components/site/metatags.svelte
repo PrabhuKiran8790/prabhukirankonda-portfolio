@@ -46,7 +46,7 @@
 				handle: '@prabhukirantwt',
 				cardType: 'summary_large_image',
 				title: `Prabhu Kiran Konda | ${meta.ogTitle || meta.title}`,
-				description: meta.ogDescription,
+				description: meta.ogDescription || meta.description,
 				image: 'https://prabhukirankonda.vercel.app/og.png',
 				imageAlt: 'Prabhu Kiran Konda'
 			}
