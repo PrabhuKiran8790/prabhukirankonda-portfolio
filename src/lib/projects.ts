@@ -34,6 +34,13 @@ export const projects: ProjectType[] = [
 		techstack: ['SvelteKit', 'TypeScript', 'MySQL', 'Drizzle']
 	},
 	{
+		title: 'GFPGAN Streamlit App: Face Restoration',
+		description: `Created a Streamlit app for the GFPGAN model to restore faces in images. It has a user-friendly interface, and easy Docker deployment.`,
+		image: '/GFPGAN.png',
+		href: 'https://huggingface.co/spaces/PrabhuKiranKonda/Streamlit-GFPGAN',
+		techstack: ['Python', 'Streamlit', 'Docker']
+	},
+	{
 		title: 'AI-SaaS App: MultiGPT',
 		description:
 			'Created an AI-SaaS app using NextJS, React. It features a subscription based payment system using Stripe, user authentication, and a user-friendly interface. The app is deployed with Vercel for easy setup and scalability. It has several features like Chatbot, Code Generation, Image Generation, Audio Generation and Video Generation.',
@@ -53,13 +60,6 @@ export const projects: ProjectType[] = [
 		description: `Built a PDF Assistant tool using OpenAI's LLM to answer questions from uploaded PDF files. It has a user-friendly web interface with StreamLit, Firebase authentication for security, real-time updates via Firebase, a guest mode for no authentication, and easy Docker deployment.`,
 		image: '/PDF_Assistant.png',
 		href: 'https://huggingface.co/spaces/PrabhuKiranKonda/Streamlit-PDF-Assistant-Docker',
-		techstack: ['Python', 'Streamlit', 'Docker']
-	},
-	{
-		title: 'GFPGAN Streamlit App: Face Restoration',
-		description: `Created a Streamlit app for the GFPGAN model to restore faces in images. It has a user-friendly interface, and easy Docker deployment.`,
-		image: '/GFPGAN.png',
-		href: 'https://huggingface.co/spaces/PrabhuKiranKonda/Streamlit-GFPGAN',
 		techstack: ['Python', 'Streamlit', 'Docker']
 	},
 	{
