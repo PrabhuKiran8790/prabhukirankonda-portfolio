@@ -8,6 +8,7 @@
 	import { Navbar, Footer, MetaTags } from '$lib/components/site';
 	import { Toaster } from 'svelte-french-toast';
 	import MobileNavbar from '$lib/components/site/mobile-navbar.svelte';
+	import { page } from '$app/stores';
 
 	onNavigate(() => {
 		if ($openMobileMenu) {
@@ -29,7 +30,7 @@
 </script>
 
 <ModeWatcher />
-<MetaTags />
+<MetaTags url={$page.data.href} />
 <Toaster />
 <Navbar />
 <!-- no-highlight (touch highlights in mobile) -->
@@ -44,4 +45,3 @@
 		<Footer />
 	</footer>
 </div>
-

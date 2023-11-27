@@ -2,8 +2,10 @@
 	import { page } from '$app/stores';
 	import { MetaTags } from 'svelte-meta-tags';
 
+	export let url: string;
+
 	const og = {
-		url: $page.url.href,
+		url: url,
 		images: [
 			{
 				url: 'https://prabhukirankonda.vercel.app/og.png',
@@ -30,7 +32,6 @@
 		ogDescription?: string;
 	};
 
-	// Function to set page-specific meta tags
 	function setPageMeta(meta: Meta) {
 		pageMeta = {
 			title: `${meta.title} | Prabhu Kiran Konda`,
@@ -52,35 +53,30 @@
 			}
 		};
 	}
+
+	$: {
+		if ($page.url.pathname == '/') {
+			setPageMeta({
+				title: 'Home',
+				description: 'Personal website and blog'
+			});
+		} else if ($page.url.pathname == '/blog') {
+			setPageMeta({
+				title: 'Blog',
+				description: 'Blog'
+			});
+		} else if ($page.url.pathname == '/projects') {
+			setPageMeta({
+				title: 'Projects',
+				description: 'Projects'
+			});
+		} else if ($page.url.pathname == '/about') {
+			setPageMeta({
+				title: 'About',
+				description: 'About Me'
+			});
+		}
+	}
 </script>
-
-<!-- Set meta tags based on current page -->
-{#if $page.url.pathname == '/'}
-	{setPageMeta({
-		title: 'Home',
-		description: 'Personal website and blog'
-	})}
-{/if}
-
-{#if $page.url.pathname == '/blog'}
-	{setPageMeta({
-		title: 'Blog',
-		description: 'Blog'
-	})}
-{/if}
-
-{#if $page.url.pathname == '/projects'}
-	{setPageMeta({
-		title: 'Projects',
-		description: 'Projects'
-	})}
-{/if}
-
-{#if $page.url.pathname == '/about'}
-	{setPageMeta({
-		title: 'About',
-		description: 'About Me'
-	})}
-{/if}
 
 <MetaTags {...pageMeta} />
