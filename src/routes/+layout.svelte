@@ -30,7 +30,7 @@
 </script>
 
 <ModeWatcher />
-<MetaTags url={$page.data.href} />
+<MetaTags />
 <Toaster />
 <Navbar />
 <!-- no-highlight (touch highlights in mobile) -->

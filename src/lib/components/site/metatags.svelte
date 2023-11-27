@@ -2,10 +2,8 @@
 	import { page } from '$app/stores';
 	import { MetaTags } from 'svelte-meta-tags';
 
-	export let url: string;
-
 	const og = {
-		url: url,
+		url: $page.data.href,
 		images: [
 			{
 				url: 'https://prabhukirankonda.vercel.app/og.png',
