@@ -1,120 +1,86 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
 	import { MetaTags } from 'svelte-meta-tags';
-</script>
 
-{#if $page.url.pathname == '/'}
-	<MetaTags
-		title="Home | Prabhu Kiran Konda"
-		description="Personal website and blog"
-		openGraph={{
-			url: $page.url.href,
-			title: 'Prabhu Kiran Konda | Home',
-			description: 'Personal website and blog',
-			images: [
-				{
-					url: 'https://prabhukirankonda.vercel.app/og.png',
-					width: 800,
-					height: 600,
-					alt: 'Prabhu Kiran Konda'
-				}
-			],
-			siteName: 'Prabhu Kiran Konda'
-		}}
-		twitter={{
+	const og = {
+		url: $page.url.href,
+		images: [
+			{
+				url: 'https://prabhukirankonda.vercel.app/og.png',
+				width: 800,
+				height: 600,
+				alt: 'Prabhu Kiran Konda'
+			}
+		],
+		siteName: 'Prabhu Kiran Konda',
+		twitter: {
 			handle: '@prabhukirantwt',
 			cardType: 'summary_large_image',
-			title: 'Prabhu Kiran Konda | Home',
-			description: 'Personal website and Blog',
 			image: 'https://prabhukirankonda.vercel.app/og.png',
 			imageAlt: 'Prabhu Kiran Konda'
-		}}
-	/>
+		}
+	};
+
+	let pageMeta = {};
+
+	type Meta = {
+		title: string;
+		description: string;
+		ogTitle?: string;
+		ogDescription?: string;
+	};
+
+	// Function to set page-specific meta tags
+	function setPageMeta(meta: Meta) {
+		pageMeta = {
+			title: `${meta.title} | Prabhu Kiran Konda`,
+			description: meta.description,
+			openGraph: {
+				url: og.url,
+				title: `Prabhu Kiran Konda | ${meta.ogTitle || meta.title}`,
+				description: meta.ogDescription || meta.description,
+				images: og.images,
+				siteName: og.siteName
+			},
+			twitter: {
+				handle: '@prabhukirantwt',
+				cardType: 'summary_large_image',
+				title: `Prabhu Kiran Konda | ${meta.ogTitle || meta.title}`,
+				description: meta.ogDescription,
+				image: 'https://prabhukirankonda.vercel.app/og.png',
+				imageAlt: 'Prabhu Kiran Konda'
+			}
+		};
+	}
+</script>
+
+<!-- Set meta tags based on current page -->
+{#if $page.url.pathname == '/'}
+	{setPageMeta({
+		title: 'Home',
+		description: 'Personal website and blog'
+	})}
 {/if}
 
 {#if $page.url.pathname == '/blog'}
-	<MetaTags
-		title="Blog | Prabhu Kiran Konda"
-		description="Blog"
-		openGraph={{
-			url: $page.url.href,
-			title: 'Prabhu Kiran Konda | Blog',
-			description: 'Blog',
-			images: [
-				{
-					url: 'https://prabhukirankonda.vercel.app/og.png',
-					width: 800,
-					height: 600,
-					alt: 'Prabhu Kiran Konda'
-				}
-			],
-			siteName: 'Prabhu Kiran Konda'
-		}}
-		twitter={{
-			handle: '@prabhukirantwt',
-			cardType: 'summary_large_image',
-			title: 'Prabhu Kiran Konda | Blog',
-			description: 'Blog',
-			image: 'https://prabhukirankonda.vercel.app/og.png',
-			imageAlt: 'Prabhu Kiran Konda'
-		}}
-	/>
+	{setPageMeta({
+		title: 'Blog',
+		description: 'Blog'
+	})}
 {/if}
 
 {#if $page.url.pathname == '/projects'}
-	<MetaTags
-		title="Projects | Prabhu Kiran Konda"
-		description="Projects"
-		openGraph={{
-			url: $page.url.href,
-			title: 'Prabhu Kiran Konda | Projects',
-			description: 'Projects',
-			images: [
-				{
-					url: 'https://prabhukirankonda.vercel.app/og.png',
-					width: 800,
-					height: 600,
-					alt: 'Prabhu Kiran Konda'
-				}
-			],
-			siteName: 'Prabhu Kiran Konda'
-		}}
-		twitter={{
-			handle: '@prabhukirantwt',
-			cardType: 'summary_large_image',
-			title: 'Prabhu Kiran Konda | Projects',
-			description: 'Blog',
-			image: 'https://prabhukirankonda.vercel.app/og.png',
-			imageAlt: 'Prabhu Kiran Konda'
-		}}
-	/>
+	{setPageMeta({
+		title: 'Projects',
+		description: 'Projects'
+	})}
 {/if}
 
 {#if $page.url.pathname == '/about'}
-	<MetaTags
-		title="About | Prabhu Kiran Konda"
-		description="About Me"
-		openGraph={{
-			url: $page.url.href,
-			title: 'Prabhu Kiran Konda | About',
-			description: 'About Me',
-			images: [
-				{
-					url: 'https://prabhukirankonda.vercel.app/og.png',
-					width: 800,
-					height: 600,
-					alt: 'Prabhu Kiran Konda'
-				}
-			],
-			siteName: 'Prabhu Kiran Konda'
-		}}
-		twitter={{
-			handle: '@prabhukirantwt',
-			cardType: 'summary_large_image',
-			title: 'Prabhu Kiran Konda | About',
-			description: 'About Me',
-			image: 'https://prabhukirankonda.vercel.app/og.png',
-			imageAlt: 'Prabhu Kiran Konda'
-		}}
-	/>
+	{setPageMeta({
+		title: 'About',
+		description: 'About Me'
+	})}
 {/if}
+
+<MetaTags {...pageMeta} />

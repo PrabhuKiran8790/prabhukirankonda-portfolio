@@ -1,11 +1,11 @@
 <script lang="ts">
+	import { Badge } from '$lib/components/ui/badge';
+	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
 	import { Separator } from '$lib/components/ui/separator';
-	import { Badge } from '$lib/components/ui/badge';
-	import { ArrowRight, Calendar, Tag } from 'lucide-svelte';
-	import { Button } from '$lib/components/ui/button';
 	import type { Post } from '$lib/types';
 	import { formatDate } from '$lib/utils';
+	import { ArrowRight, Calendar, Tag } from 'lucide-svelte';
 	export let data: {
 		posts: Post[];
 	};
