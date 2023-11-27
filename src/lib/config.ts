@@ -69,6 +69,6 @@ export const getSocials = ({ exclude }: { exclude?: string } = {}): socialsType[
 
 export const githubConfig = {
 	username: 'PrabhuKiran8790',
-	repo: 'sveltekit-portfolio',
+	repo: 'prabhukirankonda.vercel.app',
 	branch: 'main'
 };
