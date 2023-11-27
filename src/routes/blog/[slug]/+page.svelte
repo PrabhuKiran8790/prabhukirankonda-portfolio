@@ -19,9 +19,11 @@
 	import { localToGithubURL } from '$lib/utils';
 	import { theme } from '$lib/stores.js';
 	import { formatDate } from '$lib/utils';
-	import { Calendar, MessageSquare, Share2, Tag } from 'lucide-svelte';
+	import { Calendar, Github, MessageSquare, Share2, Tag } from 'lucide-svelte';
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
+	import { Button } from '$lib/components/ui/button/index.js';
+	import { githubConfig } from '$lib/config.js';
 	export let data;
 
 	let { content, meta } = data;
@@ -135,6 +137,15 @@
 				</div>
 			</div>
 		{/if}
+		<Button
+			variant="outline"
+			target="_blank"
+			class="px-2 h-8"
+			href={`https://github.com/${githubConfig.username}/${githubConfig.repo}/blob/${githubConfig.branch}/posts/${$page.params.slug}/page.md`}
+		>
+			<Github class="h-4 w-4 mr-3" />
+			<h1>View on GitHub</h1>
+		</Button>
 	</div>
 	<div class="px-3 md:container pb-24" id="comments">
 		<Giscus
