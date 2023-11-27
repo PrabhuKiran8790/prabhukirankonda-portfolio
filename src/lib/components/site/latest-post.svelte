@@ -31,7 +31,7 @@
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			<a
-				class="border-2 hover:border-primary p-2 -mx-2 rounded-xl space-y-2 shadow-xl"
+				class="border-2 hover:border-primary p-2 -mx-2 rounded-xl space-y-2 shadow-xl md:max-w-sm lg:max-w-lg"
 				href={`/blog/${post.slug}`}
 			>
 				<img
@@ -59,7 +59,7 @@
 						<Separator />
 						<div class="flex items-center justify-between p-2">
 							<div class="flex items-center gap-2">
-								<Calendar class="h-4 w-4"/>
+								<Calendar class="h-4 w-4" />
 								<h1>{formatDate(post.date)}</h1>
 							</div>
 							<div>

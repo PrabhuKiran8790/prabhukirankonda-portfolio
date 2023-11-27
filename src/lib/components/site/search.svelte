@@ -78,7 +78,7 @@
 							<h1>{latestPost.title}</h1>
 						</div>
 						<div>
-							<h1>{formatDate(latestPost.date)}</h1>
+							<h1 class="text-xs text-muted-foreground">{formatDate(latestPost.date)}</h1>
 						</div>
 					</div>
 					<div class="flex items-center gap-2">
@@ -105,7 +105,7 @@
 								<h1>{post.title}</h1>
 							</div>
 							<div>
-								<h1>{formatDate(post.date)}</h1>
+								<h1 class="text-xs text-muted-foreground">{formatDate(post.date)}</h1>
 							</div>
 						</div>
 						<div class="flex items-center gap-2">
