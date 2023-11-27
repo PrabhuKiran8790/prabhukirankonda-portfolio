@@ -3,7 +3,6 @@
 	import { MetaTags } from 'svelte-meta-tags';
 
 	const og = {
-		url: $page.data.href,
 		images: [
 			{
 				url: 'https://prabhukirankonda.vercel.app/og.png',
@@ -35,7 +34,7 @@
 			title: `${meta.title} | Prabhu Kiran Konda`,
 			description: meta.description,
 			openGraph: {
-				url: og.url,
+				url: $page.data.href,
 				title: `Prabhu Kiran Konda | ${meta.ogTitle || meta.title}`,
 				description: meta.ogDescription || meta.description,
 				images: og.images,
