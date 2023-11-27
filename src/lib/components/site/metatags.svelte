@@ -34,7 +34,7 @@
 			title: `${meta.title} | Prabhu Kiran Konda`,
 			description: meta.description,
 			openGraph: {
-				url: $page.data.href,
+				url: $page.url,
 				title: `Prabhu Kiran Konda | ${meta.ogTitle || meta.title}`,
 				description: meta.ogDescription || meta.description,
 				images: og.images,
