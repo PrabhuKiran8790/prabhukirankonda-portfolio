@@ -45,7 +45,7 @@
 		};
 	});
 
-	if (!dev && meta.image?.startsWith('/')) {
+	if (!dev && meta.image?.startsWith('/posts')) {
 		meta.image = localToGithubURL({ src: meta.image });
 	}
 </script>

@@ -9,7 +9,7 @@ export const load = async ({ params }) => {
     } catch (e) {
         error(404, 'post not found')
 	}
-	
+
 	return {
 		content: post.default,
 		meta: post.metadata

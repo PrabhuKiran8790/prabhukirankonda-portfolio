@@ -331,3 +331,6 @@ export const mdsvexOptions = {
 ---
 
 These are the some of the important changes to be made to get started. If you have any issues, feel free to open an issue. In the next update, I'll include related posts based on tags.
+
+
+![PDF_Assistant](/posts/getting-started/PDF_Assistant.png)
