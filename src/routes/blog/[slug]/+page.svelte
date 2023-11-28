@@ -57,13 +57,8 @@
 <div class="md:container pt-6 md:pt-14 space-y-8">
 	<div class="flex flex-col items-center justify-center space-y-4">
 		<div class="flex items-center space-x-2 text-muted-foreground">
-			<Calendar class="h-4 w-4" />
-			<p class="font-semibold text-sm">{formatDate(meta.date, 'long')}</p>
-		</div>
-		<div>
-			<h1 class="text-2xl md:text-4xl font-bold px-4">
-				{meta.title}
-			</h1>
+			<Calendar class="h-3 w-3 md:h-4 md:w-4" />
+			<p class="font-semibold text-xs md:text-sm">{formatDate(meta.date, 'long')}</p>
 		</div>
 		{#if meta.image}
 			<img
@@ -78,6 +73,11 @@
 			{#each meta.tags as tags}
 				<Badge class="rounded-md">{tags}</Badge>
 			{/each}
+		</div>
+		<div>
+			<h1 class="text-2xl md:text-4xl font-bold px-4">
+				{meta.title}
+			</h1>
 		</div>
 	</div>
 	<Separator />
@@ -116,7 +116,7 @@
 										<DropdownMenu.Label>Share</DropdownMenu.Label>
 										<DropdownMenu.Separator />
 										<DropdownMenu.Item
-											class="space-x-3"
+											class="space-x-2"
 											href={`http://www.twitter.com/share?url=${$page.url}`}
 										>
 											<X />
@@ -126,7 +126,7 @@
 											class="space-x-2"
 											href={`https://www.linkedin.com/sharing/share-offsite/?url=${$page.url}`}
 										>
-											<Linkedin />
+											<Linkedin class="-ml-1" />
 											<p>LinkedIn</p>
 										</DropdownMenu.Item>
 									</DropdownMenu.Group>

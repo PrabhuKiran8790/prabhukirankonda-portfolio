@@ -77,18 +77,19 @@
 			class="rounded-lg bg-zinc-900 max-h-[450px] mt-[2px] border-2">
         <slot />
     </pre>
-		<div class="absolute right-3 top-3">
-			<button on:click={handleCopy} class="p-0 z-50 no-highlight">
-				{#if copyState}
-					<span in:fly={{ y: -4, delay: 50 }}>
-						<Check class="h-4 w-4 text-white" />
-					</span>
-				{:else}
-					<span in:fly={{ y: 4, delay: 50 }}>
-						<Copy class="h-4 w-4 text-white" />
-					</span>
-				{/if}</button
-			>
-		</div>
+		<button
+			on:click={handleCopy}
+			class="p-0 no-highlight inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 z-50 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50 absolute right-2 top-2"
+		>
+			{#if copyState}
+				<span in:fly={{ y: -4, delay: 50 }}>
+					<Check class="h-4 w-4 text-white" />
+				</span>
+			{:else}
+				<span in:fly={{ y: 4, delay: 50 }}>
+					<Copy class="h-4 w-4 text-white" />
+				</span>
+			{/if}</button
+		>
 	</div>
 {/if}

@@ -1,13 +1,8 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
 	import type { ProjectType } from '$lib/projects';
-	// import { cn } from '$lib/utils';
 	import { ArrowRight } from 'lucide-svelte';
-	// import { getTechStack } from '.';
 	import { TechStackIcon } from '.';
-	// import { Badge } from '../ui/badge';
-	// import Icons from './icons.svelte';
-	// import { techStackArray } from '$lib/types';
 
 	export let project: ProjectType;
 

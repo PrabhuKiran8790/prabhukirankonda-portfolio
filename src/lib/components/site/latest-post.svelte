@@ -31,17 +31,19 @@
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			<a
-				class="border-2 hover:border-primary p-2 -mx-2 rounded-xl space-y-2 shadow-xl md:max-w-sm lg:max-w-lg"
+				class="-mx-2 space-y-2 shadow-xl md:max-w-sm lg:max-w-lg rounded-2xl"
 				href={`/blog/${post.slug}`}
 			>
-				<img
-					src={post.image}
-					alt={post.title}
-					loading="lazy"
-					class="w-full h-full md:h-72 object-cover object-center rounded-lg"
-				/>
-				<Card.Root class="p-0 border-none ">
-					<Card.Header class="p-0">
+				<Card.Root class="rounded-xl hover:border-primary border-2">
+					<div class="p-2">
+						<img
+							src={post.image}
+							alt={post.title}
+							loading="lazy"
+							class="w-full h-full md:h-72 object-cover object-center rounded-lg"
+						/>
+					</div>
+					<Card.Header class="p-2">
 						<div class="flex gap-2 items-center">
 							<Tag class="h-4 w-4" />
 							{#each post.tags as tags}
@@ -58,7 +60,7 @@
 					<div class="mt-5">
 						<Separator />
 						<div class="flex items-center justify-between p-2">
-							<div class="flex items-center gap-2">
+							<div class="flex items-center gap-2 text-sm">
 								<Calendar class="h-4 w-4" />
 								<h1>{formatDate(post.date)}</h1>
 							</div>

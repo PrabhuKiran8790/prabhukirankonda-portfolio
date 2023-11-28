@@ -3,7 +3,6 @@ export { default as BlogMetatags } from './blog-metatags.svelte';
 export { default as Blogcard } from './blogcard.svelte';
 export { default as Footer } from './footer.svelte';
 export { default as Hero } from './hero.svelte';
-export { default as Icons } from './icons.svelte';
 export { default as LatestPost } from './latest-post.svelte';
 export { default as Masonry } from './masonry.svelte';
 export { default as MetaTags } from './metatags.svelte';

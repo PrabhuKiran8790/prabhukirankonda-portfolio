@@ -552,7 +552,7 @@ now, let's create a dashboard page. we will be using the same code that we have 
 </div>
 ```
 
-and in `src/routes/dashboard/+page.server.ts` file, add the following code.
+and in `routes/dashboard/+page.server.ts` file, add the following code.
 
 ```ts title="+page.server.ts" showLineNumbers {7-11}
 // src/routes/dashboard/+page.server.ts

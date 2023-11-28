@@ -10,16 +10,18 @@
 </script>
 
 <a
-	class="border-2 rounded-lg hover:border-primary block pb-0"
+	class="border-2 rounded-xl hover:border-primary block pb-0"
 	on:mouseenter={() => (hover = true)}
 	on:mouseleave={() => (hover = false)}
 	href={`blog/${post.slug}`}
 	data-sveltekit-preload-data
 >
 	{#if post.image}
-		<img src={post.image} alt={post.title} class="rounded-md rounded-b-none"/>
+		<div class="p-2">
+			<img src={post.image} alt={post.title} class="rounded-md" loading="lazy" />
+		</div>
 	{/if}
-	<div class="flex flex-col justify-between h-full gap-4 p-2.5">
+	<div class="flex flex-col justify-between h-full gap-4 p-2.5 pt-0">
 		<div class="flex flex-col justify-between gap-2">
 			<h1 class={`text-lg font-semibold ${hover ? 'underline underline-offset-4' : ''}`}>
 				{post.title}
