@@ -1,4 +1,4 @@
-import type { TechStack } from "./types";
+import type { TechStack } from "./icons";
 
 export type ProjectType = {
 	title: string;

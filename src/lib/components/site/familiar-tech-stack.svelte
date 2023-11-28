@@ -3,7 +3,7 @@
 	// import { Badge } from '$lib/components/ui/badge';
 	// import { cn } from '$lib/utils';
 	import { TechStackIcon } from '.';
-	import { techStackArray } from '$lib/types';
+	import { techStackArray } from '$lib/icons';
 </script>
 
 <!-- <div class="flex items-center gap-3 my-4 flex-wrap">

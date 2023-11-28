@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { techStackData, type TechStack } from '$lib/types';
+	import { techStackData, type TechStack } from '$lib/icons';
 	import { Badge } from '$lib/components/ui/badge';
 	import { cn } from '$lib/utils';
 
