@@ -7,7 +7,7 @@
 	import { page } from '$app/stores';
 </script>
 
-<div class="items-center h-16 px-2 bg-gray-200 rounded-lg grid grid-cols-3 dark:bg-zinc-800">
+<div class="items-center h-16 px-2 bg-gray-200 border rounded-lg grid grid-cols-3 dark:bg-zinc-800">
 	<div class="flex">
 		<a
 			href="/"

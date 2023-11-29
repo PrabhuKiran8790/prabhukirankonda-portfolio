@@ -10,7 +10,7 @@
 </script>
 
 <a
-	class="block pb-0 border-2 rounded-xl hover:border-primary"
+	class="block pb-0 border-2 rounded-xl hover:border-primary no-highlight"
 	on:mouseenter={() => (hover = true)}
 	on:mouseleave={() => (hover = false)}
 	href={`blog/${post.slug}`}
