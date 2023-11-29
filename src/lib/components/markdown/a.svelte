@@ -11,12 +11,12 @@
 </script>
 
 <a
-	class="inline-flex items-center gap-1 underline underline-offset-4 transition-colors"
+	class="inline-flex items-center underline gap-1 underline-offset-4 transition-colors"
 	{href}
 	{target}
 >
 	<slot />
 	{#if !internal}
-		<ExternalLink class="h-3 w-3" />
+		<ExternalLink class="w-3 h-3" />
 	{/if}
 </a>

@@ -16,5 +16,5 @@
 
 <div>
 	<img {src} {alt} class={cn('rounded-md mt-4', className)} {...$$restProps} loading="lazy" />
-	<p class="text-center text-muted-foreground text-sm">{alt ? alt : ''}</p>
+	<p class="text-sm text-center text-muted-foreground">{alt ? alt : ''}</p>
 </div>

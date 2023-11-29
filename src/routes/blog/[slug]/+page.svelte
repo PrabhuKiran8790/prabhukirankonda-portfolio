@@ -20,10 +20,12 @@
 	import { theme } from '$lib/stores.js';
 	import { formatDate } from '$lib/utils';
 	import { Calendar, Github, MessageSquare, Share2, Tag } from 'lucide-svelte';
+	import * as Tooltip from '$lib/components/ui/tooltip';
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { githubConfig } from '$lib/config.js';
+	import TooltipContent from '$lib/components/ui/tooltip/tooltip-content.svelte';
 	export let data;
 
 	let { content, meta } = data;
@@ -54,11 +56,11 @@
 
 <BlogMetatags {meta} />
 
-<div class="md:container pt-6 md:pt-14 space-y-8">
+<div class="pt-6 md:container md:pt-14 space-y-8">
 	<div class="flex flex-col items-center justify-center space-y-4">
 		<div class="flex items-center space-x-2 text-muted-foreground">
-			<Calendar class="h-3 w-3 md:h-4 md:w-4" />
-			<p class="font-semibold text-xs md:text-sm">{formatDate(meta.date, 'long')}</p>
+			<Calendar class="w-3 h-3 md:h-4 md:w-4" />
+			<p class="text-xs font-semibold md:text-sm">{formatDate(meta.date, 'long')}</p>
 		</div>
 		{#if meta.image}
 			<img
@@ -68,71 +70,99 @@
 				class="w-full md:w-[90%] h-auto md:rounded-lg max-h-[550px]"
 			/>
 		{/if}
-		<div class="flex gap-2 items-center">
-			<Tag class="h-4 w-4" />
+		<div class="flex items-center gap-2">
+			<Tag class="w-4 h-4" />
 			{#each meta.tags as tags}
 				<Badge class="rounded-md">{tags}</Badge>
 			{/each}
 		</div>
 		<div>
-			<h1 class="text-2xl md:text-4xl font-bold px-4">
+			<h1 class="px-4 text-2xl font-bold md:text-4xl">
 				{meta.title}
 			</h1>
 		</div>
 	</div>
 	<Separator />
-	<div class="text-primary max-w-4xl w-full mx-auto p-4 relative">
-		<div class="mdsvex mb-20" id="mdsvex">
+	<div class="relative w-full max-w-4xl p-4 mx-auto text-primary">
+		<div class="mb-20 mdsvex" id="mdsvex">
 			<svelte:component this={content} />
 		</div>
 		{#if isTocSticky}
 			<div
-				class="hidden md:block sticky bottom-10 w-full z-50"
+				class="sticky z-50 hidden w-full md:block bottom-10"
 				in:fly={{ y: 1000 }}
 				out:fly={{ y: 1000 }}
 			>
-				<div class=" flex items-center justify-center">
+				<div class="flex items-center justify-center ">
 					<div
-						class="flex items-center justify-evenly rounded-l-full rounded-r-full border border-primary/50 bg-muted shadow-sm px-7 py-1 space-x-3"
+						class="flex items-center py-1 border rounded-l-full rounded-r-full justify-evenly border-primary/50 bg-muted shadow-sm px-7 space-x-3"
 					>
-						<button
-							on:click={() => {
-								element?.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
-							}}
-							class="hover:bg-gray-200 dark:hover:bg-zinc-900 p-1 rounded-full h-10 w-10 flex items-center justify-center"
-						>
-							<MessageSquare class="h-5 w-5" />
-						</button>
-						<Toc />
-						<button
-							class="hover:bg-gray-200 dark:hover:bg-zinc-900 p-1 rounded-full h-10 w-10 flex items-center justify-center"
-						>
-							<DropdownMenu.Root>
-								<DropdownMenu.Trigger>
-									<Share2 class="h-5 w-5" />
-								</DropdownMenu.Trigger>
-								<DropdownMenu.Content>
-									<DropdownMenu.Group>
-										<DropdownMenu.Label>Share</DropdownMenu.Label>
-										<DropdownMenu.Separator />
-										<DropdownMenu.Item
-											class="space-x-2"
-											href={`http://www.twitter.com/share?url=${$page.url}`}
-										>
-											<X />
-											<p>Twitter</p>
-										</DropdownMenu.Item>
-										<DropdownMenu.Item
-											class="space-x-2"
-											href={`https://www.linkedin.com/sharing/share-offsite/?url=${$page.url}`}
-										>
-											<Linkedin class="-ml-1" />
-											<p>LinkedIn</p>
-										</DropdownMenu.Item>
-									</DropdownMenu.Group>
-								</DropdownMenu.Content>
-							</DropdownMenu.Root>
-						</button>
+						<!-- Comments -->
+						<Tooltip.Root openDelay={100}>
+							<Tooltip.Trigger>
+								<button
+									on:click={() => {
+										element?.scrollIntoView({
+											behavior: 'smooth',
+											block: 'end',
+											inline: 'nearest'
+										});
+									}}
+									class="flex items-center justify-center w-10 h-10 p-1 rounded-full hover:bg-gray-200 dark:hover:bg-zinc-900"
+								>
+									<MessageSquare class="w-5 h-5" />
+								</button>
+							</Tooltip.Trigger>
+							<Tooltip.Content class="border border-primary">
+								<p>Comments</p>
+							</Tooltip.Content>
+						</Tooltip.Root>
+						<!-- Table of Contents -->
+						<Tooltip.Root openDelay={0}>
+							<Tooltip.Trigger>
+								<Toc />
+							</Tooltip.Trigger>
+							<Tooltip.Content class="border border-primary">
+								<p>Table of Contents</p>
+							</Tooltip.Content>
+						</Tooltip.Root>
+						<!-- Share -->
+						<Tooltip.Root openDelay={0}>
+							<Tooltip.Trigger>
+								<button
+									class="flex items-center justify-center w-10 h-10 p-1 rounded-full hover:bg-gray-200 dark:hover:bg-zinc-900"
+								>
+									<DropdownMenu.Root>
+										<DropdownMenu.Trigger>
+											<Share2 class="w-5 h-5" />
+										</DropdownMenu.Trigger>
+										<DropdownMenu.Content>
+											<DropdownMenu.Group>
+												<DropdownMenu.Label>Share</DropdownMenu.Label>
+												<DropdownMenu.Separator />
+												<DropdownMenu.Item
+													class="space-x-2"
+													href={`http://www.twitter.com/share?url=${$page.url}`}
+												>
+													<X />
+													<p>Twitter</p>
+												</DropdownMenu.Item>
+												<DropdownMenu.Item
+													class="space-x-2"
+													href={`https://www.linkedin.com/sharing/share-offsite/?url=${$page.url}`}
+												>
+													<Linkedin class="-ml-1" />
+													<p>LinkedIn</p>
+												</DropdownMenu.Item>
+											</DropdownMenu.Group>
+										</DropdownMenu.Content>
+									</DropdownMenu.Root>
+								</button>
+							</Tooltip.Trigger>
+							<Tooltip.Content class="border border-primary">
+								<p>Share</p>
+							</Tooltip.Content>
+						</Tooltip.Root>
 					</div>
 				</div>
 			</div>
@@ -140,14 +170,14 @@
 		<Button
 			variant="outline"
 			target="_blank"
-			class="px-2 h-8"
+			class="h-8 px-2"
 			href={`https://github.com/${githubConfig.username}/${githubConfig.repo}/blob/${githubConfig.branch}/posts/${$page.params.slug}/page.md`}
 		>
-			<Github class="h-4 w-4 mr-3" />
+			<Github class="w-4 h-4 mr-3" />
 			<h1>View on GitHub</h1>
 		</Button>
 	</div>
-	<div class="px-3 md:container pb-24" id="comments">
+	<div class="px-3 pb-24 md:container" id="comments">
 		<Giscus
 			repo={`${PUBLIC_GITHUB_USERNAME}/${PUBLIC_GITHUB_REPO}`}
 			repoId={PUBLIC_GITHUB_REPO_ID}

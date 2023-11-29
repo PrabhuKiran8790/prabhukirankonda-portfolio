@@ -40,7 +40,7 @@
 	{...$$restProps}
 >
 	<span class="inline-flex items-center">
-		<Search class="h-4 w-4 mr-2" />
+		<Search class="w-4 h-4 mr-2" />
 		Search blogs</span
 	>
 	<kbd
@@ -48,7 +48,7 @@
 	>
 		<span class="text-xs">
 			<div class="flex items-center">
-				<CommandIcon class="h-3 w-3" />
+				<CommandIcon class="w-3 h-3" />
 				<h1>/ctrl K</h1>
 			</div>
 		</span>
@@ -72,7 +72,7 @@
 					});
 				}}
 			>
-				<div class="flex flex-col gap-1 w-full">
+				<div class="flex flex-col w-full gap-1">
 					<div class="flex items-center justify-between w-full">
 						<div>
 							<h1>{latestPost.title}</h1>
@@ -83,7 +83,7 @@
 					</div>
 					<div class="flex items-center gap-2">
 						{#each latestPost.tags as tags}
-							<Badge class="rounded-md bg-gray-300 dark:bg-zinc-600" variant="outline">{tags}</Badge
+							<Badge class="bg-gray-300 rounded-md dark:bg-zinc-600" variant="outline">{tags}</Badge
 							>
 						{/each}
 					</div>
@@ -99,7 +99,7 @@
 						});
 					}}
 				>
-					<div class="flex flex-col gap-1 w-full">
+					<div class="flex flex-col w-full gap-1">
 						<div class="flex items-center justify-between w-full">
 							<div>
 								<h1>{post.title}</h1>
@@ -110,7 +110,7 @@
 						</div>
 						<div class="flex items-center gap-2">
 							{#each post.tags as tags}
-								<Badge class="rounded-md bg-gray-300 dark:bg-zinc-600" variant="outline"
+								<Badge class="bg-gray-300 rounded-md dark:bg-zinc-600" variant="outline"
 									>{tags}</Badge
 								>
 							{/each}

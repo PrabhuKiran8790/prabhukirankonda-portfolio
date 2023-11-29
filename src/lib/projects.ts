@@ -2,7 +2,9 @@ import type { TechStack } from "./icons";
 
 export type ProjectType = {
 	title: string;
+	featured?: boolean,
 	href: string;
+	source?: string
 	image: string;
 	description: string;
 	techstack: TechStack[];
@@ -14,29 +16,36 @@ export const projects: ProjectType[] = [
 		description:
 			'This website, prabhukirankonda.vercel.app is my personal website with a markdown blog written in SvelteKit and deployed using Vercel. Styled using Taiwind CSS and Shadcn-UI and completely written in TypeScript.',
 		href: 'https://prabhukirankonda.vercel.app',
+		source: 'https://github.com/PrabhuKiran8790/prabhukirankonda.vercel.app',
 		image: '/sveltekit-portfolio.png',
-		techstack: ['SvelteKit', 'Tailwind', 'TypeScript']
+		techstack: ['SvelteKit', 'Tailwind', 'TypeScript'],
+		featured: true
 	},
 	{
 		title: 'Corgi-AI: Create anything with AI',
 		description:
 			'Corgi AI is a collection of AI tools for different usecases. It includes a chatGPT clone with streaming responses, Image Generation, Audio Generation, Image Restoration and PDF Chat(beta). It is a full fledged SaaS application with stripe payments. It is Deployed using Docker with a VPS hosting on fly.io',
 		href: 'https://corgi-ai.fly.dev',
+		source: 'https://github.com/PrabhuKiran8790/corgi-docker',
 		image: '/corgi-ai-dashboard.png',
-		techstack: ['SvelteKit', 'TypeScript', 'PostgreSQL', 'Docker', 'Drizzle']
+		techstack: ['SvelteKit', 'TypeScript', 'PostgreSQL', 'Docker', 'Drizzle'],
+		featured: true
 	},
 	{
 		title: 'Dall-E Clone: AI Image Generation',
 		description:
 			'Created a Dall-E Clone using SvelteKit, OpenAI API, TailwindCSS, TypeScript, Dirzzle ORM and MySQL Database. Converted it into fully working SaaS which inludes Stripe Payment Integration, User Authentication (Github & Google), and User Friendly Interface. The app is deployed with Vercel for easy setup and scalability.',
 		href: 'https://dall-e-sveltekit.vercel.app/',
+		source: 'https://github.com/PrabhuKiran8790/dall-e-clone',
 		image: '/dall-e-svelte.png',
-		techstack: ['SvelteKit', 'TypeScript', 'MySQL', 'Drizzle']
+		techstack: ['SvelteKit', 'TypeScript', 'MySQL', 'Drizzle'],
+		featured: true
 	},
 	{
 		title: 'GFPGAN Streamlit App: Face Restoration',
 		description: `Created a Streamlit app for the GFPGAN model to restore faces in images. It has a user-friendly interface, and easy Docker deployment.`,
 		image: '/GFPGAN.png',
+		source: 'https://huggingface.co/spaces/PrabhuKiranKonda/Streamlit-GFPGAN/tree/main',
 		href: 'https://huggingface.co/spaces/PrabhuKiranKonda/Streamlit-GFPGAN',
 		techstack: ['Python', 'Streamlit', 'Docker']
 	},
@@ -46,6 +55,7 @@ export const projects: ProjectType[] = [
 			'Created an AI-SaaS app using NextJS, React. It features a subscription based payment system using Stripe, user authentication, and a user-friendly interface. The app is deployed with Vercel for easy setup and scalability. It has several features like Chatbot, Code Generation, Image Generation, Audio Generation and Video Generation.',
 		image: '/multigpt.png',
 		href: 'https://multigpt-pk.vercel.app/',
+		source: 'https://github.com/PrabhuKiran8790/ai-saas',
 		techstack: ['NextJS', 'React', 'JavaScript']
 	},
 	{
@@ -60,6 +70,7 @@ export const projects: ProjectType[] = [
 		description: `Built a PDF Assistant tool using OpenAI's LLM to answer questions from uploaded PDF files. It has a user-friendly web interface with StreamLit, Firebase authentication for security, real-time updates via Firebase, a guest mode for no authentication, and easy Docker deployment.`,
 		image: '/PDF_Assistant.png',
 		href: 'https://huggingface.co/spaces/PrabhuKiranKonda/Streamlit-PDF-Assistant-Docker',
+		source: 'https://huggingface.co/spaces/PrabhuKiranKonda/Streamlit-PDF-Assistant-Docker/tree/main',
 		techstack: ['Python', 'Streamlit', 'Docker']
 	},
 	{
@@ -67,6 +78,7 @@ export const projects: ProjectType[] = [
 		description: `Developed a high-performance API using FastAPI and MongoDB Cloud Database for CRUD Operation. The API is deployed with Docker for easy setup and scalability.`,
 		image: '/FastAPI_MongDB.png',
 		href: 'https://huggingface.co/spaces/PrabhuKiranKonda/fastapi_mongoDB',
+		source: 'https://huggingface.co/spaces/PrabhuKiranKonda/fastapi_mongoDB/tree/main',
 		techstack: ['Python', 'FastAPI', 'MongoDB', 'Docker']
 	}
 ];

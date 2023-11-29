@@ -13,8 +13,8 @@
 	)}
 	{...$$restProps}
 >
-	<div class="flex items-center gap-3 p-1">
-		<Info class="h-10 w-10 md:h-5 md:w-5" />
+	<div class="flex items-center p-1 gap-3">
+		<Info class="w-10 h-10 md:h-5 md:w-5" />
 		<div>
 			<slot />
 		</div>

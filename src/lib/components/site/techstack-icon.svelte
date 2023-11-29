@@ -6,7 +6,7 @@
 	export let icon: TechStack;
 </script>
 
-<Badge variant="outline" class="rounded-md border-primary border gap-2 py-1">
+<Badge variant="outline" class="py-1 border rounded-md border-primary gap-2">
 	<p class="text-sm">{icon}</p>
 	{#if techStackData[icon]?.customIcon}
 		<svelte:component

@@ -4,6 +4,6 @@
 	let { content, meta } = data;
 </script>
 
-<div class="mdsvex mb-20" id="mdsvex">
+<div class="mb-20 mdsvex" id="mdsvex">
 	<svelte:component this={content} />
 </div>

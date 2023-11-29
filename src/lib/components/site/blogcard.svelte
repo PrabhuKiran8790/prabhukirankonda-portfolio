@@ -10,7 +10,7 @@
 </script>
 
 <a
-	class="border-2 rounded-xl hover:border-primary block pb-0"
+	class="block pb-0 border-2 rounded-xl hover:border-primary"
 	on:mouseenter={() => (hover = true)}
 	on:mouseleave={() => (hover = false)}
 	href={`blog/${post.slug}`}
@@ -38,12 +38,12 @@
 
 		<div>
 			<div class="flex items-center justify-between">
-				<div class="flex items-center gap-2 text-sm">
-					<Calendar class="h-4 w-4" />
+				<div class="flex items-center text-sm gap-2">
+					<Calendar class="w-4 h-4" />
 					<h1>{formatDate(post.date)}</h1>
 				</div>
 				<div>
-					<Button variant="ghost" size="sm" class="py-0 px-3" href={`/blog/${post.slug}`}
+					<Button variant="ghost" size="sm" class="px-3 py-0" href={`/blog/${post.slug}`}
 						>read more
 						<ArrowRight class={`h-4 w-4 ml-2`} /></Button
 					>

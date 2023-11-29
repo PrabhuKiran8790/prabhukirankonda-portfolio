@@ -403,7 +403,7 @@ and in your `+page.svelte` file inside your `src/routes` directory, add the foll
   import { page } from "$app/stores";
 </script>
 
-<div class="h-full flex flex-col items-center justify-center gap-4">
+<div class="flex flex-col items-center justify-center h-full gap-4">
   <h1 class="text-5xl">Home Page</h1>
   {#if $page.data.session}
     Welcome back, <span class="text-4xl">{$page.data.session.user?.name}!</span>
@@ -444,7 +444,7 @@ let's create a login routes
   <html lang="en" />
 </svelte:head>
 
-<div class="flex items-center justify-center h-full overflow-x-hidden -mt-12">
+<div class="flex items-center justify-center h-full -mt-12 overflow-x-hidden">
   <Card.Root
     class="w-[300px] rounded-lg flex flex-col items-center justify-center"
   >
@@ -544,7 +544,7 @@ now, let's create a dashboard page. we will be using the same code that we have 
   export let data;
 </script>
 
-<div class="h-full flex flex-col items-center justify-center gap-4">
+<div class="flex flex-col items-center justify-center h-full gap-4">
   {#if data.session}
     <h1 class="text-5xl">Dashboard</h1>
     Welcome back,<span class="text-4xl">{data.session.user?.name}!</span>

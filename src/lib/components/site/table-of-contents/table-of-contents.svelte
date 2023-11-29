@@ -52,9 +52,9 @@
 
 <DropdownMenu.Root>
 	<DropdownMenu.Trigger
-		class="hover:bg-gray-200 dark:hover:bg-zinc-900 p-1 rounded-full h-10 w-10 flex items-center justify-center"
+		class="flex items-center justify-center w-10 h-10 p-1 rounded-full hover:bg-gray-200 dark:hover:bg-zinc-900"
 	>
-		<BookOpen class="h-5 w-5" />
+		<BookOpen class="w-5 h-5" />
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content class="px-3 border border-primary min-w-[200px] pb-2">
 		<DropdownMenu.Group class="w-full">

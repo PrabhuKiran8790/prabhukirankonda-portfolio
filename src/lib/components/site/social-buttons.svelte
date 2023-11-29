@@ -4,7 +4,7 @@
 	import { cn } from '$lib/utils';
 </script>
 
-<div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-4 gap-y-4 py-4 sm:grid-cols-4">
+<div class="max-w-2xl py-4 mx-auto grid grid-cols-1 gap-x-4 gap-y-4 sm:grid-cols-4">
 	{#each getSocials({ exclude: 'Mail' }) as { display, href, icon }}
 		<a
 			{href}

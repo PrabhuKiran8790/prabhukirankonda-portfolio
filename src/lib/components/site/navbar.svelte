@@ -8,15 +8,15 @@
 <nav
 	class="z-50 top-0 left-0 right-0 h-14 md:h-[4.1rem] border-b fixed supports-[backdrop-filter]:bg-background/60 w-full bg-background/95 backdrop-blur hidden md:block"
 >
-	<div class="flex h-full items-center justify-between p-4">
+	<div class="flex items-center justify-between h-full p-4">
 		<div>
 			<a
 				href="/"
-				class="text-3xl md:text-4xl font-semibold tracking-wider"
+				class="text-3xl font-semibold tracking-wider md:text-4xl"
 				style="font-family: 'Fuggles', cursive;"
 			>
 				<span
-					class="bg-gradient-to-r from-primary to-gray-400 bg-clip-text text-transparent text-5xl md:text-6xl"
+					class="text-5xl text-transparent bg-gradient-to-r from-primary to-gray-400 bg-clip-text md:text-6xl"
 					>P</span
 				>rabhu
 			</a>
@@ -28,7 +28,7 @@
 						<li>
 							<a
 								href={route.link}
-								class="group inline-block relative text-lg tracking-wider hover:bg-accent hover:text-accent-foreground py-1 px-3 rounded-lg"
+								class="relative inline-block px-3 py-1 text-lg tracking-wider rounded-lg group hover:bg-accent hover:text-accent-foreground"
 							>
 								<span
 									class={cn(

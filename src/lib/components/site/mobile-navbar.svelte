@@ -8,14 +8,14 @@
 	import { cn } from '$lib/utils';
 </script>
 
-<div class="fixed w-full md:hidden bottom-3 px-2 z-50 h-14">
+<div class="fixed z-50 w-full px-2 md:hidden bottom-3 h-14">
 	<MobileMenu />
 </div>
 
 <Sheet.Root open={$openMobileMenu} onOpenChange={() => ($openMobileMenu = !$openMobileMenu)}>
 	<Sheet.Content
 		side="bottom"
-		class="bottom-5 right-2 left-2 rounded-lg bg-gray-50 dark:bg-zinc-900 p-0 h-1/2 border border-primary/40"
+		class="p-0 border rounded-lg bottom-5 right-2 left-2 bg-gray-50 dark:bg-zinc-900 h-1/2 border-primary/40"
 	>
 		<Sheet.Header>
 			<Sheet.Title>
@@ -29,7 +29,7 @@
 						<div>
 							<a
 								href={route.link}
-								class="group inline-block relative text-2xl tracking-wider hover:bg-accent hover:text-accent-foreground py-1 px-3 rounded-lg"
+								class="relative inline-block px-3 py-1 text-2xl tracking-wider rounded-lg group hover:bg-accent hover:text-accent-foreground"
 							>
 								<span
 									class={cn(

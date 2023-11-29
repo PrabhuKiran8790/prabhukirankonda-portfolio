@@ -37,11 +37,11 @@
 <div class="no-highlight">
 	<MobileNavbar />
 </div>
-<div class="min-h-screen md:pt-10 flex flex-col">
+<div class="flex flex-col min-h-screen md:pt-10">
 	<div class="flex-1 mb-16 md:mb-0">
 		<slot />
 	</div>
-	<footer class="border-t hidden md:block">
+	<footer class="hidden border-t md:block">
 		<Footer />
 	</footer>
 </div>

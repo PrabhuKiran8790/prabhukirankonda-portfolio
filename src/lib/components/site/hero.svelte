@@ -4,17 +4,17 @@
 </script>
 
 <div class="md:container">
-	<div class="md:flex md:flex-row items-center justify-between mt-5">
+	<div class="items-center justify-between mt-5 md:flex md:flex-row">
 		<!-- Image for mobile devices -->
 		<img
 			src={ProfilePicture}
 			alt="Prabhu Kiran Konda"
-			class="block md:hidden mx-auto rounded-full h-40 w-40"
+			class="block w-40 h-40 mx-auto rounded-full md:hidden"
 		/>
 
 		<div class="space-y-3 md:w-1/2 md:mr-4">
-			<h1 class="md:text-xl font-bold">Hi, I'm</h1>
-			<h1 class="text-2xl md:text-5xl font-bold">Prabhu Kiran Konda</h1>
+			<h1 class="font-bold md:text-xl">Hi, I'm</h1>
+			<h1 class="text-2xl font-bold md:text-5xl">Prabhu Kiran Konda</h1>
 			<p>
 				a software developer from India. I specialize in Python, Machine Learning, and full stack
 				development. I’m currently seeking software developer roles to further my career. In my free
@@ -27,7 +27,7 @@
 		<img
 			src={ProfilePicture}
 			alt="Prabhu Kiran Konda"
-			class="hidden md:block rounded-full h-28 w-28 md:h-64 md:w-64 md:self-center"
+			class="hidden rounded-full md:block h-28 w-28 md:h-64 md:w-64 md:self-center"
 		/>
 	</div>
 </div>

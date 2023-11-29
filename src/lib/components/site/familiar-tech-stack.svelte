@@ -3,7 +3,7 @@
 	import { techStackArray } from '$lib/icons';
 </script>
 
-<div class="flex items-center gap-3 my-4 flex-wrap">
+<div class="flex flex-wrap items-center my-4 gap-3">
 	{#each techStackArray as icon}
 		<TechStackIcon {icon} />
 	{/each}

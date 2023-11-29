@@ -7,15 +7,15 @@
 	import { page } from '$app/stores';
 </script>
 
-<div class="flex items-center justify-between px-2 rounded-lg bg-gray-200 dark:bg-zinc-700 border">
+<div class="flex items-center justify-between px-2 bg-gray-200 border rounded-lg dark:bg-zinc-700">
 	<div>
 		<a
 			href="/"
-			class="text-3xl md:text-4xl font-semibold tracking-wider"
+			class="text-3xl font-semibold tracking-wider md:text-4xl"
 			style="font-family: 'Fuggles', cursive;"
 		>
 			<span
-				class="bg-gradient-to-r from-primary to-gray-400 bg-clip-text text-transparent text-5xl md:text-6xl"
+				class="text-5xl text-transparent bg-gradient-to-r from-primary to-gray-400 bg-clip-text md:text-6xl"
 				>P</span
 			>rabhu
 		</a>

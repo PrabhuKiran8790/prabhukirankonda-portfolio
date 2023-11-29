@@ -15,3 +15,4 @@ export { default as Search } from './search.svelte';
 export { default as SocialButtons } from './social-buttons.svelte';
 export { default as TechStackIcon } from './techstack-icon.svelte';
 export { default as ThemeToggle } from './theme-toggle.svelte';
+export { default as FeaturedProjects } from './featured-projects.svelte'
