@@ -295,7 +295,7 @@ you can change these styles in `markdown.postcss` file and `pre.svelte` file and
 		- <Math eq={`$$\\nabla \\cdot \\mathbf{E} = \\frac{\\rho}{\\varepsilon_0}$$`}/> this is an example of inline equation
 		- to make the inline equations bigger, wrap the equation in `$$` instead of single `$`
 	- the reason why we're adding double backslashes (`\\`) is to avoid unicode escape sequence.
-	> **Note**: one this to make sure that, you cannot add inline equations in a list. Well, you might be thinking that above inline equation is indeed a list item, then what's the problem? The problem comes when we add inline equation in a list item that already has content.
+	> **Note**: one thing to make sure that, you cannot add inline equations in a list. Well, you might be thinking that above inline equation is indeed a list item, then what's the problem? The problem comes when we add inline equation in a list item that already has content.
 
 	- below inline equation will not work
 	```md
