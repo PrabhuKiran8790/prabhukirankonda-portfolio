@@ -8,7 +8,7 @@
 	import { cn } from '$lib/utils';
 </script>
 
-<div class="fixed z-50 w-full px-2 md:hidden bottom-3 h-16">
+<div class="fixed z-50 w-full h-16 px-2 md:hidden bottom-3">
 	<MobileMenu />
 </div>
 

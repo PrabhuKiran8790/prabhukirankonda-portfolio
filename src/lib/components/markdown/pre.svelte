@@ -79,7 +79,7 @@
     </pre>
 		<button
 			on:click={handleCopy}
-			class="absolute z-50 inline-flex items-center justify-center w-6 h-6 p-0 text-sm font-medium no-highlight rounded-md transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50 right-2 top-2"
+			class="absolute z-10 inline-flex items-center justify-center w-6 h-6 p-0 text-sm font-medium no-highlight rounded-md transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50 right-2 top-2"
 		>
 			{#if copyState}
 				<span in:fly={{ y: -4, delay: 50 }}>
