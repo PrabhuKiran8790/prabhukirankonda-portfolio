@@ -7,7 +7,9 @@
 	import { page } from '$app/stores';
 </script>
 
-<div class="flex items-center justify-between px-2 bg-gray-200 border rounded-lg dark:bg-zinc-700">
+<div
+	class="flex items-center justify-between px-2 bg-gray-200 border rounded-lg dark:bg-zinc-700 h-16"
+>
 	<div>
 		<a
 			href="/"

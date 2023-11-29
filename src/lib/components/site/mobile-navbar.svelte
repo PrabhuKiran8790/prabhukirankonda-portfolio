@@ -8,14 +8,14 @@
 	import { cn } from '$lib/utils';
 </script>
 
-<div class="fixed z-50 w-full px-2 md:hidden bottom-3 h-14">
+<div class="fixed z-50 w-full px-2 md:hidden bottom-3 h-16">
 	<MobileMenu />
 </div>
 
 <Sheet.Root open={$openMobileMenu} onOpenChange={() => ($openMobileMenu = !$openMobileMenu)}>
 	<Sheet.Content
 		side="bottom"
-		class="p-0 border rounded-lg bottom-5 right-2 left-2 bg-gray-50 dark:bg-zinc-900 h-1/2 border-primary/40"
+		class="p-0 border rounded-lg bottom-3 right-2 left-2 bg-gray-50 dark:bg-zinc-900 h-1/2 border-primary/40"
 	>
 		<Sheet.Header>
 			<Sheet.Title>

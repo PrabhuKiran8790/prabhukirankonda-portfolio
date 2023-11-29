@@ -4,12 +4,12 @@
 </script>
 
 <div class="md:container">
-	<div class="items-center justify-between mt-5 md:flex md:flex-row">
+	<div class="items-center justify-between mt-5 md:mt-12 md:flex md:flex-row">
 		<!-- Image for mobile devices -->
 		<img
 			src={ProfilePicture}
 			alt="Prabhu Kiran Konda"
-			class="block w-40 h-40 mx-auto rounded-full md:hidden"
+			class="block mx-auto rounded-full w-52 h-52 md:hidden"
 		/>
 
 		<div class="space-y-3 md:w-1/2 md:mr-4">
