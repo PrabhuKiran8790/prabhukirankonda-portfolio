@@ -3,18 +3,18 @@ title: Getting Started
 description: A guide on how to use this sveltekit + markdown blog.
 date: '2023-11-20'
 tags:
-    - SvelteKit
+  - SvelteKit
 image: https://res.cloudinary.com/practicaldev/image/fetch/s--YFzS8yLr--/c_imagga_scale,f_auto,fl_progressive,h_720,q_auto,w_1280/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w9o5387e8s37g7r4i6dy.png
 draft: false
 ---
 
 <script>
     import { ThemeToggle } from '$lib/components/site';
-    import Katex from 'svelte-katex'
+	import { Math } from '$lib/components/markdown'
 </script>
 
-
 ## Introduction
+
 Welcome, this will guide you through this template and how to use it. This is a SvelteKit + MDsveX Personal website and a blog completely designed with [Shadcn-Svelte](https://shadcn-svelte.com/), it has everything you need get started and you can fully customise it.
 
 to get started, clone the repo: [repo link](https://github.com/PrabhuKiran8790/prabhukirankonda.vercel.app)
@@ -24,64 +24,68 @@ git clone https://github.com/PrabhuKiran8790/prabhukirankonda.vercel.app.git
 ```
 
 ## Features
+
 it's got ton of features that you don't wanna miss out.
 
 - Tailwind CSS for styling
 - [Shadcn-Svelte](https://shadcn-svelte.com/) for UI Components
 - Light and Dark mode
 - Syntax Highlighting
-    - with toast notifications for copy feedback
-    - individual words highlighting
-        ```py {2} showLineNumbers title="fib.py"  /fibonacci/#yb /return/#hi
-        def fibonacci(n):
-            if n <= 1: # base case
-                return n 
-            else:
-        return fibonacci(n - 1) + fibonacci(n - 2)
-        ```
-    - inline syntax highlighting example: `console.log("Hey there"){:js}`
-    - ability to inlcude an icon if title with an extension is provided.
-    
-    ````md
-    ```js title="example.js"
-    console.log("Hello from JS")
-    ```
-    ````
 
-    will render into
-    ```js title="example.js"
-    console.log("Hello from JS")
+  - with toast notifications for copy feedback
+  - individual words highlighting
+    ```py {2} showLineNumbers title="fib.py"  /fibonacci/#yb /return/#hi
+    def fibonacci(n):
+        if n <= 1: # base case
+            return n
+        else:
+    return fibonacci(n - 1) + fibonacci(n - 2)
     ```
+  - inline syntax highlighting example: `console.log("Hey there"){:js}`
+  - ability to inlcude an icon if title with an extension is provided.
 
-    you can add icons for other languages as well
+  ````md
+  ```js title="example.js"
+  console.log('Hello from JS');
+  ```
+  ````
+
+  will render into
+
+  ```js title="example.js"
+  console.log('Hello from JS');
+  ```
+
+  you can add icons for other languages as well
 
 - [MDsveX](https://mdsvex.pngwn.io/) to support markdown files so that you can write your blogs in markdown.
 - Custom Components
 - use svelte components inside markdown
-    - example
-    <div class="flex items-center gap-4">
-        try changing the theme 👉
-        <ThemeToggle />
-    </div>
+  - example
+  <div class="flex items-center gap-4">
+      try changing the theme 👉
+      <ThemeToggle />
+  </div>
 - Table of Contents
 - Giscus Comments (based on Github Discussions)
 - Image Optimization
 - Support for Nested routing of blogs
 - Projects Page
 - Support for math
-    ```math
-    \nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0}
-    ```
-    ```math
-    \nabla \cdot \mathbf{B} = 0  
-    ```
-    ```math
-    \nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}  
-    ```
-    ```math
-    \nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)
-    ```
-    - wondering what those equations are? Maxwells Equations 🙃
+  ```math
+  \nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0}
+  ```
+  ```math
+  \nabla \cdot \mathbf{B} = 0
+  ```
+  ```math
+  \nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}
+  ```
+  ```math
+  \nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)
+  ```
+  - wondering what those equations are? Maxwells Equations 🙃
+  - <Math eq={`$\\nabla \\cdot \\mathbf{E} = \\frac{\\rho}{\\varepsilon_0}$`}/> this is an example of inline equation
 - Mobile friendly interface
 
 ## How to use?
@@ -190,7 +194,6 @@ However, there's a caveat – assets in other than public folder (static), won't
 
 Alternatively, you can place your images directly in the static folder and access them using `/` which points to static folder. example: `/image.png`
 
-
 ### Creating a new blog
 
 to create a new blog, create a folder with the slug you want and create a `page.md` file. the slug will acts as the blog url which will be `/blog/[slug]`
@@ -200,12 +203,12 @@ to create a new blog, create a folder with the slug you want and create a `page.
 ├── about
 ├── node_modules
 ├── posts
-│   ├── authjs-sveltekit-prisma <!-- slug -->
-│   │   └── page.md
-│   ├── dimensionality-reduction-using-auto-encoders <!-- slug -->
-│   │   └── page.md
-│   └── getting-started <!-- slug -->
-│       └── page.md
+│ ├── authjs-sveltekit-prisma <!-- slug -->
+│ │ └── page.md
+│ ├── dimensionality-reduction-using-auto-encoders <!-- slug -->
+│ │ └── page.md
+│ └── getting-started <!-- slug -->
+│ └── page.md
 ├── src
 ├── static
 ├── package.json
@@ -231,7 +234,7 @@ title:
 description:
 date: '2023-11-26'
 tags:
-    - SvelteKit
+  - SvelteKit
 image: url or a pathname
 draft: false
 ---
@@ -262,16 +265,59 @@ a small example:
 
 ````md
 ```ts title="hello.ts" showLineNumbers {1} /Hello/#yb
-console.log("Hello")
+console.log('Hello');
 ```
 ````
+
 will render into
 
 ```ts title="hello.ts" showLineNumbers {1} /Hello/#yb
-console.log("Hello")
+console.log('Hello');
 ```
 
 you can change these styles in `markdown.postcss` file and `pre.svelte` file and for more information visit [rehype-pretty-code](https://rehype-pretty-code.netlify.app/)
+
+### Math Blocks
+
+- to write inline math equations,
+  ```svelte
+	<script>
+		import { Math } from '$lib/components/markdown'
+	</script>
+
+  <Math eq={`$\\\nabla \\\\cdot \\\\mathbf{E} = \\\\frac{\\\rho}{\\\\varepsilon_0}$`}/> this is an example of inline equation
+  ```
+
+	- add a script tag inside your markdown and import the `Math.svelte` component and write your LaTeX equation.
+	- you can add path aliases to shorten the path if you use it more often.
+	- the above equation will become
+		- <Math eq={`$\\nabla \\cdot \\mathbf{E} = \\frac{\\rho}{\\varepsilon_0}$`}/> this is an example of inline equation
+		- <Math eq={`$$\\nabla \\cdot \\mathbf{E} = \\frac{\\rho}{\\varepsilon_0}$$`}/> this is an example of inline equation
+		- to make the inline equations bigger, wrap the equation in `$$` instead of single `$`
+	- the reason why we're adding double backslashes (`\\`) is to avoid unicode escape sequence.
+	> **Note**: one this to make sure that, you cannot add inline equations in a list. Well, you might be thinking that above inline equation is indeed a list item, then what's the problem? The problem comes when we add inline equation in a list item that already has content.
+
+	- below inline equation will not work
+	```md
+	- this will not work <Math eq={`$\\\nabla \\\\cdot \\\\mathbf{E} = \\\\frac{\\\rho}{\\\\varepsilon_0}$`}/> this is an example of inline equation
+	```
+	- but this will work
+	```md
+	- <Math eq={`$\\nabla \\cdot \\mathbf{E} = \\frac{\\rho}{\\varepsilon_0}$`}/> this is an example of inline equation
+	```
+	- I don't know the reason but if there's any fix i'll update or you can fix it and make a pull request.
+
+	- but when it comes to block equations, there is no need to do this. it's pretty easy. all you need to do is
+
+	````md /math/1#rb title="math.md"
+	```math
+	\nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)
+	```
+	````
+	- define a codeblock with `math` as the language and the above equation becomes
+	```math
+	\nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)
+	```
 
 
 ## Blog Comments
@@ -281,10 +327,11 @@ Comments are made possible using [Giscus](https://giscus.app/), a GitHub discuss
 ```js
 PUBLIC_GITHUB_REPO = prabhukirankonda.vercel.app
 PUBLIC_GITHUB_USERNAME = PrabhuKiran8790
-PUBLIC_GITHUB_REPO_ID = 
+PUBLIC_GITHUB_REPO_ID =
 PUBLIC_CATEGORY = General
-PUBLIC_CATEGORY_ID = 
+PUBLIC_CATEGORY_ID =
 ```
+
 to get Repo ID, Category ID goto [Giscus](https://giscus.app/) and follow the instructions.
 
 ## Projects
@@ -292,7 +339,7 @@ to get Repo ID, Category ID goto [Giscus](https://giscus.app/) and follow the in
 To add a new project, you can start by chaging the `src/lib/projects.ts` file.
 
 ```ts title="src/lib/projects.ts"
-import type { TechStack } from "./types";
+import type { TechStack } from './types';
 
 export type ProjectType = {
 	title: string;
@@ -305,16 +352,16 @@ export type ProjectType = {
 export const projects: ProjectType[] = [
 	{
 		title: 'Personal Portfolio with Markdown Blog',
-		description: 'This website, prabhukirankonda.vercel.app is my personal website with a markdown blog written in SvelteKit and deployed using Vercel. Styled using Taiwind CSS and Shadcn-UI and completely written in TypeScript.',
+		description:
+			'This website, prabhukirankonda.vercel.app is my personal website with a markdown blog written in SvelteKit and deployed using Vercel. Styled using Taiwind CSS and Shadcn-UI and completely written in TypeScript.',
 		href: 'https://prabhukirankonda.vercel.app',
 		image: '/sveltekit-portfolio.png',
 		techstack: ['SvelteKit', 'Tailwind', 'TypeScript']
-	},
+	}
 ];
 ```
 
 make sure the techstack is of type `TechStack[]` so that it's possible to render the respective icons to showcase projects. see [`/projects`](/projects) to get an idea on how icons are rendered and see `src/lib/types.ts` for more information.
-
 
 ## About
 
@@ -331,9 +378,10 @@ export const mdsvexOptions = {
 		about: resolve('./src/lib/components/markdown/about-layout.svelte') // named layout
 	},
 	remarkPlugins: [],
-	rehypePlugins: [],
+	rehypePlugins: []
 };
 ```
+
 ---
 
 These are the some of the important changes to be made to get started. If you have any issues, feel free to open an issue. In the next update, I'll include related posts based on tags.

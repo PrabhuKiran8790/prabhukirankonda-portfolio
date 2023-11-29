@@ -23,10 +23,13 @@ span[data-rehype-pretty-code-fragment] code {
 	@apply bg-zinc-800 rounded-md px-2 text-base;
 }
 
-
+/* 
 p > code {
-	/* to style code element `` */
 	@apply bg-slate-200 dark:bg-zinc-700/70 px-1 rounded-md mx-1 border border-primary font-mono tracking-wide text-base;
+} */
+
+code:not(pre code) {
+  @apply bg-slate-200 dark:bg-zinc-700/70 px-1 rounded-md mx-1 border border-primary font-mono tracking-wide text-base;
 }
 
 
