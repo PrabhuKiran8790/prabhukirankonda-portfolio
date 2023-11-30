@@ -20,7 +20,6 @@ import katex from 'katex';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
-
 const correct_hast_tree = () => (tree) => {
 	visit(tree, 'text', (node) => {
 		if (node.value.trim().startsWith('<')) {
@@ -49,7 +48,6 @@ const katex_blocks = () => (tree) => {
 		}
 	});
 };
-
 
 const prettyCodeOptions = {
 	// theme: 'github-dark',
@@ -243,4 +241,3 @@ function rehypeRenderCode() {
 function tabsToSpaces(code) {
 	return code.replaceAll('	', '  ');
 }
-

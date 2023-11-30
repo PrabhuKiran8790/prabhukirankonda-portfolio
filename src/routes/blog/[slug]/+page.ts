@@ -5,9 +5,8 @@ export const load = async ({ params }) => {
 
 	try {
 		post = await import(`../../../../posts/${params.slug}/page.md`);
-
-    } catch (e) {
-        error(404, 'post not found')
+	} catch (e) {
+		error(404, 'post not found');
 	}
 
 	return {

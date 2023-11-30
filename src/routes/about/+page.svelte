@@ -1,7 +1,7 @@
 <script>
 	export let data;
 
-	let { content, meta } = data;
+	let { content } = data;
 </script>
 
 <div class="mb-20 mdsvex" id="mdsvex">

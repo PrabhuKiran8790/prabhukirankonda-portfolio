@@ -25,7 +25,6 @@
 	import { fly } from 'svelte/transition';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { githubConfig } from '$lib/config.js';
-	import TooltipContent from '$lib/components/ui/tooltip/tooltip-content.svelte';
 	export let data;
 
 	let { content, meta } = data;
@@ -93,7 +92,7 @@
 				in:fly={{ y: 1000 }}
 				out:fly={{ y: 1000 }}
 			>
-				<div class="flex items-center justify-center ">
+				<div class="flex items-center justify-center">
 					<div
 						class="flex items-center py-1 border rounded-l-full rounded-r-full justify-evenly border-primary/50 bg-muted shadow-sm px-7 space-x-3"
 					>

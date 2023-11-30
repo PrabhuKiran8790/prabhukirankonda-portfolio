@@ -7,7 +7,7 @@
 	import { page } from '$app/stores';
 </script>
 
-<div class="items-center h-16 px-2 bg-gray-200 border rounded-lg grid grid-cols-3 dark:bg-zinc-800">
+<div class="items-center h-16 px-2 bg-gray-300 border rounded-lg grid grid-cols-3 dark:bg-zinc-800">
 	<div class="flex">
 		<a
 			href="/"
@@ -42,19 +42,14 @@
 		{/if}
 	</div>
 
-	<div class="flex items-center justify-end space-x-1">
+	<div class="flex items-center justify-end space-x-1 no-highlight">
 		<ThemeToggle />
-		<Button
-			variant="ghost"
-			size="sm"
-			on:click={() => ($openMobileMenu = !$openMobileMenu)}
-			class="p-1"
-		>
+		<button on:click={() => ($openMobileMenu = !$openMobileMenu)} class="p-1 bg-none">
 			{#if !$openMobileMenu}
 				<Menu />
 			{:else}
 				<X />
 			{/if}
-		</Button>
+		</button>
 	</div>
 </div>

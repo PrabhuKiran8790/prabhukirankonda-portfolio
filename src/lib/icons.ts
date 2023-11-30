@@ -24,7 +24,7 @@ export const techStackArray = tuple(
 	'Docker',
 	'Git',
 	'Drizzle',
-    'Tailwind',
+	'Tailwind'
 );
 
 export type TechStack = (typeof techStackArray)[number];

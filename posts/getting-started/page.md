@@ -280,45 +280,53 @@ you can change these styles in `markdown.postcss` file and `pre.svelte` file and
 ### Math Blocks
 
 - to write inline math equations,
-  ```svelte
-	<script>
-		import { Math } from '$lib/components/markdown'
-	</script>
 
-  <Math eq={`$\\\nabla \\\\cdot \\\\mathbf{E} = \\\\frac{\\\rho}{\\\\varepsilon_0}$`}/> this is an example of inline equation
+  ```svelte
+  <script>
+  	import { Math } from '$lib/components/markdown';
+  </script>
+
+  <Math eq={`$\\\nabla \\\\cdot \\\\mathbf{E} = \\\\frac{\\\rho}{\\\\varepsilon_0}$`} /> this is an example
+  of inline equation
   ```
 
-	- add a script tag inside your markdown and import the `Math.svelte` component and write your LaTeX equation.
-	- you can add path aliases to shorten the path if you use it more often.
-	- the above equation will become
-		- <Math eq={`$\\nabla \\cdot \\mathbf{E} = \\frac{\\rho}{\\varepsilon_0}$`}/> this is an example of inline equation
-		- <Math eq={`$$\\nabla \\cdot \\mathbf{E} = \\frac{\\rho}{\\varepsilon_0}$$`}/> this is an example of inline equation
-		- to make the inline equations bigger, wrap the equation in `$$` instead of single `$`
-	- the reason why we're adding double backslashes (`\\`) is to avoid unicode escape sequence.
-	> **Note**: one thing to make sure that, you cannot add inline equations in a list. Well, you might be thinking that above inline equation is indeed a list item, then what's the problem? The problem comes when we add inline equation in a list item that already has content.
+  - add a script tag inside your markdown and import the `Math.svelte` component and write your LaTeX equation.
+  - you can add path aliases to shorten the path if you use it more often.
+  - the above equation will become
+    - <Math eq={`$\\nabla \\cdot \\mathbf{E} = \\frac{\\rho}{\\varepsilon_0}$`}/> this is an example of inline equation
+    - <Math eq={`$$\\nabla \\cdot \\mathbf{E} = \\frac{\\rho}{\\varepsilon_0}$$`}/> this is an example of inline equation
+    - to make the inline equations bigger, wrap the equation in `$$` instead of single `$`
+  - the reason why we're adding double backslashes (`\\`) is to avoid unicode escape sequence.
 
-	- below inline equation will not work
-	```md
-	- this will not work <Math eq={`$\\\nabla \\\\cdot \\\\mathbf{E} = \\\\frac{\\\rho}{\\\\varepsilon_0}$`}/> this is an example of inline equation
-	```
-	- but this will work
-	```md
-	- <Math eq={`$\\nabla \\cdot \\mathbf{E} = \\frac{\\rho}{\\varepsilon_0}$`}/> this is an example of inline equation
-	```
-	- I don't know the reason but if there's any fix i'll update or you can fix it and make a pull request.
+    > **Note**: one thing to make sure that, you cannot add inline equations in a list. Well, you might be thinking that above inline equation is indeed a list item, then what's the problem? The problem comes when we add inline equation in a list item that already has content.
 
-	- but when it comes to block equations, there is no need to do this. it's pretty easy. all you need to do is
+  - below inline equation will not work
 
-	````md /math/1#rb title="math.md"
-	```math
-	\nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)
-	```
-	````
-	- define a codeblock with `math` as the language and the above equation becomes
-	```math
-	\nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)
-	```
+  ```md
+  - this will not work <Math eq={`$\\\nabla \\\\cdot \\\\mathbf{E} = \\\\frac{\\\rho}{\\\\varepsilon_0}$`}/> this is an example of inline equation
+  ```
 
+  - but this will work
+
+  ```md
+  - <Math eq={`$\\nabla \\cdot \\mathbf{E} = \\frac{\\rho}{\\varepsilon_0}$`}/> this is an example of inline equation
+  ```
+
+  - I don't know the reason but if there's any fix i'll update or you can fix it and make a pull request.
+
+  - but when it comes to block equations, there is no need to do this. it's pretty easy. all you need to do is
+
+  ````md /math/1#rb title="math.md"
+  ```math
+  \nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)
+  ```
+  ````
+
+  - define a codeblock with `math` as the language and the above equation becomes
+
+  ```math
+  \nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)
+  ```
 
 ## Blog Comments
 

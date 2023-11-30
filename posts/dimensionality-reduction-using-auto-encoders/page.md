@@ -3,11 +3,12 @@ title: Dimensionality Reduction using Auto-Encoders
 description: Let's look at how we can perform the dimensionality reduction using the Auto-Encoders using Tensorflow.
 date: '2023-11-10'
 tags:
-    - Tensorflow
-    - Deep Learning
+  - Tensorflow
+  - Deep Learning
 image: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*DcsT4AtAq8dxqbDHP_Uppg.jpeg'
 draft: false
 ---
+
 Imagine having over thousands of input features in your dataset and you’ve to train them all..well, sometimes we wish we could compress the dataset to less number of features. Right? well, we can do that using a special type of Neural Network called Auto-encoders.
 So, let’s have a brief introduction to Auto-encoders.
 
@@ -21,9 +22,7 @@ Auto-encoder consists of 3 main components
 - Code
 - Decoder
 
-
 **Encoder**: An encoder is a feed-forward, fully connected neural network that compresses the input into a latent space representation and encodes the input image as a compressed representation in a reduced dimension, and produces code. `The lower the size of the code, the higher the compression.`
-
 
 **Code**: This part of the network contains the reduced representation of the input that is fed into the decoder.
 
@@ -46,9 +45,7 @@ Auto Encoders can have many different hyperparameters but the very important one
 
 Let’s look at how we can do dimensionality reduction using auto-encoders. Let’s take a dataset that has 12 features and 8664 columns. Now our goal is to compress the dataset into 6 features.
 
-
 ![Original dataset with 12 features](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*5Lw8YLwLpAsq9wTNdSyDUA.jpeg)
-
 
 Let us scale the data so that all our data points lie in the same range
 
@@ -60,9 +57,7 @@ X_train_df = pd.DataFrame(df_scaled, columns=df.columns)
 X_train_df
 ```
 
-
 ![dataset after scaling](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*6whoBrbY9x-2gzxbjJhWww.jpeg)
-
 
 Let’s build an auto-encoder with a code size of 6.
 
@@ -112,9 +107,7 @@ encoded_train = pd.DataFrame(X_train_encode,
                              columns=[f"X{x}" for x in range(1, X_train_encode.shape[1]+1)])
 ```
 
-
 ![autoencoder model summary](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*7y62pJS6SXaorbOvOuW_ew.jpeg)
-
 
 ![Compressed version of the original (12 features) dataset with 6 features](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ADFWIJH8y935y_q4YfNtlg.jpeg)
 

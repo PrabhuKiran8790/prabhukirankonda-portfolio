@@ -10,7 +10,12 @@
 
 <DropdownMenu.Root>
 	<DropdownMenu.Trigger asChild let:builder>
-		<Button builders={[builder]} variant="ghost" size="icon" class="md:w-9 md:h-9">
+		<Button
+			builders={[builder]}
+			size="icon"
+			variant="ghost"
+			class="md:w-9 md:h-9 p-0 hover:bg-transparent"
+		>
 			<Sun class="h-5 w-5 hidden dark:block" />
 			<Moon class="h-5 w-5 dark:hidden block" />
 			<span class="sr-only">Toggle theme</span>

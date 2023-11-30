@@ -1,10 +1,10 @@
-import type { TechStack } from "./icons";
+import type { TechStack } from './icons';
 
 export type ProjectType = {
 	title: string;
-	featured?: boolean,
+	featured?: boolean;
 	href: string;
-	source?: string
+	source?: string;
 	image: string;
 	description: string;
 	techstack: TechStack[];
@@ -70,7 +70,8 @@ export const projects: ProjectType[] = [
 		description: `Built a PDF Assistant tool using OpenAI's LLM to answer questions from uploaded PDF files. It has a user-friendly web interface with StreamLit, Firebase authentication for security, real-time updates via Firebase, a guest mode for no authentication, and easy Docker deployment.`,
 		image: '/PDF_Assistant.png',
 		href: 'https://huggingface.co/spaces/PrabhuKiranKonda/Streamlit-PDF-Assistant-Docker',
-		source: 'https://huggingface.co/spaces/PrabhuKiranKonda/Streamlit-PDF-Assistant-Docker/tree/main',
+		source:
+			'https://huggingface.co/spaces/PrabhuKiranKonda/Streamlit-PDF-Assistant-Docker/tree/main',
 		techstack: ['Python', 'Streamlit', 'Docker']
 	},
 	{

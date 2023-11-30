@@ -29,7 +29,7 @@
 						<div>
 							<a
 								href={route.link}
-								class="relative inline-block px-3 py-1 text-2xl tracking-wider rounded-lg group hover:bg-accent hover:text-accent-foreground"
+								class="relative inline-block px-3 py-1 text-2xl tracking-wider rounded-lg group hover:bg-accent font-semibold hover:text-accent-foreground no-highlight"
 							>
 								<span
 									class={cn(

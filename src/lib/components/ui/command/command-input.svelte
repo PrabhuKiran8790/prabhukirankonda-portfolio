@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Command as CommandPrimitive } from "cmdk-sv";
-	import { Search } from "lucide-svelte";
-	import { cn } from "$lib/utils";
+	import { Command as CommandPrimitive } from 'cmdk-sv';
+	import { Search } from 'lucide-svelte';
+	import { cn } from '$lib/utils';
 
 	type $$Props = CommandPrimitive.InputProps;
 
@@ -13,7 +13,7 @@
 	<Search class="w-4 h-4 mr-2 opacity-50 shrink-0" />
 	<CommandPrimitive.Input
 		class={cn(
-			"flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
+			'flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50',
 			className
 		)}
 		{...$$restProps}

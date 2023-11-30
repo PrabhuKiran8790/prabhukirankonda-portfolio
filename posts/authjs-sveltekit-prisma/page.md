@@ -4,15 +4,17 @@ description: let's see how to integrate Github and Google OAuth authentication u
 date: '2023-11-15'
 image: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*PLD7lQ5hH8_6QVfDtCflcg.png
 tags:
-    - Sveltekit
-    - Prisma
+  - Sveltekit
+  - Prisma
 draft: false
 ---
+
 Let's see how we can implement Auth.js (NextAuth) and Prisma with SvelteKit
 
 **Note**: Auth.js is still experimental at the time of writing this article. So there might be some breaking changes in the future. But it reamins same for the most part.
 
 we will be using the following stack for this project.
+
 - SvelteKit
 - TypeScript
 - Prisma
@@ -29,6 +31,7 @@ First, we need to create a sveltekit project. We can do that by using the follow
 ```bash
 npm create svelte@latest my-app
 ```
+
 chose your preferred configuration and then add tailwindcss to the project using the below command.
 
 ```bash
@@ -42,11 +45,13 @@ npm install
 ```
 
 Now, we need to install shadcn-ui.
+
 ```bash
 npx shadcn-svelte@latest init
 ```
 
 You will be asked a few questions to configure
+
 ```bash
 Which style would you like to use? › Default
 Which color would you like to use as base color? › Slate
@@ -212,13 +217,14 @@ after that, we need to generate the prisma client. We can do that by using the f
 ```bash
 npx prisma generate
 ```
+
 The generate command generates assets like Prisma Client based on the generator and data model blocks defined in your `prisma/schema.prisma` file.
 The generate command is most often used to generate Prisma Client with the prisma-client-js generator.
 
 create a new file named `db.server.ts` inside `src/lib` directory and add the following code to it.
 
 ```ts title="src/lib/db.server.ts"
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from '@prisma/client';
 
 // expose a singleton
 export const db = new PrismaClient();
@@ -240,7 +246,6 @@ npx prisma studio
 
 this will open a browser window with the prisma studio. you can see the tables there.
 
-
 ![Prisma Studio models](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*P1bMQdFe6FAkjkGlAJLE3g.png)
 
 you can also see those tables in your database in my case it's vercel postgres. so i can open up my vercel and see the tables there.
@@ -258,11 +263,10 @@ import { db } from '$lib/db.server';
 import { GOOGLE_SECRET, GOOGLE_ID, GITHUB_SECRET, GITHUB_ID } from '$env/static/private';
 import type { Adapter } from '@auth/core/adapters';
 
-
 export const handle = SvelteKitAuth({
 	adapter: PrismaAdapter(db) as Adapter,
 	session: {
-		strategy: "database",
+		strategy: 'database',
 		generateSessionToken: () => {
 			return crypto.randomUUID(); // generate a uuid
 		}
@@ -270,7 +274,7 @@ export const handle = SvelteKitAuth({
 	providers: [
 		GitHub({ clientId: GITHUB_ID, clientSecret: GITHUB_SECRET }),
 		Google({ clientId: GOOGLE_ID, clientSecret: GOOGLE_SECRET })
-	],
+	]
 });
 ```
 
@@ -289,9 +293,9 @@ NEXTAUTH_SECRET="58383abb3d6c7f7fb02eb71d97bd6dc7"
 ```
 
 Get Google and Github Client and Secret ID's
-to get google's Client and Secret ID, go to google developers console or follow [this](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid) guide from google 
+to get google's Client and Secret ID, go to google developers console or follow [this](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid) guide from google
 and for Github, it's pretty easy. just go to Github developers settings and under OAuth Apps, add a new app and follow the on-screen instructions.
-One thing to be clear is that, while testing in local environment, you homepage URL (or javascript origins in google) must be http://localhost:5173, replace `5173` with your port number where your app runs and callback URL (or redirect) should be 
+One thing to be clear is that, while testing in local environment, you homepage URL (or javascript origins in google) must be http://localhost:5173, replace `5173` with your port number where your app runs and callback URL (or redirect) should be
 http://localhost:xxxx/auth/callback/provider, replace provider with github and google in their respective consoles.
 
 we are almost done with the setup. Now on to the SvelteKit part where we will be creating the login and protected routes.
@@ -299,8 +303,9 @@ we are almost done with the setup. Now on to the SvelteKit part where we will be
 ## Creating Routes
 
 let's create following routes.
+
 - `/` - Home page
-- `/login` - Login page 
+- `/login` - Login page
 - `/dashboard` - Dashboard page (protected route)
 
 First, let's create Navbar where we will have login button and if users are logged in, we will show their name and profile picture.
@@ -309,7 +314,7 @@ create a file named `navbar.svelte` in `src/lib/components` directory and add th
 
 ```html title="Navbar.svelte"
 <script>
-  // src/lib/components/Navbar.svelte 
+  // src/lib/components/Navbar.svelte
   import * as Avatar from "$lib/components/ui/avatar";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
   import { page } from "$app/stores"; // we will get the session info from here
@@ -378,20 +383,20 @@ create a file named `navbar.svelte` in `src/lib/components` directory and add th
 ```
 
 add that `Navbar` component to `+layout.svelte` file in your root directory.
-    
+
 ```html title="+layout.svelte"
 <script>
-  // src/routes/+layout.svelte
-  import "../app.postcss";
-  import { Navbar } from "$lib/components";
+	// src/routes/+layout.svelte
+	import '../app.postcss';
+	import { Navbar } from '$lib/components';
 </script>
 
 <Navbar />
 
 <div class="h-screen pt-20">
-  <div class="h-full">
-    <slot />
-  </div>
+	<div class="h-full">
+		<slot />
+	</div>
 </div>
 ```
 
@@ -399,15 +404,15 @@ and in your `+page.svelte` file inside your `src/routes` directory, add the foll
 
 ```html title="+page.svelte"
 <script>
-  // src/routes/+page.svelte
-  import { page } from "$app/stores";
+	// src/routes/+page.svelte
+	import { page } from '$app/stores';
 </script>
 
 <div class="flex flex-col items-center justify-center h-full gap-4">
-  <h1 class="text-5xl">Home Page</h1>
-  {#if $page.data.session}
-    Welcome back, <span class="text-4xl">{$page.data.session.user?.name}!</span>
-  {/if}
+	<h1 class="text-5xl">Home Page</h1>
+	{#if $page.data.session} Welcome back,
+	<span class="text-4xl">{$page.data.session.user?.name}!</span>
+	{/if}
 </div>
 ```
 
@@ -417,77 +422,77 @@ let's create a login routes
 
 ```html title="+page.svelte"
 <script lang="ts">
-  // src/routes/login/+page.svelte
-  import { page } from "$app/stores";
-  import Button from "$lib/components/ui/button/button.svelte";
-  import * as Card from "$lib/components/ui/card";
-  import { signIn } from "@auth/sveltekit/client";
-  import { Github } from "lucide-svelte";
-  const redirectUrl = $page.url.searchParams.get("redirectTo") || "/dashboard";
+	// src/routes/login/+page.svelte
+	import { page } from '$app/stores';
+	import Button from '$lib/components/ui/button/button.svelte';
+	import * as Card from '$lib/components/ui/card';
+	import { signIn } from '@auth/sveltekit/client';
+	import { Github } from 'lucide-svelte';
+	const redirectUrl = $page.url.searchParams.get('redirectTo') || '/dashboard';
 
-  const githubLogin = async () => {
-    if (!$page.data.session) {
-      await signIn("github", { callbackUrl: `${redirectUrl}` });
-    }
-  };
+	const githubLogin = async () => {
+		if (!$page.data.session) {
+			await signIn('github', { callbackUrl: `${redirectUrl}` });
+		}
+	};
 
-  const googleLogin = async () => {
-    if (!$page.data.session) {
-      await signIn("google", { callbackUrl: `${redirectUrl}` });
-    }
-  };
+	const googleLogin = async () => {
+		if (!$page.data.session) {
+			await signIn('google', { callbackUrl: `${redirectUrl}` });
+		}
+	};
 </script>
 
 <svelte:head>
-  <title>Login | Dall-E Clone</title>
-  <meta name="robots" content="noindex nofollow" />
-  <html lang="en" />
+	<title>Login | Dall-E Clone</title>
+	<meta name="robots" content="noindex nofollow" />
+	<html lang="en" />
 </svelte:head>
 
 <div class="flex items-center justify-center h-full -mt-12 overflow-x-hidden">
-  <Card.Root
-    class="w-[300px] rounded-lg flex flex-col items-center justify-center"
-  >
-    <Card.Header>
-      <Card.Title class="text-center">Dall-E Clone | SvelteKit</Card.Title>
-      <Card.Description class="text-center"
-        >AI Image Generation</Card.Description
-      >
-    </Card.Header>
-    <Card.Content class="p-3">
-      <div class="flex flex-col items-center justify-center gap-6">
-        <Button on:click={githubLogin}>
-          <Github class="w-6 h-6 mr-2" />
-          Login with GitHub
-        </Button>
-        <Button on:click={googleLogin}>
-          <svg viewBox="0 0 128 128" class="w-5 h-5 mr-2">
-            <path
-              fill="#fff"
-              d="M44.59 4.21a63.28 63.28 0 004.33 120.9 67.6 67.6 0 0032.36.35 57.13 57.13 0 0025.9-13.46 57.44 57.44 0 0016-26.26 74.33 74.33 0 001.61-33.58H65.27v24.69h34.47a29.72 29.72 0 01-12.66 19.52 36.16 36.16 0 01-13.93 5.5 41.29 41.29 0 01-15.1 0A37.16 37.16 0 0144 95.74a39.3 39.3 0 01-14.5-19.42 38.31 38.31 0 010-24.63 39.25 39.25 0 019.18-14.91A37.17 37.17 0 0176.13 27a34.28 34.28 0 0113.64 8q5.83-5.8 11.64-11.63c2-2.09 4.18-4.08 6.15-6.22A61.22 61.22 0 0087.2 4.59a64 64 0 00-42.61-.38z"
-            /><path
-              fill="#e33629"
-              d="M44.59 4.21a64 64 0 0142.61.37 61.22 61.22 0 0120.35 12.62c-2 2.14-4.11 4.14-6.15 6.22Q95.58 29.23 89.77 35a34.28 34.28 0 00-13.64-8 37.17 37.17 0 00-37.46 9.74 39.25 39.25 0 00-9.18 14.91L8.76 35.6A63.53 63.53 0 0144.59 4.21z"
-            /><path
-              fill="#f8bd00"
-              d="M3.26 51.5a62.93 62.93 0 015.5-15.9l20.73 16.09a38.31 38.31 0 000 24.63q-10.36 8-20.73 16.08a63.33 63.33 0 01-5.5-40.9z"
-            /><path
-              fill="#587dbd"
-              d="M65.27 52.15h59.52a74.33 74.33 0 01-1.61 33.58 57.44 57.44 0 01-16 26.26c-6.69-5.22-13.41-10.4-20.1-15.62a29.72 29.72 0 0012.66-19.54H65.27c-.01-8.22 0-16.45 0-24.68z"
-            /><path
-              fill="#319f43"
-              d="M8.75 92.4q10.37-8 20.73-16.08A39.3 39.3 0 0044 95.74a37.16 37.16 0 0014.08 6.08 41.29 41.29 0 0015.1 0 36.16 36.16 0 0013.93-5.5c6.69 5.22 13.41 10.4 20.1 15.62a57.13 57.13 0 01-25.9 13.47 67.6 67.6 0 01-32.36-.35 63 63 0 01-23-11.59A63.73 63.73 0 018.75 92.4z"
-            />
-          </svg>
-          Login with Google
-        </Button>
-      </div>
-    </Card.Content>
-    <Card.Footer class="flex flex-col items-center justify-center p-3">
-      <p>by</p>
-      <p class="p-1">Prabhu Kiran Konda</p>
-    </Card.Footer>
-  </Card.Root>
+	<Card.Root class="w-[300px] rounded-lg flex flex-col items-center justify-center">
+		<Card.Header>
+			<Card.Title class="text-center">Dall-E Clone | SvelteKit</Card.Title>
+			<Card.Description class="text-center">AI Image Generation</Card.Description>
+		</Card.Header>
+		<Card.Content class="p-3">
+			<div class="flex flex-col items-center justify-center gap-6">
+				<button on:click="{githubLogin}">
+					<Github class="w-6 h-6 mr-2" />
+					Login with GitHub
+				</button>
+				<button on:click="{googleLogin}">
+					<svg viewBox="0 0 128 128" class="w-5 h-5 mr-2">
+						<path
+							fill="#fff"
+							d="M44.59 4.21a63.28 63.28 0 004.33 120.9 67.6 67.6 0 0032.36.35 57.13 57.13 0 0025.9-13.46 57.44 57.44 0 0016-26.26 74.33 74.33 0 001.61-33.58H65.27v24.69h34.47a29.72 29.72 0 01-12.66 19.52 36.16 36.16 0 01-13.93 5.5 41.29 41.29 0 01-15.1 0A37.16 37.16 0 0144 95.74a39.3 39.3 0 01-14.5-19.42 38.31 38.31 0 010-24.63 39.25 39.25 0 019.18-14.91A37.17 37.17 0 0176.13 27a34.28 34.28 0 0113.64 8q5.83-5.8 11.64-11.63c2-2.09 4.18-4.08 6.15-6.22A61.22 61.22 0 0087.2 4.59a64 64 0 00-42.61-.38z"
+						/>
+						<path
+							fill="#e33629"
+							d="M44.59 4.21a64 64 0 0142.61.37 61.22 61.22 0 0120.35 12.62c-2 2.14-4.11 4.14-6.15 6.22Q95.58 29.23 89.77 35a34.28 34.28 0 00-13.64-8 37.17 37.17 0 00-37.46 9.74 39.25 39.25 0 00-9.18 14.91L8.76 35.6A63.53 63.53 0 0144.59 4.21z"
+						/>
+						<path
+							fill="#f8bd00"
+							d="M3.26 51.5a62.93 62.93 0 015.5-15.9l20.73 16.09a38.31 38.31 0 000 24.63q-10.36 8-20.73 16.08a63.33 63.33 0 01-5.5-40.9z"
+						/>
+						<path
+							fill="#587dbd"
+							d="M65.27 52.15h59.52a74.33 74.33 0 01-1.61 33.58 57.44 57.44 0 01-16 26.26c-6.69-5.22-13.41-10.4-20.1-15.62a29.72 29.72 0 0012.66-19.54H65.27c-.01-8.22 0-16.45 0-24.68z"
+						/>
+						<path
+							fill="#319f43"
+							d="M8.75 92.4q10.37-8 20.73-16.08A39.3 39.3 0 0044 95.74a37.16 37.16 0 0014.08 6.08 41.29 41.29 0 0015.1 0 36.16 36.16 0 0013.93-5.5c6.69 5.22 13.41 10.4 20.1 15.62a57.13 57.13 0 01-25.9 13.47 67.6 67.6 0 01-32.36-.35 63 63 0 01-23-11.59A63.73 63.73 0 018.75 92.4z"
+						/>
+					</svg>
+					Login with Google
+				</button>
+			</div>
+		</Card.Content>
+		<Card.Footer class="flex flex-col items-center justify-center p-3">
+			<p>by</p>
+			<p class="p-1">Prabhu Kiran Konda</p>
+		</Card.Footer>
+	</Card.Root>
 </div>
 ```
 
@@ -540,15 +545,15 @@ now, let's create a dashboard page. we will be using the same code that we have 
 
 ```html title="+page.svelte"
 <script>
-  // src/routes/dashboard/+page.svelte
-  export let data;
+	// src/routes/dashboard/+page.svelte
+	export let data;
 </script>
 
 <div class="flex flex-col items-center justify-center h-full gap-4">
-  {#if data.session}
-    <h1 class="text-5xl">Dashboard</h1>
-    Welcome back,<span class="text-4xl">{data.session.user?.name}!</span>
-  {/if}
+	{#if data.session}
+	<h1 class="text-5xl">Dashboard</h1>
+	Welcome back,<span class="text-4xl">{data.session.user?.name}!</span>
+	{/if}
 </div>
 ```
 
@@ -566,7 +571,7 @@ export const load: PageServerLoad = async (event) => {
 +	if (!session?.user) {
 +		throw redirect(303, `/login?redirectTo=${fromUrl}`);
 +    }
-    
+
 	return {
 		session,
 	};
@@ -579,12 +584,9 @@ you can use this code in any protected route where you want to redirect the user
 
 And that's it. we have successfully integrated Auth.js (NextAuth) and Prisma with SvelteKit. you can see the full code in my [github repo](https://github.com/PrabhuKiran8790/sveltekit-authjs-prisma-template.git).
 
-
 ![login Page](https://raw.githubusercontent.com/PrabhuKiran8790/sveltekit-authjs-prisma-template/main/static/login_page.png)
 
-
 ![Dashboard Page](https://raw.githubusercontent.com/PrabhuKiran8790/sveltekit-authjs-prisma-template/main/static/dashboard_page.png)
-
 
 ![Prisma Studio](https://raw.githubusercontent.com/PrabhuKiran8790/sveltekit-authjs-prisma-template/main/static/prisma_studio.png)
 
