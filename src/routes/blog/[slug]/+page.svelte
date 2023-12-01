@@ -16,7 +16,7 @@
 	import { Badge } from '$lib/components/ui/badge';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import Separator from '$lib/components/ui/separator/separator.svelte';
-	import { localToGithubURL } from '$lib/utils';
+	import { cn, localToGithubURL } from '$lib/utils';
 	import { theme } from '$lib/stores.js';
 	import { formatDate } from '$lib/utils';
 	import { Calendar, Github, MessageSquare, Share2, Tag } from 'lucide-svelte';
@@ -38,11 +38,37 @@
 	let theme_: string | undefined;
 	let element: HTMLElement | null;
 
+	// onMount(() => {
+	// 	theme_ = localStorage.getItem('mode')?.replace(/^"(.*)"$/, '$1');
+	// 	element = document.getElementById('comments');
+
+	// 	window.addEventListener('scroll', handleScroll);
+	// 	return () => {
+	// 		window.removeEventListener('scroll', handleScroll);
+	// 	};
+	// });
+
 	onMount(() => {
 		theme_ = localStorage.getItem('mode')?.replace(/^"(.*)"$/, '$1');
 		element = document.getElementById('comments');
 
+		const scrollProgress = document.getElementById('scroll-progress') as HTMLDivElement;
+		const commentsSection = document.getElementById('comments') as HTMLDivElement;
+
+		const handleScroll = () => {
+			const scrollPosition = window.scrollY;
+			isTocSticky = scrollPosition > 200;
+			const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+			const height =
+				document.documentElement.scrollHeight -
+				document.documentElement.clientHeight -
+				(commentsSection.offsetHeight || 0);
+			const scrolled = (winScroll / height) * 100;
+			scrollProgress.style.width = `${scrolled}%`;
+		};
+
 		window.addEventListener('scroll', handleScroll);
+
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
 		};
@@ -54,6 +80,11 @@
 </script>
 
 <BlogMetatags {meta} />
+
+<div
+	class="fixed top-0 md:top-[64px] z-[1000] w-[0%] h-0.5 bg-muted-foreground"
+	id="scroll-progress"
+/>
 
 <div class="pt-6 md:container md:pt-14 space-y-8">
 	<div class="flex flex-col items-center justify-center space-y-4">
