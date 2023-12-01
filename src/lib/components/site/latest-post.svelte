@@ -31,7 +31,7 @@
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			<a
-				class="-mx-2 shadow-xl space-y-2 md:max-w-sm lg:max-w-lg rounded-2xl"
+				class="-mx-2 shadow-xl space-y-2 md:max-w-sm lg:max-w-lg rounded-2xl no-highlight"
 				href={`/blog/${post.slug}`}
 			>
 				<Card.Root class="border-2 rounded-xl hover:border-primary">
