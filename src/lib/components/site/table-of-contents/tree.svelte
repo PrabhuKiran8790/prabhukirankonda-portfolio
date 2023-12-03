@@ -11,7 +11,7 @@
 	export let level = 1;
 </script>
 
-<ul class={cn('m-0 list-none', { 'pl-4': level !== 1 })}>
+<ul class={cn('m-0 list-none', { 'pl-4 w-full': level !== 1 })}>
 	{#if tree.items && tree.items.length}
 		{#each tree.items as item, i (i)}
 			<li class={cn('pt-[4px]')}>

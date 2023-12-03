@@ -56,11 +56,11 @@
 	>
 		<BookOpen class="w-5 h-5" />
 	</DropdownMenu.Trigger>
-	<DropdownMenu.Content class="px-3 border border-primary min-w-[200px] pb-2">
+	<DropdownMenu.Content class="px-3 border border-primary min-w-[95%] md:min-w-[60%] lg:min-w-[30%] pb-2">
 		<DropdownMenu.Group class="w-full">
 			<DropdownMenu.Label>On this page</DropdownMenu.Label>
 			<DropdownMenu.Separator />
-			<div class="space-y-2">
+			<div class="space-y-2 max-h-[500px] overflow-scroll">
 				<Tree tree={filteredHeadingsList} />
 			</div>
 		</DropdownMenu.Group>

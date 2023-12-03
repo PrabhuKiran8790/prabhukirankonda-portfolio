@@ -14,39 +14,24 @@
 	import Linkedin from '$lib/components/site/icons/linkedin.svelte';
 	import { Toc } from '$lib/components/site/table-of-contents';
 	import { Badge } from '$lib/components/ui/badge';
+	import { Button } from '$lib/components/ui/button/index.js';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import Separator from '$lib/components/ui/separator/separator.svelte';
-	import { cn, localToGithubURL } from '$lib/utils';
-	import { theme } from '$lib/stores.js';
-	import { formatDate } from '$lib/utils';
-	import { Calendar, Github, MessageSquare, Share2, Tag } from 'lucide-svelte';
 	import * as Tooltip from '$lib/components/ui/tooltip';
+	import { githubConfig } from '$lib/config.js';
+	import { theme } from '$lib/stores.js';
+	import { formatDate, localToGithubURL } from '$lib/utils';
+	import { Calendar, Github, MessageSquare, Share2, Tag } from 'lucide-svelte';
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
-	import { Button } from '$lib/components/ui/button/index.js';
-	import { githubConfig } from '$lib/config.js';
 	export let data;
 
 	let { content, meta } = data;
 
 	let isTocSticky = false;
 
-	function handleScroll() {
-		const scrollPosition = window.scrollY;
-		isTocSticky = scrollPosition > 200;
-	}
 	let theme_: string | undefined;
 	let element: HTMLElement | null;
-
-	// onMount(() => {
-	// 	theme_ = localStorage.getItem('mode')?.replace(/^"(.*)"$/, '$1');
-	// 	element = document.getElementById('comments');
-
-	// 	window.addEventListener('scroll', handleScroll);
-	// 	return () => {
-	// 		window.removeEventListener('scroll', handleScroll);
-	// 	};
-	// });
 
 	onMount(() => {
 		theme_ = localStorage.getItem('mode')?.replace(/^"(.*)"$/, '$1');
