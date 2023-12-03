@@ -3,6 +3,7 @@
 	import { routes } from '$lib/config';
 	import { cn } from '$lib/utils';
 	import { ThemeToggle } from '$lib/components/site';
+	import { currentHeadingId } from '$lib/stores';
 </script>
 
 <nav

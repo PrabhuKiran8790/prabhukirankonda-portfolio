@@ -3,6 +3,8 @@
 	import { Tree, type TableOfContents, type TableOfContentsItem } from '.';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import { BookOpen } from 'lucide-svelte';
+	import { currentHeadingId } from '$lib/stores';
+	import { page } from '$app/stores';
 
 	let filteredHeadingsList: TableOfContents;
 
@@ -47,6 +49,38 @@
 	// Lifecycle
 	onMount(() => {
 		getHeadingsWithHierarchy('mdsvex');
+
+		const headings = document.querySelectorAll('h2, h3');
+
+		function handleScroll() {
+			// Get the current scroll position
+			const scrollPosition = window.scrollY;
+
+			// Loop through each heading and check its position
+			headings.forEach((heading) => {
+				const headingElement = heading as HTMLElement;
+
+				const headingPosition = headingElement.offsetTop;
+
+				// You can adjust the threshold as needed
+				const threshold = 50;
+
+				// Check if the heading is within the threshold of the current scroll position
+				if (Math.abs(headingPosition - scrollPosition) < threshold) {
+					// Remove the highlight class from all headings
+					headings.forEach((h) => h.classList.remove('highlight'));
+
+					// Add the highlight class to the current heading
+					heading.classList.add('highlight');
+
+					// Log the ID of the current heading
+					console.log('Current Heading ID:', heading.id);
+					$currentHeadingId = `#${heading.id}`;
+					$page.url.hash = `#${heading.id}`;
+				}
+			});
+		}
+		window.addEventListener('scroll', handleScroll);
 	});
 </script>
 
@@ -56,7 +90,9 @@
 	>
 		<BookOpen class="w-5 h-5" />
 	</DropdownMenu.Trigger>
-	<DropdownMenu.Content class="px-3 border border-primary min-w-[95%] md:min-w-[60%] lg:min-w-[30%] pb-2">
+	<DropdownMenu.Content
+		class="px-3 border border-primary min-w-[95%] md:min-w-[60%] lg:min-w-[30%] pb-2"
+	>
 		<DropdownMenu.Group class="w-full">
 			<DropdownMenu.Label>On this page</DropdownMenu.Label>
 			<DropdownMenu.Separator />
