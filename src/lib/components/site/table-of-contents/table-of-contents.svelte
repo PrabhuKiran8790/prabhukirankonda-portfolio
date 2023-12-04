@@ -74,7 +74,6 @@
 					heading.classList.add('highlight');
 
 					// Log the ID of the current heading
-					console.log('Current Heading ID:', heading.id);
 					$currentHeadingId = `#${heading.id}`;
 					$page.url.hash = `#${heading.id}`;
 				}

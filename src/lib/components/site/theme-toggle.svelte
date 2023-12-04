@@ -14,7 +14,7 @@
 			builders={[builder]}
 			size="icon"
 			variant="ghost"
-			class="md:w-9 md:h-9 p-0 hover:bg-transparent"
+			class="md:w-9 md:h-9 p-0 hover:bg-transparent md:hover:bg-muted"
 		>
 			<Sun class="h-5 w-5 hidden dark:block" />
 			<Moon class="h-5 w-5 dark:hidden block" />

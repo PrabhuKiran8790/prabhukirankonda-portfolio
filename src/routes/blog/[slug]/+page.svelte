@@ -8,7 +8,7 @@
 		PUBLIC_GITHUB_REPO_ID,
 		PUBLIC_GITHUB_USERNAME
 	} from '$env/static/public';
-	import { BlogMetatags } from '$lib/components/site';
+	import { BlogMetatags, SVGDoodle } from '$lib/components/site';
 	import { Giscus } from '$lib/components/site/gicsus_';
 	import X from '$lib/components/site/icons/X.svelte';
 	import Linkedin from '$lib/components/site/icons/linkedin.svelte';
@@ -67,7 +67,7 @@
 <BlogMetatags {meta} />
 
 <div
-	class="fixed top-0 md:top-[64px] z-[1000] w-[0%] h-0.5 bg-muted-foreground"
+	class="fixed top-0 md:top-[64px] z-[50] w-[0%] h-0.5 bg-muted-foreground"
 	id="scroll-progress"
 />
 
@@ -192,6 +192,9 @@
 			<h1>View on GitHub</h1>
 		</Button>
 	</div>
+	<div class="flex items-center justify-center">
+		<SVGDoodle />
+	</div>
 	<div class="px-3 pb-24 md:container" id="comments">
 		<Giscus
 			repo={`${PUBLIC_GITHUB_USERNAME}/${PUBLIC_GITHUB_REPO}`}
@@ -203,7 +206,7 @@
 			reactionsEnabled="1"
 			emitMetadata="0"
 			inputPosition="top"
-			theme={$theme ? $theme : theme_}
+			theme={$theme ? ($theme === 'light' ? 'light' : 'dark_tritanopia') : theme_}
 			lang="en"
 		/>
 	</div>
