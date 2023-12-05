@@ -1,11 +1,12 @@
 <script lang="ts">
-	import { Badge } from '$lib/components/ui/badge';
+	// import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
-	import { Separator } from '$lib/components/ui/separator';
+	// import { Separator } from '$lib/components/ui/separator';
 	import type { Post } from '$lib/types';
-	import { formatDate } from '$lib/utils';
-	import { ArrowRight, Calendar, Tag } from 'lucide-svelte';
+	// import { formatDate } from '$lib/utils';
+	// import { ArrowRight, Calendar, Tag } from 'lucide-svelte';
+	import Blogcard from './blogcard.svelte';
 	export let data: {
 		posts: Post[];
 	};
@@ -30,7 +31,7 @@
 
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
-			<a
+			<!-- <a
 				class="-mx-2 shadow-xl space-y-2 md:max-w-sm lg:max-w-lg rounded-2xl no-highlight"
 				href={`/blog/${post.slug}`}
 			>
@@ -73,7 +74,11 @@
 						</div>
 					</div>
 				</Card.Root>
-			</a>
+			</a> -->
+
+			<div class="-mx-2 shadow-xl space-y-2 md:max-w-sm lg:max-w-md rounded-2xl no-highlight">
+				<Blogcard {post} />
+			</div>
 		</div>
 	</div>
 </div>
