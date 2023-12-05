@@ -49,6 +49,52 @@ const katex_blocks = () => (tree) => {
 	});
 };
 
+
+const katex_inline = () => (tree) => {
+  visit(tree, 'text', (node, index, parent) => {
+    const regex = /\$\$(.*?)\$\$/g;
+    let match;
+
+    while ((match = regex.exec(node.value)) !== null) {
+      const equation = match[1].trim();
+
+      // Replace double backslashes with single backslashes
+      const cleanedEquation = equation.replace(/\\\\/g, '\\');
+
+      const str = katex.renderToString(cleanedEquation, {
+        throwOnError: true,
+        errorColor: '#cc0000',
+        strict: 'warn',
+        output: 'htmlAndMathml',
+        trust: false,
+        macros: { '\\f': '#1f(#2)' }
+      });
+
+      // Escape the HTML for Svelte
+      const escapedHTML = escapeSvelte(str);
+
+      // Replace the matched portion with the escaped HTML
+      const before = node.value.slice(0, match.index);
+      const after = node.value.slice(match.index + match[0].length);
+      const renderedEquation = '<span class="text-base">{@html `' + escapedHTML + '`}</span>';
+
+      // Create a new 'raw' node with the rendered equation
+      const rawNode = {
+        type: 'raw',
+        value: renderedEquation
+      };
+
+      // Insert the 'raw' node into the parent's children array
+      parent.children.splice(index, 1, ...[
+        { type: 'text', value: before },
+        rawNode,
+        { type: 'text', value: after }
+      ]);
+    }
+  });
+};
+
+
 const prettyCodeOptions = {
 	// theme: 'github-dark',
 	theme: JSON.parse(readFileSync(resolve(__dirname, './static/github-dark.json'), 'utf-8')),
@@ -93,7 +139,7 @@ export const mdsvexOptions = {
 	// highlight: {
 	// 	highlighter: highlightCode
 	// },
-	remarkPlugins: [remarkUnwrapImages, math, katex_blocks],
+	remarkPlugins: [remarkUnwrapImages, math, katex_blocks, katex_inline],
 	rehypePlugins: [
 		rehypeCustomComponents,
 		rehypeComponentPreToPre,

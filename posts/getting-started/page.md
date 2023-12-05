@@ -85,7 +85,8 @@ it's got ton of features that you don't wanna miss out.
   \nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)
   ```
   - wondering what those equations are? Maxwells Equations 🙃
-  - <Math eq={`$\\nabla \\cdot \\mathbf{E} = \\frac{\\rho}{\\varepsilon_0}$`}/> this is an example of inline equation
+  - <Math eq={`$\\nabla \\cdot \\mathbf{E} = \\frac{\\rho}{\\varepsilon_0}$`}/> this is an example of inline equation (using external component)
+  - $$\nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)$$ is an inline equation (I somehow created a plugin to render inline equation without relying on external component.)
 - Mobile friendly interface
 
 ## How to use?
@@ -309,7 +310,7 @@ you can change these styles in `markdown.postcss` file and `pre.svelte` file and
   - but this will work
 
   ```md
-  - <Math eq={`$\\nabla \\cdot \\mathbf{E} = \\frac{\\rho}{\\varepsilon_0}$`}/> this is an example of inline equation
+  - <Math eq={`$\\\nabla \\\\cdot \\\\mathbf{E} = \\\\frac{\\\rho}{\\\\varepsilon_0}$`}/>  this is an example of inline equation
   ```
 
   - I don't know the reason but if there's any fix i'll update or you can fix it and make a pull request.
@@ -327,6 +328,16 @@ you can change these styles in `markdown.postcss` file and `pre.svelte` file and
   ```math
   \nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)
   ```
+
+  To render inline equations without using any component, you can use this below
+  ```md title="inline-math.md"
+  $$\nabla \\times \\mathbf{B} = \\mu_0 \\left(\\mathbf{J} + \\varepsilon_0 \\frac{\\partial \\mathbf{E}}{\\partial t}\\right)$$
+  ```
+  - this is as of Dec 5, 2023. I added a new plugin to render inline maths.
+  - this will fix the above mentioned issue of not rendering inline math equation in list item with content.
+  - example: $$\nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)$$ this will work
+  - you don't even need to put double backslashes `\\`, just write like you write them in math blocks, but wrap between double dollar signs.
+  - this is the recommended way from now on.
 
 ## Blog Comments
 
