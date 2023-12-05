@@ -95,7 +95,7 @@
 		<DropdownMenu.Group class="w-full">
 			<DropdownMenu.Label>On this page</DropdownMenu.Label>
 			<DropdownMenu.Separator />
-			<div class="space-y-2 max-h-[500px] overflow-scroll">
+			<div class="space-y-2 max-h-[300px] md:max-h-[500px] overflow-scroll">
 				<Tree tree={filteredHeadingsList} />
 			</div>
 		</DropdownMenu.Group>

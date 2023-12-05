@@ -339,6 +339,21 @@ you can change these styles in `markdown.postcss` file and `pre.svelte` file and
   - you don't even need to put double backslashes `\\`, just write like you write them in math blocks, but wrap between double dollar signs.
   - this is the recommended way from now on.
 
+
+### each blocks
+you can also render each blocks like you do in svelte to render a list of items
+
+{#each Array.from({ length: 5 }, (_, i) => i + 1) as number (number)}
+	<li>{number}</li>
+{/each}
+
+usage: 
+```svelte
+{#each Array.from({ length: 5 }, (_, i) => i + 1) as number (number)}
+	<li>{number}</li>
+{/each}
+```
+
 ## Blog Comments
 
 Comments are made possible using [Giscus](https://giscus.app/), a GitHub discussion based commenting system. Start by changing some environment variables to setup Giscus. In you `.env` file change the following variables. These environment variables are imported in `routes/blog/[slug]/+page.svelte`

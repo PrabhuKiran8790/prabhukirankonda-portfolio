@@ -14,6 +14,7 @@ import remarkUnwrapImages from 'remark-unwrap-images';
 import rehypeSlug from 'rehype-slug';
 import math from 'remark-math';
 import rehype_katex from 'rehype-katex';
+import remarkGfm from 'remark-gfm'
 import katex from 'katex';
 
 // import { highlightCode } from './src/lib/scripts/highlight.js';
@@ -128,6 +129,17 @@ const prettyCodeOptions = {
 	}
 };
 
+// replaces “ and ” with " and ". useful to render {} curly braces
+const replaceQuotes = () => (tree) => {
+  visit(tree, 'text', (node) => {
+    node.value = node.value
+      .replace(/”/g, '"') // Replace curly double quotes with straight double quotes
+      .replace(/“/g, '"') // Replace straight double quotes with straight double quotes
+      .replace(/’/g, "'") // Replace curly single quotes with straight single quotes
+      .replace(/‘/g, "'"); // Replace straight single quotes with straight single quotes
+  });
+};
+
 /** @type {import('mdsvex').MdsvexOptions} */
 export const mdsvexOptions = {
 	extensions: ['.md', '.svx'],
@@ -139,7 +151,7 @@ export const mdsvexOptions = {
 	// highlight: {
 	// 	highlighter: highlightCode
 	// },
-	remarkPlugins: [remarkUnwrapImages, math, katex_blocks, katex_inline],
+	remarkPlugins: [remarkUnwrapImages, math, katex_blocks, katex_inline, replaceQuotes, remarkGfm],
 	rehypePlugins: [
 		rehypeCustomComponents,
 		rehypeComponentPreToPre,
