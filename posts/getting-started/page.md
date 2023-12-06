@@ -17,10 +17,10 @@ draft: false
 
 Welcome, this will guide you through this template and how to use it. This is a SvelteKit + MDsveX Personal website and a blog completely designed with [Shadcn-Svelte](https://shadcn-svelte.com/), it has everything you need get started and you can fully customise it.
 
-to get started, clone the repo: [repo link](https://github.com/PrabhuKiran8790/prabhukirankonda.vercel.app)
+to get started, clone the repo: [repo link](https://github.com/PrabhuKiran8790/prabhukirankonda-portfolio.git)
 
 ```shell
-git clone https://github.com/PrabhuKiran8790/prabhukirankonda.vercel.app.git
+git clone https://github.com/PrabhuKiran8790/prabhukirankonda-portfolio.git
 ```
 
 ## Features
