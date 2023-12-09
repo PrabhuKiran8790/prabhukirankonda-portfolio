@@ -7,6 +7,10 @@
 	export let project: ProjectType;
 
 	let hover: boolean = false;
+
+	const getAssetUrl = (path: string) => {
+		return new URL(path, import.meta.url).href;
+	};
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -16,7 +20,7 @@
 	on:mouseleave={() => (hover = false)}
 >
 	{#if project.image}
-		<img src={project.image} alt={project.title} class="rounded-b-none rounded-md" />
+		<img src={getAssetUrl(project.image)} alt={project.title} class="rounded-b-none rounded-md" />
 	{/if}
 	<div class="flex flex-col justify-between h-full p-4 gap-4">
 		<div class="flex flex-col justify-between gap-2">
