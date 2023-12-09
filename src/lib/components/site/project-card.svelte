@@ -9,7 +9,8 @@
 	let hover: boolean = false;
 
 	const getAssetUrl = (path: string) => {
-		return new URL(path, import.meta.url).href;
+		const picture = new URL(path, import.meta.url).href;
+		return picture;
 	};
 </script>
 
