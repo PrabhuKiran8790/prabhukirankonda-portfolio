@@ -17,10 +17,10 @@ draft: false
 
 Welcome, this will guide you through this template and how to use it. This is a SvelteKit + MDsveX Personal website and a blog completely designed with [Shadcn-Svelte](https://shadcn-svelte.com/), it has everything you need get started and you can fully customise it.
 
-to get started, clone the repo: [repo link](https://github.com/PrabhuKiran8790/prabhukirankonda.vercel.app)
+to get started, clone the repo: [repo link](https://github.com/PrabhuKiran8790/prabhukirankonda-portfolio.git)
 
 ```shell
-git clone https://github.com/PrabhuKiran8790/prabhukirankonda.vercel.app.git
+git clone https://github.com/PrabhuKiran8790/prabhukirankonda-portfolio.git
 ```
 
 ## Features
@@ -344,7 +344,7 @@ you can change these styles in `markdown.postcss` file and `pre.svelte` file and
 Comments are made possible using [Giscus](https://giscus.app/), a GitHub discussion based commenting system. Start by changing some environment variables to setup Giscus. In you `.env` file change the following variables. These environment variables are imported in `routes/blog/[slug]/+page.svelte`
 
 ```js
-PUBLIC_GITHUB_REPO = prabhukirankonda.vercel.app
+PUBLIC_GITHUB_REPO = prabhukirankonda-portfolio
 PUBLIC_GITHUB_USERNAME = PrabhuKiran8790
 PUBLIC_GITHUB_REPO_ID =
 PUBLIC_CATEGORY = General
