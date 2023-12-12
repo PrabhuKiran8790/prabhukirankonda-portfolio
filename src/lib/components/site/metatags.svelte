@@ -31,7 +31,7 @@
 
 	function setPageMeta(meta: Meta) {
 		pageMeta = {
-			title: `${meta.title} | Prabhu Kiran Konda`,
+			title: `Prabhu Kiran Konda | ${meta.title}`,
 			description: meta.description,
 			openGraph: {
 				url: $page.url,
