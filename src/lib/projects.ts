@@ -17,7 +17,7 @@ export const projects: ProjectType[] = [
 			'This website, prabhukirankonda.vercel.app is my personal website with a markdown blog written in SvelteKit and deployed using Vercel. Styled using Taiwind CSS and Shadcn-UI and completely written in TypeScript.',
 		href: 'https://prabhukirankonda.vercel.app',
 		source: 'https://github.com/PrabhuKiran8790/prabhukirankonda.vercel.app',
-		image: '/sveltekit-portfolio.png',
+		image: '/sveltekit-portfolio-min.png',
 		techstack: ['SvelteKit', 'Tailwind', 'TypeScript'],
 		featured: true
 	},
@@ -37,14 +37,14 @@ export const projects: ProjectType[] = [
 			'Created a Dall-E Clone using SvelteKit, OpenAI API, TailwindCSS, TypeScript, Dirzzle ORM and MySQL Database. Converted it into fully working SaaS which inludes Stripe Payment Integration, User Authentication (Github & Google), and User Friendly Interface. The app is deployed with Vercel for easy setup and scalability.',
 		href: 'https://dall-e-sveltekit.vercel.app/',
 		source: 'https://github.com/PrabhuKiran8790/dall-e-clone',
-		image: '/dall-e-svelte.png',
+		image: '/dall-e-svelte-min.png',
 		techstack: ['SvelteKit', 'TypeScript', 'MySQL', 'Drizzle'],
 		featured: true
 	},
 	{
 		title: 'GFPGAN Streamlit App: Face Restoration',
 		description: `Created a Streamlit app for the GFPGAN model to restore faces in images. It has a user-friendly interface, and easy Docker deployment.`,
-		image: '/GFPGAN.png',
+		image: '/GFPGAN-min.png',
 		source: 'https://huggingface.co/spaces/PrabhuKiranKonda/Streamlit-GFPGAN/tree/main',
 		href: 'https://huggingface.co/spaces/PrabhuKiranKonda/Streamlit-GFPGAN',
 		techstack: ['Python', 'Streamlit', 'Docker']
