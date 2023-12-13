@@ -60,6 +60,26 @@ code:not(pre code) {
 	}
 }
 
+.code-add {
+	@apply bg-green-600/40;
+}
+
+.code-delete {
+	@apply bg-red-400/30;
+}
+
+span.code-add::before {
+	content: '+';
+	color: #2ecc71;
+	margin-left: -10px;
+}
+
+span.code-delete::before {
+	content: '-';
+	color: #e74c3c;
+	margin-left: -10px;
+}
+
 [data-comp-preview] [data-rehype-pretty-code-fragment] {
 	& pre {
 		@apply mt-0 rounded-b-lg rounded-t-none;

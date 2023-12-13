@@ -276,6 +276,30 @@ will render into
 console.log('Hello');
 ```
 
+and for code diffing, 
+````md
+```js title="code-diff.js"
+export function foo() {
+  console.log('hewwo') // [!code --] // this should be hello
+  console.log('hello') // [!code ++]
+}
+```
+````
+
+this will becomes 
+```js title="code-diff.js"
+export function foo() {
+  console.log('hewwo') // [!code --] // this should be hello
+  console.log('hello') // [!code ++]
+  console.log('hello')
+  console.log('hello') // [!code ++]
+  console.log('hello') // [!code ++]
+}
+```
+
+> it is important to add `// [!code --]` and `// [!code ++]` to see the changes, that inlcudes the whitespace after the comment
+
+
 you can change these styles in `markdown.postcss` file and `pre.svelte` file and for more information visit [rehype-pretty-code](https://rehype-pretty-code.netlify.app/)
 
 ### Math Blocks
