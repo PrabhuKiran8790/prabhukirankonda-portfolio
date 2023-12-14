@@ -98,7 +98,7 @@ const katex_inline = () => (tree) => {
 
 const prettyCodeOptions = {
 	// theme: 'github-dark',
-	theme: JSON.parse(readFileSync(resolve(__dirname, './static/github-dark.json'), 'utf-8')),
+	theme: JSON.parse(readFileSync(resolve(__dirname, './static/moonlight-2-theme.json'), 'utf-8')),
 	keepBackground: false,
 	onVisitLine(node) {
 		if (node.children.length === 0) {

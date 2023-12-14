@@ -286,13 +286,10 @@ export function foo() {
 ```
 ````
 
-this will becomes 
+this will become
 ```js title="code-diff.js"
 export function foo() {
   console.log('hewwo') // [!code --] // this should be hello
-  console.log('hello') // [!code ++]
-  console.log('hello')
-  console.log('hello') // [!code ++]
   console.log('hello') // [!code ++]
 }
 ```
