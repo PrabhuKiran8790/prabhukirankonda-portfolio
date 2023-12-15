@@ -340,7 +340,7 @@ you can change these styles in `markdown.postcss` file and `pre.svelte` file and
 
   ````md /math/1#rb title="math.md"
   ```math
-  \nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)
+  \nabla \times \mathbf{B} = \\mu_0 \\left(\\mathbf{J} + \\varepsilon_0 \\frac{\\partial \\mathbf{E}}{\\partial t}\\right)
   ```
   ````
 

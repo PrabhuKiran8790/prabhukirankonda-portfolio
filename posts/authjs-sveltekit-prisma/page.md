@@ -98,7 +98,7 @@ Auth.js (NextAuth) provides us with different models for the database like `User
 
 here are those schemas. it's very much important to add these as it is to your `schema.prisma` file. I've tried other different schema models but it didn't work. so i'm using these models. you can also use these models.
 
-```js title="schema.prisma"
+```prisma title="schema.prisma"
 model Account {
   id                 String  @id @default(cuid())
   userId             String

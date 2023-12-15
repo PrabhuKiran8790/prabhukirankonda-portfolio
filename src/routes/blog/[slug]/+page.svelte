@@ -34,6 +34,8 @@
 	let element: HTMLElement | null;
 
 	onMount(() => {
+		
+
 		theme_ = localStorage.getItem('mode')?.replace(/^"(.*)"$/, '$1');
 		element = document.getElementById('comments');
 

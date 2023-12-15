@@ -14,7 +14,7 @@ import remarkUnwrapImages from 'remark-unwrap-images';
 import rehypeSlug from 'rehype-slug';
 import math from 'remark-math';
 import rehype_katex from 'rehype-katex';
-import remarkGfm from 'remark-gfm'
+import remarkGfm from 'remark-gfm';
 import katex from 'katex';
 
 // import { highlightCode } from './src/lib/scripts/highlight.js';
@@ -50,56 +50,61 @@ const katex_blocks = () => (tree) => {
 	});
 };
 
-
 const katex_inline = () => (tree) => {
-  visit(tree, 'text', (node, index, parent) => {
-    const regex = /\$\$(.*?)\$\$/g;
-    let match;
+	visit(tree, 'text', (node, index, parent) => {
+		const regex = /\$\$(.*?)\$\$/g;
+		let match;
 
-    while ((match = regex.exec(node.value)) !== null) {
-      const equation = match[1].trim();
+		while ((match = regex.exec(node.value)) !== null) {
+			const equation = match[1].trim();
 
-      // Replace double backslashes with single backslashes
-      const cleanedEquation = equation.replace(/\\\\/g, '\\');
+			// Replace double backslashes with single backslashes
+			const cleanedEquation = equation.replace(/\\\\/g, '\\');
 
-      const str = katex.renderToString(cleanedEquation, {
-        throwOnError: true,
-        errorColor: '#cc0000',
-        strict: 'warn',
-        output: 'htmlAndMathml',
-        trust: false,
-        macros: { '\\f': '#1f(#2)' }
-      });
+			const str = katex.renderToString(cleanedEquation, {
+				throwOnError: true,
+				errorColor: '#cc0000',
+				strict: 'warn',
+				output: 'htmlAndMathml',
+				trust: false,
+				macros: { '\\f': '#1f(#2)' }
+			});
 
-      // Escape the HTML for Svelte
-      const escapedHTML = escapeSvelte(str);
+			// Escape the HTML for Svelte
+			const escapedHTML = escapeSvelte(str);
 
-      // Replace the matched portion with the escaped HTML
-      const before = node.value.slice(0, match.index);
-      const after = node.value.slice(match.index + match[0].length);
-      const renderedEquation = '<span class="text-base">{@html `' + escapedHTML + '`}</span>';
+			// Replace the matched portion with the escaped HTML
+			const before = node.value.slice(0, match.index);
+			const after = node.value.slice(match.index + match[0].length);
+			const renderedEquation = '<span class="text-base">{@html `' + escapedHTML + '`}</span>';
 
-      // Create a new 'raw' node with the rendered equation
-      const rawNode = {
-        type: 'raw',
-        value: renderedEquation
-      };
+			// Create a new 'raw' node with the rendered equation
+			const rawNode = {
+				type: 'raw',
+				value: renderedEquation
+			};
 
-      // Insert the 'raw' node into the parent's children array
-      parent.children.splice(index, 1, ...[
-        { type: 'text', value: before },
-        rawNode,
-        { type: 'text', value: after }
-      ]);
-    }
-  });
+			// Insert the 'raw' node into the parent's children array
+			parent.children.splice(
+				index,
+				1,
+				...[{ type: 'text', value: before }, rawNode, { type: 'text', value: after }]
+			);
+		}
+	});
 };
-
 
 const prettyCodeOptions = {
 	// theme: 'github-dark',
-	theme: JSON.parse(readFileSync(resolve(__dirname, './static/moonlight-2-theme.json'), 'utf-8')),
-	keepBackground: false,
+	theme: {
+		// for dark, class name will be Moonlight II, use that class name in pre.svelte to adjust
+		// any changes here, you need to change in pre.svelte as well with the same class name
+		dark: JSON.parse(readFileSync(resolve(__dirname, './static/moonlight-2-theme.json'), 'utf-8')),
+		// for light, class name will be min-light, use that class name in pre.svelte to adjust
+		// any changes here, you need to change in pre.svelte as well with the same class name
+		light: 'min-light'
+	},
+	keepBackground: false, // to use our own background color
 	onVisitLine(node) {
 		if (node.children.length === 0) {
 			node.children = { type: 'text', value: ' ' };
@@ -131,13 +136,13 @@ const prettyCodeOptions = {
 
 // replaces “ and ” with " and ". useful to render {} curly braces
 const replaceQuotes = () => (tree) => {
-  visit(tree, 'text', (node) => {
-    node.value = node.value
-      .replace(/”/g, '"') // Replace curly double quotes with straight double quotes
-      .replace(/“/g, '"') // Replace straight double quotes with straight double quotes
-      .replace(/’/g, "'") // Replace curly single quotes with straight single quotes
-      .replace(/‘/g, "'"); // Replace straight single quotes with straight single quotes
-  });
+	visit(tree, 'text', (node) => {
+		node.value = node.value
+			.replace(/”/g, '"') // Replace curly double quotes with straight double quotes
+			.replace(/“/g, '"') // Replace straight double quotes with straight double quotes
+			.replace(/’/g, "'") // Replace curly single quotes with straight single quotes
+			.replace(/‘/g, "'"); // Replace straight single quotes with straight single quotes
+	});
 };
 
 /** @type {import('mdsvex').MdsvexOptions} */
@@ -249,6 +254,11 @@ function rehypeHandleMetadata() {
 
 				const titleElement = node.children[0];
 				const preElement = node.children.at(-1);
+				// console.log(preElement)
+				// console.log(preElement.properties)
+				preElement.properties['__title__'] = titleElement.children[0].value;
+				// console.log(preElement.properties)
+
 				if (
 					preElement.tagName !== 'pre' ||
 					!('data-rehype-pretty-code-title' in titleElement.properties)
@@ -257,7 +267,7 @@ function rehypeHandleMetadata() {
 				}
 
 				if (titleElement.children.length > 0 && 'value' in titleElement.children[0]) {
-					preElement.properties['title'] = titleElement.children[0].value;
+					preElement.properties['__title__'] = titleElement.children[0].value;
 					node.children.shift();
 				}
 			}

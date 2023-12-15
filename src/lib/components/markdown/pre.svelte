@@ -5,6 +5,7 @@
 	import { Check, Copy } from 'lucide-svelte';
 	import LangIcon from './language-icons/lang-icon.svelte';
 	import { onMount } from 'svelte';
+	import { cn } from '$lib/utils';
 
 	let className: string | undefined | null = undefined;
 	// export { className as class };
@@ -28,10 +29,34 @@
 		}, 2000);
 	};
 
+	let title__: string;
+
+	let lang: string;
+
 	onMount(() => {
+		const divsWithAttribute = document.querySelectorAll('[data-rehype-pretty-code-fragment]');
+
+		divsWithAttribute.forEach((div) => {
+			const preTags = div.querySelectorAll('pre');
+			console.log(preTags);
+			console.log(div);
+
+			if (preTags.length === 2) {
+				const titleAttribute = preTags[1].getAttribute('__title__');
+
+				if (titleAttribute) {
+					preTags[0].setAttribute('__title__', titleAttribute);
+				}
+			}
+		});
+
 		if (codeElement) {
 			// Check if data-language attribute is not equal to "md"
 			const languageAttribute = codeElement.getAttribute('data-language');
+			lang = languageAttribute as string;
+			const title_ = codeElement.getAttribute('__title__') as string;
+			title__ = title_;
+			title = title_;
 
 			if (languageAttribute && languageAttribute.toLowerCase() !== 'md') {
 				const lines = codeElement.querySelectorAll('span[data-line]');
@@ -52,9 +77,11 @@
 	});
 </script>
 
-{#if title}
-	<div class="my-4 bg-gray-200 rounded-lg shadow-lg dark:bg-zinc-800">
-		<div class="flex items-center justify-between px-2 py-1 md:grid md:grid-cols-3">
+<div class={cn($$restProps.class, title__ ? 'mt-[14px]' : '')}>
+	{#if title__}
+		<div
+			class="flex items-center justify-between px-2 py-1 md:grid md:grid-cols-3 bg-gray-200 dark:bg-zinc-800 rounded-t-lg"
+		>
 			<div class="hidden md:block">
 				<div class="flex items-center gap-2">
 					<div class="w-3 h-3 bg-red-500 rounded-full" />
@@ -68,12 +95,11 @@
 				{#if extensionMappings[title.split('.').pop() || '']}
 					<LangIcon extension={title.split('.').pop() || ''} />
 				{/if}
-				{title || ''}
+				{title__ || ''}
 			</div>
-
 			<div class="text-end">
 				<button
-					class="px-2 rounded-lg hover:bg-slate-300 hover:dark:bg-zinc-700 no-highlight"
+					class="px-2 rounded-lg hover:bg-gray-300 hover:dark:bg-zinc-700 no-highlight"
 					on:click={handleCopy}
 				>
 					{#if copyState}
@@ -84,36 +110,50 @@
 				</button>
 			</div>
 		</div>
-		<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-		<pre
-			bind:this={codeElement}
-			tabindex="0"
-			{...$$restProps}
-			class="rounded-t-none rounded-lg bg-zinc-900 max-h-[450px] mt-[2px] border-2"><slot /></pre>
-	</div>
-{:else}
+	{/if}
 	<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-	<div class="relative my-5">
-		<pre
-			bind:this={codeElement}
-			tabindex="0"
-			{...$$restProps}
-			class="rounded-lg bg-zinc-900 max-h-[450px] mt-[2px] border-2">
-        <slot />
-    </pre>
+	<pre
+		bind:this={codeElement}
+		tabindex="0"
+		{...$$restProps}
+		class={cn(
+			'rounded-lg bg-slate-50 dark:bg-zinc-900 max-h-[450px] border-2',
+			title__ ? 'rounded-t-none' : 'mt-[14px]'
+		)}>
+			<slot />
+	</pre>
+	{#if !title__}
 		<button
 			on:click={handleCopy}
-			class="absolute z-10 inline-flex items-center justify-center w-6 h-6 p-0 text-sm font-medium no-highlight rounded-md transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50 right-2 top-2"
+			class="absolute z-10 inline-flex items-center justify-center w-6 h-6 p-0 text-sm font-medium no-highlight rounded-md transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-slate-200 dark:hover:bg-zinc-700 right-2 top-2"
 		>
 			{#if copyState}
 				<span in:fly={{ y: -4, delay: 50 }}>
-					<Check class="w-4 h-4 text-white" />
+					<Check class="w-4 h-4" />
 				</span>
 			{:else}
 				<span in:fly={{ y: 4, delay: 50 }}>
-					<Copy class="w-4 h-4 text-white" />
+					<Copy class="w-4 h-4" />
 				</span>
 			{/if}</button
 		>
-	</div>
-{/if}
+	{/if}
+</div>
+
+<style lang="postcss">
+	[data-theme='light'] {
+		@apply dark:hidden !important;
+	}
+
+	[data-theme='dark'] {
+		@apply hidden dark:flex !important;
+	}
+
+	.min-light {
+		@apply block dark:hidden !important;
+	}
+
+	.Moonlight {
+		@apply hidden dark:block !important;
+	}
+</style>

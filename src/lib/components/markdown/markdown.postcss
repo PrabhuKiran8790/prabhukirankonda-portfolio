@@ -1,10 +1,10 @@
-[data-theme='default'] {
+[data-theme] {
 	display: flex;
 	flex-direction: column;
 }
 
 [data-rehype-pretty-code-fragment] [data-line-numbers] > [data-line]::before {
-	@apply text-xs text-white/70;
+	@apply text-xs text-black dark:text-white/70;
 	counter-increment: line;
 	content: counter(line);
 	display: inline-block;
@@ -17,8 +17,16 @@ span[data-rehype-pretty-code-fragment] {
 	@apply inline-flex w-fit;
 }
 
-span[data-rehype-pretty-code-fragment] code {
+/* span[data-rehype-pretty-code-fragment] code {
 	@apply bg-zinc-800 rounded-md px-2 text-base;
+} */
+
+span[data-rehype-pretty-code-fragment] code[data-theme='light'] {
+	@apply dark:hidden bg-slate-100 rounded-md px-2 text-base;
+}
+
+span[data-rehype-pretty-code-fragment] code[data-theme='dark'] {
+	@apply hidden dark:block bg-zinc-800 rounded-md px-2 text-base;
 }
 
 /* 
@@ -39,6 +47,8 @@ code:not(pre code) {
 
 	& pre {
 		@apply overflow-x-auto py-2 text-base font-medium;
+		display: flex;
+		flex-direction: column;
 	}
 
 	& code {
@@ -70,8 +80,8 @@ code:not(pre code) {
 
 span.code-add::before {
 	content: '+';
-	color: #2ecc71;
 	margin-left: -10px;
+	@apply text-green-700 dark:text-[#2ecc71]
 }
 
 span.code-delete::before {
@@ -102,8 +112,12 @@ span.code-delete::before {
 	@apply border-yellow-600 border p-[2px] rounded font-bold !important;
 }
 
-[data-rehype-pretty-code-title] {
+/* [data-rehype-pretty-code-title] {
 	@apply mt-2 px-4 pt-6 text-sm font-medium;
+} */
+
+[data-rehype-pretty-code-title] {
+	@apply hidden;
 }
 
 [data-rehype-pretty-code-title] + pre {
