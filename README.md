@@ -4,14 +4,14 @@ Welcome to my personal website built with SvelteKit, Tailwind CSS, Shadcn-Svelte
 
 
 ## Features
-- SvelteKit + TypeScript
-- Tailwind CSS for styling
-- Shadcn-Svelte for UI components
-- MDsveX preprocessor
+- [SvelteKit](https://kit.svelte.dev/) + TypeScript
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+- [Shadcn-Svelte](https://www.shadcn-svelte.com/) for UI components
+- [MDsveX](https://mdsvex.pngwn.io) preprocessor
 - Light and Dark mode
     - also for code block with two different themes for light and dark mode
 - Mobile friendly interface
-- build time syntax highlighting using shiki and rehype pretty code
+- build time syntax highlighting using [shiki](https://shiki.matsu.io/) and [rehype pretty code](https://rehype-pretty-code.netlify.app/)
     - code blocks has several features like:
         - inline syntax highlighting
         - line numbers
@@ -28,9 +28,7 @@ Welcome to my personal website built with SvelteKit, Tailwind CSS, Shadcn-Svelte
         \nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)
         ```
         ````
-        $$
-        \nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)
-        $$
+        $$\nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)$$
 
 - Custom components
 - Table of contents
