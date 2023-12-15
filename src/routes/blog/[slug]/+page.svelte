@@ -84,7 +84,7 @@
 				src={meta.image}
 				alt={meta.title}
 				loading="lazy"
-				class="w-full md:w-[90%] h-auto md:rounded-lg max-h-[550px]"
+				class="w-full md:w-[80%] h-auto md:rounded-lg max-h-[550px]"
 			/>
 		{/if}
 		<div class="flex items-center gap-2">
