@@ -8,22 +8,16 @@
 		PUBLIC_GITHUB_REPO_ID,
 		PUBLIC_GITHUB_USERNAME
 	} from '$env/static/public';
-	import { BlogMetatags, SVGDoodle } from '$lib/components/site';
+	import { BlogMetatags, SVGDoodle, Stickybar } from '$lib/components/site';
 	import { Giscus } from '$lib/components/site/gicsus_';
-	import X from '$lib/components/site/icons/X.svelte';
-	import Linkedin from '$lib/components/site/icons/linkedin.svelte';
-	import { Toc } from '$lib/components/site/table-of-contents';
 	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button/index.js';
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import Separator from '$lib/components/ui/separator/separator.svelte';
-	import * as Tooltip from '$lib/components/ui/tooltip';
 	import { githubConfig } from '$lib/config.js';
 	import { theme } from '$lib/stores.js';
 	import { formatDate, localToGithubURL } from '$lib/utils';
-	import { Calendar, Github, MessageSquare, Share2, Tag } from 'lucide-svelte';
+	import { Calendar, Github, Tag } from 'lucide-svelte';
 	import { onMount } from 'svelte';
-	import { fly } from 'svelte/transition';
 	export let data;
 
 	let { content, meta } = data;
@@ -32,12 +26,13 @@
 
 	let theme_: string | undefined;
 	let element: HTMLElement | null;
+	let showScrollToTop = false;
 
 	onMount(() => {
-		
-
 		theme_ = localStorage.getItem('mode')?.replace(/^"(.*)"$/, '$1');
 		element = document.getElementById('comments');
+
+		let lastScrollTop = 0;
 
 		const scrollProgress = document.getElementById('scroll-progress') as HTMLDivElement;
 		const commentsSection = document.getElementById('comments') as HTMLDivElement;
@@ -52,6 +47,13 @@
 				(commentsSection.offsetHeight || 0);
 			const scrolled = (winScroll / height) * 100;
 			scrollProgress.style.width = `${scrolled}%`;
+
+			const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+			// showScrollToTop = scrollTop < lastScrollTop;
+			showScrollToTop = scrollTop < lastScrollTop;
+
+			lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 		};
 
 		window.addEventListener('scroll', handleScroll);
@@ -105,84 +107,7 @@
 			<svelte:component this={content} />
 		</div>
 		{#if isTocSticky}
-			<div
-				class="sticky z-50 hidden w-full md:block bottom-10"
-				in:fly={{ y: 1000 }}
-				out:fly={{ y: 1000 }}
-			>
-				<div class="flex items-center justify-center">
-					<div
-						class="flex items-center py-1 border rounded-l-full rounded-r-full justify-evenly border-primary/50 bg-muted shadow-sm px-7 space-x-3"
-					>
-						<!-- Comments -->
-						<Tooltip.Root openDelay={100}>
-							<Tooltip.Trigger>
-								<button
-									on:click={() => {
-										element?.scrollIntoView({
-											behavior: 'smooth',
-											block: 'end',
-											inline: 'nearest'
-										});
-									}}
-									class="flex items-center justify-center w-10 h-10 p-1 rounded-full hover:bg-gray-200 dark:hover:bg-zinc-900"
-								>
-									<MessageSquare class="w-5 h-5" />
-								</button>
-							</Tooltip.Trigger>
-							<Tooltip.Content class="border border-primary">
-								<p>Comments</p>
-							</Tooltip.Content>
-						</Tooltip.Root>
-						<!-- Table of Contents -->
-						<Tooltip.Root openDelay={0}>
-							<Tooltip.Trigger>
-								<Toc />
-							</Tooltip.Trigger>
-							<Tooltip.Content class="border border-primary">
-								<p>Table of Contents</p>
-							</Tooltip.Content>
-						</Tooltip.Root>
-						<!-- Share -->
-						<Tooltip.Root openDelay={0}>
-							<Tooltip.Trigger>
-								<button
-									class="flex items-center justify-center w-10 h-10 p-1 rounded-full hover:bg-gray-200 dark:hover:bg-zinc-900"
-								>
-									<DropdownMenu.Root>
-										<DropdownMenu.Trigger>
-											<Share2 class="w-5 h-5" />
-										</DropdownMenu.Trigger>
-										<DropdownMenu.Content>
-											<DropdownMenu.Group>
-												<DropdownMenu.Label>Share</DropdownMenu.Label>
-												<DropdownMenu.Separator />
-												<DropdownMenu.Item
-													class="space-x-2"
-													href={`http://www.twitter.com/share?url=${$page.url}`}
-												>
-													<X />
-													<p>Twitter</p>
-												</DropdownMenu.Item>
-												<DropdownMenu.Item
-													class="space-x-2"
-													href={`https://www.linkedin.com/sharing/share-offsite/?url=${$page.url}`}
-												>
-													<Linkedin class="-ml-1" />
-													<p>LinkedIn</p>
-												</DropdownMenu.Item>
-											</DropdownMenu.Group>
-										</DropdownMenu.Content>
-									</DropdownMenu.Root>
-								</button>
-							</Tooltip.Trigger>
-							<Tooltip.Content class="border border-primary">
-								<p>Share</p>
-							</Tooltip.Content>
-						</Tooltip.Root>
-					</div>
-				</div>
-			</div>
+			<Stickybar {element} {showScrollToTop} />
 		{/if}
 		<Button
 			variant="outline"
