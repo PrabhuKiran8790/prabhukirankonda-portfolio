@@ -1,38 +1,59 @@
-# create-svelte
+# SvelteKit Personal Wesbite + Blog
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Welcome to my personal website built with SvelteKit, Tailwind CSS, Shadcn-Svelte for UI components, and MDsveX for rendering Markdown files.
 
-## Creating a project
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Features
+- SvelteKit + TypeScript
+- Tailwind CSS for styling
+- Shadcn-Svelte for UI components
+- MDsveX preprocessor
+- Light and Dark mode
+    - also for code block with two different themes for light and dark mode
+- Mobile friendly interface
+- build time syntax highlighting using shiki and rehype pretty code
+    - code blocks has several features like:
+        - inline syntax highlighting
+        - line numbers
+        - line highlight
+        - code diff
+        - icons based on the code language shown in title bar of the code block
+        - individual word highlighting
+        - toast notifications for copy feedback
+- support for math using KaTeX.
+    - inline math using `$$<matheq>$$`
+    - block math equations
+        ````
+        ```math
+        \nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)
+        ```
+        ````
+        $$
+        \nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)
+        $$
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+- Custom components
+- Table of contents
+- Dedicated blogs page with masonry layout
+- Projects page to showcase your projects
+- About page
+- Giscus comments (based on GitHub discussions)
+- SEO, OG and other metatags for different pages, blogs.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## Built using
 
-## Developing
+- **SvelteKit**: framework for building apps with Svelte.
+- **Tailwind CSS**: A utility-first CSS framework for rapidly building custom designs.
+- **Shadcn-Svelte**: Accessible and customizable components that you can copy and paste into your apps.
+- **MDsveX**: A Markdown preprocessor for Svelte.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Getting Started
 
-```bash
-npm run dev
+**Clone the repository:**
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+   ```bash
+   git clone https://github.com/your-username/your-personal-website.git
+   cd your-personal-website
+   ````
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+see the blog to get started quickly. [Blog Link](https://prabhukirankonda.vercel.app/blog/getting-started) 
