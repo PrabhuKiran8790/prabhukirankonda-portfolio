@@ -38,8 +38,6 @@
 
 		divsWithAttribute.forEach((div) => {
 			const preTags = div.querySelectorAll('pre');
-			console.log(preTags);
-			console.log(div);
 
 			if (preTags.length === 2) {
 				const titleAttribute = preTags[1].getAttribute('__title__');
@@ -80,7 +78,7 @@
 <div class={cn($$restProps.class, title__ ? 'mt-[14px]' : '')}>
 	{#if title__}
 		<div
-			class="flex items-center justify-between px-2 py-1 md:grid md:grid-cols-3 bg-gray-200 dark:bg-zinc-800 rounded-t-lg"
+			class="flex items-center justify-between px-2 py-1 bg-gray-200 rounded-t-lg md:grid md:grid-cols-3 dark:bg-zinc-800"
 		>
 			<div class="hidden md:block">
 				<div class="flex items-center gap-2">
