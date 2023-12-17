@@ -44,48 +44,65 @@
 	</div>
 	<!-- <pre class="container">{JSON.stringify(data.seriesPost?.subPosts, null, 4)}</pre> -->
 	{#if data.seriesPost}
-		<Accordion.Root
-			class="w-full sm:max-w-[70%] px-10 py-4 border-2 rounded-lg space-y-4"
-			value={$page.params.slug}
-		>
-			<div class="flex items-center justify-between">
-				<h1>{data.seriesPost?.title}</h1>
-				<h1>{meta.order} / {data.seriesPost?.subPosts.length} Parts</h1>
+		<div class="w-full sm:max-w-[70%] px-2 relative">
+			<Accordion.Root
+				class="px-2 md:px-4 py-4 border-2 rounded-lg space-y-4 "
+				value={$page.params.slug}
+			>
+				<div class="flex items-center justify-between">
+					<h1 class="font-semibold">{data.seriesPost?.title}</h1>
+					<h1>
+						{meta.order} / {data.seriesPost?.subPosts.length}
+						<span class="hidden md:inline">Parts</span>
+					</h1>
+				</div>
+				<div class="px-2 bg-zinc-100 dark:bg-zinc-900 rounded-lg">
+					{#each data.seriesPost?.subPosts as post, index (post.slug)}
+						<Accordion.Item value={post.slug} class="border-none no-highlight">
+							<Accordion.Trigger
+								class={cn(
+									'text-base font-normal no-underline border-b border-muted-foreground/50 [&[data-state=open]]:border-none',
+									$page.params.slug !== post.slug
+										? 'hover:underline underline-offset-4 decoration-primary/50'
+										: 'hover:no-underline',
+									data.seriesPost?.subPosts.length - 1 === index && 'border-none'
+								)}
+							>
+								<a href={`/blog/${post.slug}`}>
+									<p
+										class={cn(
+											'font-[500]',
+											post.slug === $page.params.slug
+												? 'text-blue-500 dark:text-green-500'
+												: 'text-primary/90'
+										)}
+									>
+										{post.order}. {post.title}
+									</p>
+								</a>
+							</Accordion.Trigger>
+							<Accordion.Content
+								class={cn(
+									'bg-zinc-200 dark:bg-zinc-800/30 -mx-2',
+									data.seriesPost?.subPosts.length - 1 === index && 'rounded-b-lg'
+								)}
+							>
+								<div class="flex flex-col gap-2 px-2 mt-2 -mb-2">
+									{#each data.seriesPost?.tags as tags}
+										<Badge class="rounded-md w-fit border-primary/40" variant="outline"
+											>{tags}</Badge
+										>
+									{/each}
+									<div>{post.description}</div>
+								</div>
+							</Accordion.Content>
+						</Accordion.Item>
+					{/each}
+				</div>
+			</Accordion.Root>
+			<div class="absolute left-[5%] md:left-[3%] -top-3">
+				<Badge class="rounded-md" variant="secondary">Series</Badge>
 			</div>
-
-			<div class="px-2 bg-zinc-100 dark:bg-zinc-900 rounded-lg">
-				{#each data.seriesPost?.subPosts as post (post.slug)}
-					<Accordion.Item value={post.slug} class="border-none no-highlight">
-						<Accordion.Trigger
-							class={cn(
-								'text-base font-normal no-underline',
-								$page.params.slug !== post.slug ? 'hover:underline' : 'hover:no-underline'
-							)}
-						>
-							<a href={`/blog/${post.slug}`}>
-								<p
-									class={cn(
-										'font-semibold',
-										post.slug === $page.params.slug &&
-											'text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 via-orange-600'
-									)}
-								>
-									{post.title}
-								</p>
-							</a>
-						</Accordion.Trigger>
-						<Accordion.Content>
-							<div class="flex flex-col gap-2">
-								{#each data.seriesPost?.tags as tags}
-									<Badge class="rounded-md w-fit">{tags}</Badge>
-								{/each}
-								<div>{post.description}</div>
-							</div>
-						</Accordion.Content>
-					</Accordion.Item>
-					<Separator />
-				{/each}
-			</div>
-		</Accordion.Root>
+		</div>
 	{/if}
 </div>
