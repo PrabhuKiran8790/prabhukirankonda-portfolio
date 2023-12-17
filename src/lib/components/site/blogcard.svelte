@@ -26,7 +26,7 @@
 			<h1 class={`text-lg font-semibold ${hover ? 'underline underline-offset-4' : ''}`}>
 				{post.title}
 			</h1>
-			<div class="flex gap-1">
+			<div class="flex gap-2">
 				{#each post.tags as tag}
 					<Badge class="rounded">{tag}</Badge>
 				{/each}

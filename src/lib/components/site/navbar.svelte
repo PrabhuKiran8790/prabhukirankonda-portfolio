@@ -1,9 +1,11 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
 	import { routes } from '$lib/config';
 	import { cn } from '$lib/utils';
 	import { ThemeToggle } from '$lib/components/site';
-	import { currentHeadingId } from '$lib/stores';
+	import type { PageData } from '../../../routes/blog/$types';
+
+	// export let data: PageData;
 </script>
 
 <nav
@@ -25,6 +27,8 @@
 		<div class="hidden md:block">
 			<div class="flex space-x-4">
 				<ul class="flex items-center">
+					<!-- <Search {data} /> -->
+
 					{#each routes as route}
 						<li>
 							<a

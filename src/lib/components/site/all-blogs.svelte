@@ -6,12 +6,10 @@
 	export let posts: Post[];
 </script>
 
-<div class="max-w-7xl md:mx-auto gap-x-[5px] -mx-2">
+<div class="max-w-7xl md:mx-auto gap-x-[5px]">
 	<Masonry gridGap={'0.75rem'} items={posts} stretchFirst={false} reset>
 		{#each posts as post}
-			<div class="p-1">
-				<Blogcard {post} />
-			</div>
+			<Blogcard {post} />
 		{/each}
 	</Masonry>
 </div>

@@ -5,13 +5,13 @@
 	import { searchOpen } from '$lib/stores';
 
 	import { goto } from '$app/navigation';
-	import type { Post } from '$lib/types';
 	import { cn, formatDate } from '$lib/utils';
 	import { onMount } from 'svelte';
 	import { Badge } from '../ui/badge';
 	import { Button } from '../ui/button';
+	import type { PageData } from '../../../routes/blog/$types';
 
-	export let posts: Post[];
+	export let data: PageData;
 
 	onMount(() => {
 		function handleKeydown(e: KeyboardEvent) {
@@ -66,7 +66,7 @@
 	<Command.List>
 		<Command.Empty>No results found.</Command.Empty>
 		<Command.Group heading="All blogs">
-			{#each posts as post}
+			{#each data.posts as post}
 				<Command.Item
 					onSelect={() => {
 						runCommand(() => {
@@ -89,6 +89,33 @@
 									>{tags}</Badge
 								>
 							{/each}
+						</div>
+					</div>
+				</Command.Item>
+			{/each}
+		</Command.Group>
+		<Command.Separator />
+		<Command.Group heading="Blog Series" class="pb-3">
+			{#each data.seriesPosts as post}
+				<Command.Item
+					onSelect={() => {
+						runCommand(() => {
+							post.slug && goto(`/blog/${post.slug}`);
+						});
+					}}
+				>
+					<div class="flex justify-between w-full">
+						<div class="flex flex-col gap-1">
+							<h1>{post.title}</h1>
+							{#each post.tags as tags}
+								<Badge class="bg-gray-300 rounded-md dark:bg-zinc-600 w-fit" variant="outline"
+									>{tags}</Badge
+								>
+							{/each}
+						</div>
+						<div class="flex flex-col items-end text-xs">
+							<h1 class="text-muted-foreground">{formatDate(post.date)}</h1>
+							<p>{post.parts} Parts</p>
 						</div>
 					</div>
 				</Command.Item>

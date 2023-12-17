@@ -2,8 +2,9 @@
 	import { page } from '$app/stores';
 	import * as Accordion from '$lib/components/ui/accordion';
 	import { cn } from '$lib/utils';
-	import { Badge } from '../ui/badge';
+	import { Component } from 'lucide-svelte';
 	import type { PageData } from '../../../routes/blog/[slug]/$types';
+	import { Badge } from '../ui/badge';
 
 	export let data: PageData;
 	$: ({ meta } = data);
@@ -64,8 +65,11 @@
 				{/each}
 			</div>
 		</Accordion.Root>
-		<div class="absolute left-[5%] md:left-[3%] -top-3">
-			<Badge class="rounded-md" variant="secondary">Series</Badge>
+		<div class="absolute left-[5%] md:left-[3%] -top-2.5">
+			<Badge class="rounded-md border border-muted-foreground/30" variant="secondary">
+				<Component class="h-4 w-4 mr-2" />
+				Series</Badge
+			>
 		</div>
 	</div>
 {/if}

@@ -4,8 +4,10 @@
 	export let data: PageData;
 </script>
 
-<div class="p-4">
-	<Hero />
-	<LatestPost {data} />
+<div>
+	<div class="p-4">
+		<Hero />
+		<LatestPost {data} />
+	</div>
 	<FeaturedProjects />
 </div>

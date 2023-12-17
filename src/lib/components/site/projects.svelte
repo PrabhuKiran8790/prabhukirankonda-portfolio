@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { projects } from '$lib/projects';
 	import { Masonry, ProjectCard } from '.';
+
+	const n = projects.length;
 </script>
 
 <!-- 
@@ -14,12 +16,10 @@
 	{/each}
 </div> -->
 
-<div class="max-w-7xl md:mx-auto gap-x-[5px] -mx-3">
+<div class="max-w-7xl md:mx-auto gap-x-[5px]">
 	<Masonry items={projects} gridGap={'0.75rem'} stretchFirst={false} reset>
 		{#each projects as project}
-			<div class="p-1">
-				<ProjectCard {project} />
-			</div>
+			<ProjectCard {project} />
 		{/each}
 	</Masonry>
 </div>
