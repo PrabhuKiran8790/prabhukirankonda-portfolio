@@ -2,6 +2,7 @@
 	import type { PageData } from './$types';
 	import { Search } from '$lib/components/site';
 	import { AllBlogs } from '$lib/components/site';
+	import SeriesBlogs from '$lib/components/site/series-blogs.svelte';
 
 	export let data: PageData;
 </script>
@@ -14,5 +15,8 @@
 	</div>
 	<div>
 		<AllBlogs posts={data.posts} />
+	</div>
+	<div>
+		<SeriesBlogs seriesPosts={data.seriesPosts} />
 	</div>
 </div>

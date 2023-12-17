@@ -11,16 +11,16 @@
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
-	class="block pb-0 border-2 rounded-lg hover:border-primary"
+	class="pb-0 border-2 rounded-lg hover:border-primary"
 	on:mouseenter={() => (hover = true)}
 	on:mouseleave={() => (hover = false)}
 >
 	{#if project.image}
 		<img src={project.image} alt={project.title} class="rounded-b-none rounded-md" />
 	{/if}
-	<div class="flex flex-col justify-between h-full p-4 gap-4">
+	<div class="flex flex-col justify-between h-full p-4 gap-4 max-w-md">
 		<div class="flex flex-col justify-between gap-2">
-			<h1 class={`text-lg font-semibold ${hover ? 'underline underline-offset-4' : ''}`}>
+			<h1 class={`text-lg font-semibold ${hover && 'underline underline-offset-4'}`}>
 				{project.title}
 			</h1>
 			<div class="flex flex-wrap gap-1">

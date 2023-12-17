@@ -18,3 +18,5 @@ export { default as ThemeToggle } from './theme-toggle.svelte';
 export { default as FeaturedProjects } from './featured-projects.svelte';
 export { default as SVGDoodle } from './svg-doodle.svelte';
 export { default as Stickybar } from './stickybar.svelte';
+export { default as SeriesBlogs } from './series-blogs.svelte'
+export { default as BlogHero }  from './bloghero.svelte'

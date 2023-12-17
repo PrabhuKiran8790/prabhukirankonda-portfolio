@@ -1,16 +1,17 @@
 <script lang="ts">
-	import type { Post } from '$lib/types';
-	import { Badge } from '$lib/components/ui/badge';
-	import { goto } from '$app/navigation';
-	import { onMount } from 'svelte';
-	import { Button } from '$lib/components/ui/button';
+	import { CommandIcon, Search } from 'lucide-svelte';
+
 	import * as Command from '$lib/components/ui/command';
-	import { cn, formatDate } from '$lib/utils';
-	import { Command as CommandIcon, Search } from 'lucide-svelte';
 	import { searchOpen } from '$lib/stores';
 
+	import { goto } from '$app/navigation';
+	import type { Post } from '$lib/types';
+	import { cn, formatDate } from '$lib/utils';
+	import { onMount } from 'svelte';
+	import { Badge } from '../ui/badge';
+	import { Button } from '../ui/button';
+
 	export let posts: Post[];
-	let latestPost = posts[0];
 
 	onMount(() => {
 		function handleKeydown(e: KeyboardEvent) {
@@ -61,35 +62,9 @@
 		$searchOpen = !$searchOpen;
 	}}
 >
-	<Command.Input placeholder="Type to search" />
+	<Command.Input placeholder="Type a command or search..." />
 	<Command.List>
 		<Command.Empty>No results found.</Command.Empty>
-		<Command.Group heading="Latest Blog">
-			<Command.Item
-				onSelect={() => {
-					runCommand(() => {
-						latestPost.slug && goto(`/blog/${latestPost.slug}`);
-					});
-				}}
-			>
-				<div class="flex flex-col w-full gap-1">
-					<div class="flex items-center justify-between w-full">
-						<div>
-							<h1>{latestPost.title}</h1>
-						</div>
-						<div>
-							<h1 class="text-xs text-muted-foreground">{formatDate(latestPost.date)}</h1>
-						</div>
-					</div>
-					<div class="flex items-center gap-2">
-						{#each latestPost.tags as tags}
-							<Badge class="bg-gray-300 rounded-md dark:bg-zinc-600" variant="outline">{tags}</Badge
-							>
-						{/each}
-					</div>
-				</div>
-			</Command.Item>
-		</Command.Group>
 		<Command.Group heading="All blogs">
 			{#each posts as post}
 				<Command.Item

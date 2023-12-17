@@ -1,8 +1,13 @@
+import type { SeriesPost, Post } from '$lib/types';
+
 export const load = async ({ fetch }) => {
 	const data = await fetch('/api/posts');
-	const posts = await data.json();
+	const seriesBlogs = await fetch('api/posts?series=true');
+	const posts: Post[] = await data.json();
+	const seriesPosts: SeriesPost[] = await seriesBlogs.json();
 
 	return {
-		posts
+		posts,
+		seriesPosts
 	};
 };
