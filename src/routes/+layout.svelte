@@ -38,7 +38,7 @@
 	<MobileNavbar />
 </div>
 <div class="flex flex-col min-h-screen md:pt-10">
-	<div class="flex-1 mb-16 md:mb-0">
+	<div class="flex-1 mb-20 md:mb-0">
 		<slot />
 	</div>
 	<footer class="hidden border-t md:block">

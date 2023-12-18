@@ -3,15 +3,12 @@
 	import { routes } from '$lib/config';
 	import { cn } from '$lib/utils';
 	import { ThemeToggle } from '$lib/components/site';
-	import type { PageData } from '../../../routes/blog/$types';
-
-	// export let data: PageData;
 </script>
 
 <nav
 	class="z-50 top-0 left-0 right-0 h-14 md:h-[4.1rem] border-b fixed supports-[backdrop-filter]:bg-background/60 w-full bg-background/95 backdrop-blur hidden md:block"
 >
-	<div class="flex items-center justify-between h-full p-4">
+	<div class="flex items-center justify-between h-full p-4 max-w-[100rem] mx-auto">
 		<div>
 			<a
 				href="/"
