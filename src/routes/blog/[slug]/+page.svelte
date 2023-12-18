@@ -77,15 +77,17 @@
 		{#if isTocSticky}
 			<Stickybar element={commentsSection} {showScrollToTop} />
 		{/if}
-		<Button
-			variant="outline"
-			target="_blank"
-			class="h-8 px-2"
-			href={`https://github.com/${githubConfig.username}/${githubConfig.repo}/blob/${githubConfig.branch}/posts/${$page.params.slug}/page.md`}
-		>
-			<Github class="w-4 h-4 mr-3" />
-			<h1>View on GitHub</h1>
-		</Button>
+		<div class="px-2">
+			<Button
+				variant="outline"
+				target="_blank"
+				class="h-8 px-2"
+				href={`https://github.com/${githubConfig.username}/${githubConfig.repo}/blob/${githubConfig.branch}/posts/${$page.params.slug}/page.md`}
+			>
+				<Github class="w-4 h-4 mr-3" />
+				<h1>View on GitHub</h1>
+			</Button>
+		</div>
 	</div>
 	<div class="flex items-center justify-center">
 		<SVGDoodle />
