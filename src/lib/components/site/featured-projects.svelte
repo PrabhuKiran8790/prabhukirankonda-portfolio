@@ -15,7 +15,7 @@
 			Featured Projects
 		</h1>
 		<p class="text-muted-foreground">Here are some of my featured projects</p>
-		<div><Button href="/blog" class="text-base">All blogs</Button></div>
+		<div><Button href="/blog" class="text-base">View all Projects</Button></div>
 	</div>
 </div>
 
