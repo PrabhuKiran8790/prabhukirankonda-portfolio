@@ -11,7 +11,6 @@
 	import { Github } from 'lucide-svelte';
 	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
-	import { invalidateAll } from '$app/navigation';
 
 	export let data: PageData;
 

@@ -2,15 +2,15 @@
 	import type { Post, SeriesPost } from '$lib/types';
 	import { cn, formatDate } from '$lib/utils';
 	import { ArrowRight, Calendar } from 'lucide-svelte';
-	import { Button } from '../ui/button';
 	import { Badge } from '../ui/badge';
+	import { Button } from '../ui/button';
 
 	export let post: Post | SeriesPost;
 	let hover: boolean = false;
 </script>
 
 <a
-	class={cn('block pb-0 border-2 rounded-xl hover:border-primary no-highlight max-w-md')}
+	class={cn('block pb-0 border-2 rounded-xl hover:border-primary no-highlight md:max-w-md')}
 	on:mouseenter={() => (hover = true)}
 	on:mouseleave={() => (hover = false)}
 	href={`blog/${post.slug}`}
