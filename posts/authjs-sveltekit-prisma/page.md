@@ -4,7 +4,7 @@ description: let's see how to integrate Github and Google OAuth authentication u
 date: '2023-11-15'
 image: https://miro.medium.com/v2/resize:fit:1400/format:webp/1*PLD7lQ5hH8_6QVfDtCflcg.png
 tags:
-  - Sveltekit
+  - SvelteKit
   - Prisma
 draft: false
 ---

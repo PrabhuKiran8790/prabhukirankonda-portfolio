@@ -13,7 +13,7 @@
 {#if data.seriesPost && data.coverFolder && data.fileName}
 	<div class="w-full sm:max-w-[70%] px-2 relative">
 		<Accordion.Root
-			class="px-2 py-4 border-2 rounded-lg md:px-4 space-y-4 "
+			class="px-2 py-4 space-y-4 border-2 rounded-lg md:px-4 "
 			value={$page.params.slug}
 		>
 			<div class="flex items-center justify-between">
@@ -36,16 +36,15 @@
 							)}
 						>
 							<a href={`/blog/${post.slug}`}>
-								<p
+								<Badge
 									class={cn(
-										'font-[500]',
-										post.slug === $page.params.slug
-											? 'text-blue-500 dark:text-green-500'
-											: 'text-primary/90'
+										'font-[500] border-muted-foreground h-7 rounded-lg text-sm',
+										$page.params.slug !== post.slug && 'border-none'
 									)}
+									variant="outline"
 								>
 									{post.order}. {post.title}
-								</p>
+								</Badge>
 							</a>
 						</Accordion.Trigger>
 						<Accordion.Content
@@ -54,11 +53,8 @@
 								data.seriesPost?.subPosts.length - 1 === index && 'rounded-b-lg'
 							)}
 						>
-							<div class="flex flex-col px-2 mt-2 -mb-2 gap-2">
-								{#each data.seriesPost?.tags as tags}
-									<Badge class="rounded-md w-fit border-primary/40" variant="outline">{tags}</Badge>
-								{/each}
-								<div>{post.description}</div>
+							<div class="px-2 mt-2 -mb-2 space-y-2">
+								<div class="px-2">{post.description}</div>
 							</div>
 						</Accordion.Content>
 					</Accordion.Item>
@@ -66,8 +62,8 @@
 			</div>
 		</Accordion.Root>
 		<div class="absolute left-[5%] md:left-[3%] -top-2.5">
-			<Badge class="rounded-md border border-muted-foreground/30" variant="secondary">
-				<Component class="h-4 w-4 mr-2" />
+			<Badge class="border rounded-md border-muted-foreground/30" variant="secondary">
+				<Component class="w-4 h-4 mr-2" />
 				Series</Badge
 			>
 		</div>

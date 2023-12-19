@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { formatDate } from '$lib/utils';
-	import { Calendar, Tag } from 'lucide-svelte';
+	import { Calendar, Tag as TagIcon } from 'lucide-svelte';
 	import type { PageData } from '../../../routes/blog/[slug]/$types';
-	import { Badge } from '$lib/components/ui/badge';
-	import { SeriesBlogAccordian } from '.';
+	import { SeriesBlogAccordian, Tag } from '.';
+	import { tagToSlug } from '$lib/posts';
 
 	export let data: PageData;
 	$: ({ meta } = data);
@@ -23,14 +23,22 @@
 		/>
 	{/if}
 	<div class="flex items-center gap-2">
-		<Tag class="w-4 h-4" />
+		<TagIcon class="w-4 h-4" />
 		{#if data.seriesPost}
-			{#each data.seriesPost?.tags as tags}
-				<Badge class="rounded-md">{tags}</Badge>
+			{#each data.seriesPost?.tags as tag}
+				<Tag
+					class="dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700"
+					{tag}
+					href={`/tags/${tagToSlug(tag)}`}
+				/>
 			{/each}
 		{:else}
-			{#each meta.tags as tags}
-				<Badge class="rounded-md">{tags}</Badge>
+			{#each meta.tags as tag}
+				<Tag
+					class="dark:bg-zinc-700 dark:text-white dark:hover:bg-zinc-600"
+					{tag}
+					href={`/tags/${tag.replace(/ /g, '-').toLowerCase()}`}
+				/>
 			{/each}
 		{/if}
 	</div>

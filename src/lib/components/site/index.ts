@@ -21,3 +21,5 @@ export { default as Stickybar } from './stickybar.svelte';
 export { default as SeriesBlogs } from './series-blogs.svelte'
 export { default as BlogHero } from './bloghero.svelte'
 export { default as SeriesBlogAccordian } from './series-blog-accordian.svelte'
+export { default as Tag } from './tag.svelte'
+export { default as ComboBox } from './combobox.svelte'
