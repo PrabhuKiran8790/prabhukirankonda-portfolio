@@ -16,7 +16,7 @@
 	{/each}
 </div> -->
 
-<div class="max-w-7xl md:mx-auto gap-x-[5px]">
+<div class="max-w-7xl md:mx-auto">
 	<Masonry items={projects} gridGap={'0.75rem'} stretchFirst={false} reset>
 		{#each projects as project}
 			<ProjectCard {project} />
