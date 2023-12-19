@@ -4,6 +4,7 @@
 	import { ArrowRight, Calendar } from 'lucide-svelte';
 	import { Button } from '../ui/button';
 	import { Tag } from '.';
+	import { tagToSlug } from '$lib/posts';
 
 	export let post: Post | Series;
 	let className: string = 'md:max-w-md';
@@ -11,6 +12,7 @@
 	export let keepImage: boolean = true;
 	export let tagClass: string = '';
 	let hover: boolean = false;
+	export let shallow: boolean = false;
 
 	function isSeries(post: Post | Series): post is Series {
 		return (post as Series).order !== undefined;
@@ -38,7 +40,7 @@
 			</h1>
 			<div class="flex gap-2">
 				{#each post.tags as tag}
-					<Tag {tag} href={`/tags/${tag.replace(/ /g, '-').toLowerCase()}`} class={tagClass} />
+					<Tag {tag} href={`/tags/${tagToSlug(tag)}`} class={tagClass} {shallow} />
 				{/each}
 			</div>
 		</div>
