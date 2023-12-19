@@ -2,9 +2,9 @@ import { getSeriesPostByCoverFolder } from '$lib/posts.js';
 import { error } from '@sveltejs/kit';
 
 export const load = async ({ params }) => {
-	let post;
+	let post
 
-	let folder: string = '';
+	let folder: string = ''
 	let fileName: string = '';
 	const pattern: RegExp = /-spn\d+-/; // -spn{order}- is the pattern for series post
 
@@ -24,15 +24,11 @@ export const load = async ({ params }) => {
 	if (!folder && !fileName) {
 		return {
 			content: post.default,
-			meta: post.metadata
+			meta: post.metadata,
 		};
 	}
 
 	const seriesPost = await getSeriesPostByCoverFolder(folder);
-
-	if (seriesPost && post.metadata.tags) {
-		seriesPost.tags = [...new Set([...seriesPost.tags, ...post.metadata.tags])];
-	}
 
 	return {
 		content: post.default,
@@ -40,5 +36,5 @@ export const load = async ({ params }) => {
 		coverFolder: folder,
 		fileName,
 		seriesPost
-	};
+	};	
 };

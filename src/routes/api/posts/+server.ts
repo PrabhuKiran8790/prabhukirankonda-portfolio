@@ -1,5 +1,5 @@
 import { json, type RequestHandler } from '@sveltejs/kit';
-import { getPosts, getSeriesPosts, groupPostsByTag } from '$lib/posts';
+import { getPosts, getSeriesPosts } from '$lib/posts';
 
 export const GET: RequestHandler = async ({ url }) => {
 	const posts = await getPosts();
@@ -14,10 +14,6 @@ export const GET: RequestHandler = async ({ url }) => {
 	if (url.searchParams.get('series') == 'true') {
 		return json(seriesPosts);
 	}
-
-	if (url.searchParams.get('tags') == 'true') {
-		return json(await groupPostsByTag());
-	 }
 	
 	return json(posts);
 };
