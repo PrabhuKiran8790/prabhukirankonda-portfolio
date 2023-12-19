@@ -19,7 +19,7 @@
 				<DropdownMenu.Item
 					class={cn(
 						'px-2 cursor-pointer data-[highlighted]:bg-primary/10 py-1',
-						item.url === $page.url.hash || item.url === $currentHeadingId
+						item.url === $currentHeadingId
 							? 'bg-primary/10 text-primary border-l-[2.5px] border-primary'
 							: 'text-muted-foreground'
 					)}

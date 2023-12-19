@@ -9,7 +9,7 @@
 <div class="max-w-7xl md:mx-auto gap-x-[5px]">
 	<Masonry gridGap={'0.75rem'} items={posts} stretchFirst={false} reset>
 		{#each posts as post}
-			<Blogcard {post} />
+			<Blogcard {post} shallow={true} />
 		{/each}
 	</Masonry>
 </div>

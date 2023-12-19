@@ -30,6 +30,7 @@
 					class="dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700"
 					{tag}
 					href={`/tags/${tagToSlug(tag)}`}
+					shallow={true}
 				/>
 			{/each}
 		{:else}
@@ -37,7 +38,8 @@
 				<Tag
 					class="dark:bg-zinc-700 dark:text-white dark:hover:bg-zinc-600"
 					{tag}
-					href={`/tags/${tag.replace(/ /g, '-').toLowerCase()}`}
+					href={`/tags/${tagToSlug(tag)}`}
+					shallow={true}
 				/>
 			{/each}
 		{/if}

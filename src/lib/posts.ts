@@ -156,7 +156,7 @@ export const groupPostsByTag = async () => {
 		postsByTag[tag] = {
 			posts: posts.filter((post) => post.tags.includes(tag)),
 			count: posts.filter((post) => post.tags.includes(tag)).length,
-			slug: tag.replace(/ /g, '-').toLowerCase() // replace spaces with dashes and make it lowercase for the url
+			slug: tagToSlug(tag) // replace spaces with dashes and make it lowercase for the url
 		};
 
 		for (const seriesPost of seriesPosts) {

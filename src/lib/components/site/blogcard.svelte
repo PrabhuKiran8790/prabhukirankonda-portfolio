@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { tagToSlug } from '$lib/posts';
 	import type { Post, Series } from '$lib/types';
 	import { cn, formatDate } from '$lib/utils';
 	import { ArrowRight, Calendar } from 'lucide-svelte';
@@ -10,6 +11,7 @@
 	export { className as class };
 	export let keepImage: boolean = true;
 	export let tagClass: string = '';
+	export let shallow: boolean = false;
 	let hover: boolean = false;
 
 	function isSeries(post: Post | Series): post is Series {
@@ -38,7 +40,7 @@
 			</h1>
 			<div class="flex gap-2">
 				{#each post.tags as tag}
-					<Tag {tag} href={`/tags/${tag.replace(/ /g, '-').toLowerCase()}`} class={tagClass} />
+					<Tag {tag} href={`/tags/${tagToSlug(tag)}`} class={tagClass} {shallow} />
 				{/each}
 			</div>
 		</div>

@@ -75,7 +75,6 @@
 
 					// Log the ID of the current heading
 					$currentHeadingId = `#${heading.id}`;
-					$page.url.hash = `#${heading.id}`;
 				}
 			});
 		}

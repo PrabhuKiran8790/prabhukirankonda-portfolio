@@ -6,6 +6,20 @@ declare global {
 		// interface Locals {}
 		// interface PageData {}
 		// interface Platform {}
+		interface PageState {
+			tagsData: {
+				currentTag: string;
+				tags: string[];
+				postsByTag: Record<
+					string,
+					{
+						posts: Post[];
+						count: number;
+						slug: string;
+					}
+				>;
+			};
+		}
 	}
 }
 

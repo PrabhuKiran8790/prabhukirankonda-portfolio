@@ -24,7 +24,7 @@
 				<div><Button href="/blog" class="text-base">All blogs</Button></div>
 			</div>
 			<div class="-mx-2 shadow-xl space-y-2 md:max-w-sm lg:max-w-md rounded-2xl no-highlight">
-				<Blogcard {post} />
+				<Blogcard {post} shallow={true} />
 			</div>
 		</div>
 	</div>

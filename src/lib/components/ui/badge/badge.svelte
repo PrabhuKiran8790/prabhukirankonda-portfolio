@@ -8,10 +8,12 @@
 	export { className as class };
 </script>
 
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <svelte:element
 	this={href ? 'a' : 'span'}
 	{href}
 	class={cn(badgeVariants({ variant, className }))}
+	on:click
 	{...$$restProps}
 >
 	<slot />
