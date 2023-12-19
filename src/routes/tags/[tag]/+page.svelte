@@ -36,7 +36,12 @@
 				reset
 			>
 				{#each data.postsByTag[data.currentTag].posts as post}
-					<Blogcard {post} class="max-w-lg" keepImage={false} tagClass="dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700"/>
+					<Blogcard
+						{post}
+						class="max-w-lg"
+						keepImage={false}
+						tagClass="dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700"
+					/>
 				{/each}
 			</Masonry>
 		</div>

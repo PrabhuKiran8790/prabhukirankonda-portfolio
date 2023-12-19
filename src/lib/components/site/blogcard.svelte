@@ -20,7 +20,10 @@
 </script>
 
 <a
-	class={cn('block pb-0 border-2 rounded-xl hover:border-primary no-highlight relative', className)}
+	class={cn(
+		'block pb-0 border-2 rounded-xl hover:border-primary no-highlight relative mb-2',
+		className
+	)}
 	on:mouseenter={() => (hover = true)}
 	on:mouseleave={() => (hover = false)}
 	href={`/blog/${post.slug}`}
@@ -34,11 +37,11 @@
 		{/if}
 	{/if}
 	<div class="flex flex-col justify-between h-full gap-4 p-2.5 pt-0">
-		<div class="flex flex-col justify-between gap-2 pt-2">
+		<div class={cn('flex flex-col justify-between gap-2', keepImage ? '' : 'pt-2')}>
 			<h1 class={`text-lg font-semibold ${hover ? 'underline underline-offset-4' : ''}`}>
 				{post.title}
 			</h1>
-			<div class="flex gap-2">
+			<div class="flex gap-2 flex-wrap">
 				{#each post.tags as tag}
 					<Tag {tag} href={`/tags/${tagToSlug(tag)}`} class={tagClass} {shallow} />
 				{/each}
