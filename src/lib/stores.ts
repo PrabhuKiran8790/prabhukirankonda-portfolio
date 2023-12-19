@@ -1,8 +1,8 @@
-import { writable } from 'svelte/store';
+import { writable, type Writable } from 'svelte/store';
 
 type theme = 'light' | 'dark' | 'system';
 
-export const openMobileMenu = writable<boolean>(false);
-export const theme = writable<theme>();
-export const searchOpen = writable<boolean>(false);
-export const currentHeadingId = writable<string>('');
+export const openMobileMenu: Writable<boolean> = writable(false);
+export const theme: Writable<theme> = writable<theme>();
+export const searchOpen: Writable<boolean> = writable(false);
+export const currentHeadingId: Writable<string> = writable('');

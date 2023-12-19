@@ -34,7 +34,7 @@
 				<Tag
 					class="dark:bg-zinc-700 dark:text-white dark:hover:bg-zinc-600"
 					{tag}
-					href={`/tags/${tagToSlug(tag)}`}
+					href={`/tags/${tag.replace(/ /g, '-').toLowerCase()}`}
 				/>
 =======
 			{#each meta.tags as tags}

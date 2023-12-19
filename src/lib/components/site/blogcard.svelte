@@ -6,14 +6,20 @@
 	import { Button } from '../ui/button';
 <<<<<<< HEAD
 	import { Tag } from '.';
+<<<<<<< HEAD
 	import { tagToSlug } from '$lib/posts';
 =======
 >>>>>>> parent of e64f9b6 (added tags page)
+=======
+>>>>>>> parent of 2644b34 (added shallow routing)
 
 	export let post: Post | SeriesPost;
 	let hover: boolean = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	export let shallow: boolean = false;
+=======
+>>>>>>> parent of 2644b34 (added shallow routing)
 
 	function isSeries(post: Post | Series): post is Series {
 		return (post as Series).order !== undefined;
@@ -42,10 +48,14 @@
 			<div class="flex gap-2">
 				{#each post.tags as tag}
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<Tag {tag} href={`/tags/${tagToSlug(tag)}`} class={tagClass} {shallow} />
 =======
 					<Badge class="rounded">{tag}</Badge>
 >>>>>>> parent of e64f9b6 (added tags page)
+=======
+					<Tag {tag} href={`/tags/${tag.replace(/ /g, '-').toLowerCase()}`} class={tagClass} />
+>>>>>>> parent of 2644b34 (added shallow routing)
 				{/each}
 			</div>
 		</div>

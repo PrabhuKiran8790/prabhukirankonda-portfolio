@@ -48,7 +48,7 @@
 			variant="outline"
 			role="combobox"
 			aria-expanded={open}
-			class="w-[350px] justify-between md:w-[200px] lg:w-[300px]"
+			class="w-[350px] justify-between md:w-[300px]"
 		>
 			<div class="flex items-center gap-1">
 				<Tag class="mr-1 h-3 w-3" />
@@ -59,7 +59,7 @@
 			<ChevronsUpDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
 		</Button>
 	</Popover.Trigger>
-	<Popover.Content class="w-[350px] md:w-[200px] lg:w-[300px] p-0">
+	<Popover.Content class="w-[350px] md:w-[300px] p-0">
 		<Command.Root>
 			<Command.Input placeholder="Search..." />
 			<Command.Empty>No Tags found</Command.Empty>
