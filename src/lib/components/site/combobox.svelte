@@ -48,13 +48,11 @@
 			variant="outline"
 			role="combobox"
 			aria-expanded={open}
-			class="w-[350px] justify-between md:w-[300px]"
+			class="w-[350px] justify-between md:w-[300px] no-highlight"
 		>
 			<div class="flex items-center gap-1">
 				<Tag class="mr-1 h-3 w-3" />
-				<span class="bg-zinc-200 dark:bg-zinc-700 px-2 rounded-md"
-					>{currentTag}</span
-				>
+				<span class="bg-zinc-200 dark:bg-zinc-700 px-2 rounded-md">{currentTag}</span>
 			</div>
 			<ChevronsUpDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
 		</Button>
@@ -72,7 +70,7 @@
 							goto(`/tags/${currentValue}`);
 							closeAndFocusTrigger(ids.trigger);
 						}}
-						class="cursor-pointer"
+						class="cursor-pointer no-highlight"
 					>
 						<div class="flex justify-between items-center w-full">
 							<div class="flex items-center">
