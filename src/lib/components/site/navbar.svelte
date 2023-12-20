@@ -9,7 +9,7 @@
 	class="z-50 top-0 left-0 right-0 h-14 md:h-[4.1rem] border-b fixed supports-[backdrop-filter]:bg-background/60 w-full bg-background/95 backdrop-blur hidden md:block"
 >
 	<div class="flex items-center justify-between h-full p-4 max-w-[100rem] mx-auto">
-		<div>
+		<div class="flex items-center gap-4">
 			<a
 				href="/"
 				class="text-3xl font-semibold tracking-wider md:text-4xl"
@@ -20,6 +20,15 @@
 					>P</span
 				>rabhu
 			</a>
+			<div class="flex items-center border border-border rounded-xl px-2 gap-3">
+				<span class="relative flex h-3 w-3">
+					<span
+						class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"
+					/>
+					<span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500" />
+				</span>
+				<a href="mailto:prabhukiran426@gmail.com">Open for work</a>
+			</div>
 		</div>
 		<div class="hidden md:block">
 			<div class="flex space-x-4">
