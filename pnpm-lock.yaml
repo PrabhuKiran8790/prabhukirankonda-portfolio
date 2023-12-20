@@ -47,9 +47,6 @@ dependencies:
   svelte-french-toast:
     specifier: ^1.2.0
     version: 1.2.0(svelte@4.2.3)
-  svelte-katex:
-    specifier: ^0.1.2
-    version: 0.1.2
   svelte-meta-tags:
     specifier: ^3.1.0
     version: 3.1.0(svelte@4.2.3)(typescript@5.2.2)
@@ -1998,13 +1995,6 @@ packages:
     resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
     dev: true
 
-  /katex@0.15.6:
-    resolution: {integrity: sha512-UpzJy4yrnqnhXvRPhjEuLA4lcPn6eRngixW7Q3TJErjg3Aw2PuLFBzTkdUb89UtumxjhHTqL3a5GDGETMSwgJA==}
-    hasBin: true
-    dependencies:
-      commander: 8.3.0
-    dev: false
-
   /katex@0.16.9:
     resolution: {integrity: sha512-fsSYjWS0EEOwvy81j3vRA8TEAhQhKiqO+FQaKWp0m39qwOzHVBgAUBIXWj1pB+O2W3fIpNa6Y9KSKCVbfPhyAQ==}
     hasBin: true
@@ -3288,12 +3278,6 @@ packages:
     dependencies:
       svelte: 4.2.3
     dev: true
-
-  /svelte-katex@0.1.2:
-    resolution: {integrity: sha512-jgqMgP0hwgsaYKLNa9GGpuEKiwE7Gr6QlDKp3C3QQkIb30G+WEHCljfl+nVCNra1aTr7uIemQmlyMA3avHx6HQ==}
-    dependencies:
-      katex: 0.15.6
-    dev: false
 
   /svelte-meta-tags@3.1.0(svelte@4.2.3)(typescript@5.2.2):
     resolution: {integrity: sha512-wFBfpktSua1R5rdvQ/aFucvXmRqzDhRYrPpMQ/pL4+KL5QHIzomPf29a5WN3yDR0reSy1PXyQ2ah0+uCYCbi0g==}
