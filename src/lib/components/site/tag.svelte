@@ -33,6 +33,11 @@
 		} else {
 			goto(href);
 		}
+
+		// for some reason, going back doesn't close the dialog. so have to include this
+		window.addEventListener('popstate', () => {
+			showModal__ = false;
+		});
 	}
 </script>
 

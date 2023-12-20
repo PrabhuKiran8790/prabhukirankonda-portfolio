@@ -11,6 +11,7 @@
 	import { Github } from 'lucide-svelte';
 	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
+	import SeriesPostNavigation from '$lib/components/site/series-post-navigation.svelte';
 
 	export let data: PageData;
 
@@ -74,6 +75,11 @@
 		<div class="mb-20 px-4 mdsvex" id="mdsvex">
 			<svelte:component this={content} />
 		</div>
+		{#if data?.seriesPost?.subPosts}
+			<div>
+				<SeriesPostNavigation subPosts={data?.seriesPost?.subPosts} />
+			</div>
+		{/if}
 		{#if isTocSticky}
 			<Stickybar element={commentsSection} {showScrollToTop} />
 		{/if}

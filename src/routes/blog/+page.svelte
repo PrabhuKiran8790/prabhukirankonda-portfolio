@@ -26,15 +26,17 @@
 		<AllBlogs posts={data.posts} />
 	</div>
 
-	<div>
-		<div class="flex flex-col items-center justify-center gap-2">
-			<h1
-				class="text-5xl font-bold text-transparent bg-gradient-to-r from-primary to-gray-400 bg-clip-text"
-			>
-				Blog Series
-			</h1>
-			<h1>a series of blogs</h1>
+	{#if data.seriesPosts && data.seriesPosts.length > 0}
+		<div>
+			<div class="flex flex-col items-center justify-center gap-2">
+				<h1
+					class="text-5xl font-bold text-transparent bg-gradient-to-r from-primary to-gray-400 bg-clip-text"
+				>
+					Blog Series
+				</h1>
+				<h1>a series of blogs</h1>
+			</div>
 		</div>
-	</div>
-	<SeriesBlogs seriesPosts={data.seriesPosts} />
+		<SeriesBlogs seriesPosts={data.seriesPosts} />
+	{/if}
 </div>
