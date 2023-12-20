@@ -59,6 +59,11 @@
 	if (!dev && meta.image?.startsWith('/posts')) {
 		meta.image = localToGithubURL({ src: meta.image });
 	}
+
+	$: {
+		content = data.content;
+		meta = data.meta;
+	}
 </script>
 
 <BlogMetatags {meta} />
@@ -76,7 +81,7 @@
 			<svelte:component this={content} />
 		</div>
 		{#if data?.seriesPost?.subPosts}
-			<div>
+			<div class="mb-20">
 				<SeriesPostNavigation subPosts={data?.seriesPost?.subPosts} />
 			</div>
 		{/if}

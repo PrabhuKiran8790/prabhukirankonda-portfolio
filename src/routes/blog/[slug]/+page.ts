@@ -36,7 +36,10 @@ export const load = async ({ params }) => {
 
 	return {
 		content: post.default,
-		meta: post.metadata,
+		meta: {
+			...post.metadata,
+			image: post.metadata.image || seriesPost?.image // if post.metadata.image is undefined, use seriesPost.image
+		},
 		coverFolder: folder,
 		fileName,
 		seriesPost

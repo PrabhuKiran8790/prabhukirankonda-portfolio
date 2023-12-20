@@ -127,7 +127,16 @@ const prettyCodeOptions = {
 					'shell',
 					'python',
 					'java',
-					'md'
+					'md',
+					'go',
+					'rust',
+					'c',
+					'cpp',
+					'csharp',
+					'php',
+					'json',
+					'yaml',
+					'swift',
 				].includes(id);
 			})
 		});
@@ -184,7 +193,7 @@ function rehypeCustomComponents() {
 		visit(tree, (node) => {
 			// Check h tags, and pass some extra parameters to the custom components.
 			if (node?.type === 'element' && hTags.includes(node?.tagName)) {
-				node.properties['id'] = node.children[0].value.split(' ').join('-');
+				node.properties['id'] = node.children[0].value.split(' ').join('-').toLowerCase();
 				node.properties['headerTag'] = node.tagName.split('.')[1];
 			}
 		});
