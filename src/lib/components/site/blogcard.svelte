@@ -21,7 +21,7 @@
 
 <a
 	class={cn(
-		'block pb-0 border-2 rounded-xl hover:border-primary no-highlight relative mb-2',
+		'block pb-0 border-2 rounded-xl hover:border-primary no-highlight relative',
 		className
 	)}
 	on:mouseenter={() => (hover = true)}
