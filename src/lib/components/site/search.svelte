@@ -7,9 +7,9 @@
 	import { goto } from '$app/navigation';
 	import { cn, formatDate } from '$lib/utils';
 	import { onMount } from 'svelte';
+	import type { PageData } from '../../../routes/blog/$types';
 	import { Badge } from '../ui/badge';
 	import { Button } from '../ui/button';
-	import type { PageData } from '../../../routes/blog/$types';
 
 	export let data: PageData;
 
@@ -73,6 +73,7 @@
 							post.slug && goto(`/blog/${post.slug}`);
 						});
 					}}
+					class="cursor-pointer"
 				>
 					<div class="flex flex-col w-full gap-1">
 						<div class="flex items-center justify-between w-full">
@@ -83,7 +84,7 @@
 								<h1 class="text-xs text-muted-foreground">{formatDate(post.date)}</h1>
 							</div>
 						</div>
-						<div class="flex items-center gap-2">
+						<div class="flex items-center gap-2 flex-wrap">
 							{#each post.tags as tags}
 								<Badge class="bg-gray-300 rounded-md dark:bg-zinc-600" variant="outline"
 									>{tags}</Badge
@@ -95,31 +96,41 @@
 			{/each}
 		</Command.Group>
 		<Command.Separator />
-		<Command.Group heading="Blog Series" class="pb-3">
-			{#each data.seriesPosts as post}
-				<Command.Item
-					onSelect={() => {
-						runCommand(() => {
-							post.slug && goto(`/blog/${post.slug}`);
-						});
-					}}
-				>
-					<div class="flex justify-between w-full">
-						<div class="flex flex-col gap-1">
-							<h1>{post.title}</h1>
-							{#each post.tags as tags}
-								<Badge class="bg-gray-300 rounded-md dark:bg-zinc-600 w-fit" variant="outline"
-									>{tags}</Badge
-								>
-							{/each}
-						</div>
-						<div class="flex flex-col items-end text-xs">
-							<h1 class="text-muted-foreground">{formatDate(post.date)}</h1>
-							<p>{post.parts} Parts</p>
-						</div>
-					</div>
-				</Command.Item>
-			{/each}
-		</Command.Group>
+		{#each data.seriesPosts as post}
+			<Command.Group heading={`Series: ${post.title} - ${post.parts} Parts`} class="pb-3">
+				{#each post.subPosts as subPost}
+					<Command.Item
+						onSelect={() => {
+							runCommand(() => {
+								subPost.slug && goto(`/blog/${subPost.slug}`);
+							});
+						}}
+						class="cursor-pointer"
+					>
+						<div class="flex flex-col w-full gap-1">
+							<div class="flex items-center justify-between w-full">
+								<div>
+									<!-- doing this helps in search when searching for series. -->
+									<span class="sr-only">Series: {subPost.title}</span>
+									<h1>{subPost.title}</h1>
+								</div>
+
+								<div>
+									<h1 class="text-xs text-muted-foreground">{formatDate(subPost.date)}</h1>
+								</div>
+							</div>
+							<div class="flex items-center gap-2 flex-wrap">
+								{#each subPost.tags as tags}
+									<Badge class="bg-gray-300 rounded-md dark:bg-zinc-600" variant="outline"
+										>{tags}</Badge
+									>
+								{/each}
+							</div>
+						</div></Command.Item
+					>
+				{/each}
+			</Command.Group>
+			<Command.Separator />
+		{/each}
 	</Command.List>
 </Command.Dialog>
