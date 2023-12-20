@@ -58,21 +58,6 @@
 
 			if (languageAttribute && languageAttribute.toLowerCase() !== 'md') {
 				const lines = codeElement.querySelectorAll('span[data-line]');
-				console.log(lines);
-				console.log(languageAttribute);
-
-				// lines.forEach((line) => {
-				// 	const lineText = line.textContent || '';
-
-				// 	if (lineText.includes('// [!code ++]')) {
-				// 		line.classList.add('code-add');
-				// 		line.innerHTML = line.innerHTML.replace('// [!code ++]', '');
-				// 	} else if (lineText.includes('// [!code --]')) {
-				// 		line.classList.add('code-delete');
-				// 		line.innerHTML = line.innerHTML.replace('// [!code --]', '');
-				// 	}
-				// });
-
 				lines.forEach((line) => {
 					const lineText = line.textContent || '';
 

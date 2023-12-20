@@ -20,7 +20,7 @@
 	$: previousPost = subPosts![currentIndex! - 1];
 </script>
 
-<div class="flex items-center justify-between">
+<div class="flex items-center justify-between px-3 flex-wrap gap-4">
 	<div>
 		{#if previousPost}
 			<a href={`/blog/${previousPost.slug}`} class={cn(buttonVariants({ variant: 'secondary' }))}

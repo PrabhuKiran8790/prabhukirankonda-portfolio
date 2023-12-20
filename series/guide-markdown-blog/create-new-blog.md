@@ -282,5 +282,7 @@ this becomes
 \nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)
 ```
 
+in the next part, we'll look at other configurations.
+
 ---
  
