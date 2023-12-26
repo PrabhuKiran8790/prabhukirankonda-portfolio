@@ -15,27 +15,12 @@
 		<p class="text-xs font-semibold md:text-sm">{formatDate(meta.date, 'long')}</p>
 	</div>
 	{#if meta.image}
-		{#if typeof meta.image === 'string'}
-			<img
-				src={meta.image}
-				alt={meta.title}
-				loading="lazy"
-				class="w-full md:w-[80%] h-auto md:rounded-lg max-h-[550px]"
-			/>
-		{:else if Array.isArray(meta.image)}
-			<img
-				src={meta.image[0]}
-				alt={meta.title}
-				loading="lazy"
-				class="w-full md:w-[80%] h-auto md:rounded-lg max-h-[550px] dark:hidden border-2 border-secondary"
-			/>
-			<img
-				src={meta.image[1]}
-				alt={meta.title}
-				loading="lazy"
-				class="w-full md:w-[80%] h-auto md:rounded-lg max-h-[550px] hidden dark:block border-2 border-secondary"
-			/>
-		{/if}
+		<img
+			src={meta.image}
+			alt={meta.title}
+			loading="lazy"
+			class="w-full md:w-[80%] h-auto md:rounded-lg max-h-[550px]"
+		/>
 	{/if}
 	<div class="flex items-center gap-2">
 		<TagIcon class="w-4 h-4" />

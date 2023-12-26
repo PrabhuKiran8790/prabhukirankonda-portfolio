@@ -20,7 +20,10 @@
 </script>
 
 <a
-	class={cn('block pb-0 border-2 rounded-xl hover:border-primary no-highlight relative', className)}
+	class={cn(
+		'block pb-0 border-2 rounded-xl hover:border-primary no-highlight relative',
+		className
+	)}
 	on:mouseenter={() => (hover = true)}
 	on:mouseleave={() => (hover = false)}
 	href={`/blog/${post.slug}`}
@@ -29,22 +32,7 @@
 	{#if keepImage}
 		{#if post.image}
 			<div class="p-2">
-				{#if typeof post.image === 'string'}
-					<img src={post.image} alt={post.title} class="rounded-md w-fit" loading="lazy" />
-				{:else if Array.isArray(post.image)}
-					<img
-						src={post.image[0]}
-						alt={post.title}
-						class="rounded-md w-fit dark:hidden"
-						loading="lazy"
-					/>
-					<img
-						src={post.image[1]}
-						alt={post.title}
-						class="rounded-md w-fit hidden dark:block"
-						loading="lazy"
-					/>
-				{/if}
+				<img src={post.image} alt={post.title} class="rounded-md w-fit" loading="lazy" />
 			</div>
 		{/if}
 	{/if}

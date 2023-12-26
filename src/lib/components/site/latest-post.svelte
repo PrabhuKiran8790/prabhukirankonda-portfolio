@@ -23,9 +23,7 @@
 				<p class="text-muted-foreground">Check out my newest blog post</p>
 				<div><Button href="/blog" class="text-base">All blogs</Button></div>
 			</div>
-			<div
-				class="-mx-2 shadow-xl space-y-2 md:max-w-sm lg:max-w-xl rounded-2xl no-highlight"
-			>
+			<div class="-mx-2 shadow-xl space-y-2 md:max-w-sm lg:max-w-md rounded-2xl no-highlight">
 				<Blogcard {post} shallow={true} />
 			</div>
 		</div>
