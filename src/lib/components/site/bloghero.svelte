@@ -30,7 +30,7 @@
 				class="w-full md:w-[80%] h-auto md:rounded-lg max-h-[550px] dark:hidden"
 			/>
 			<img
-				src={meta.image[0]}
+				src={meta.image[1]}
 				alt={meta.title}
 				loading="lazy"
 				class="w-full md:w-[80%] h-auto md:rounded-lg max-h-[550px] hidden dark:block"
