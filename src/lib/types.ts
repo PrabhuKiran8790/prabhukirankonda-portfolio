@@ -4,7 +4,7 @@ export interface BasePost {
 	description: string;
 	date: string;
 	tags: string[];
-	image: string;
+	image: string | string[];
 	draft: boolean;
 }
 

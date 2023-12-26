@@ -15,7 +15,7 @@
 		description: meta.description,
 		images: [
 			{
-				url: meta.image,
+				url: typeof meta.image === 'string' ? meta.image : meta.image[0],
 				width: 800,
 				height: 600,
 				alt: meta.title
@@ -28,7 +28,7 @@
 		cardType: 'summary_large_image',
 		title: meta.title,
 		description: meta.description,
-		image: meta.image,
+		image: typeof meta.image === 'string' ? meta.image : meta.image[0],
 		imageAlt: meta.title
 	}}
 />

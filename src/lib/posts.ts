@@ -14,9 +14,18 @@ export const getPosts = async () => {
 		if (file && typeof file === 'object' && 'metadata' in file && slug) {
 			const metadata = file.metadata as Omit<Post, 'slug'>;
 			const post = { ...metadata, slug } as Post;
-			if (post.image && !dev && post.image.startsWith('/posts')) {
+			if (post.image && !dev) {
 				// only convert if starts with /posts because you need to point the image to the actual github raw url
-				post.image = localToGithubURL({ src: post.image });
+				if (typeof post.image === 'string' && post.image.startsWith('/posts')) {
+					post.image = localToGithubURL({ src: post.image });
+				} else if (Array.isArray(post.image)) {
+					post.image = post.image.map((image) => {
+						if (image.startsWith('/posts')) {
+							return localToGithubURL({ src: image });
+						}
+						return image;
+					});
+				}
 			}
 			!post.draft && posts.push(post);
 		}
@@ -77,8 +86,20 @@ export const getSeriesPosts = async () => {
 						}
 
 						// if the subpost image is local, convert it to github raw url
-						if (subPostData.image && !dev && subPostData.image.startsWith('/series')) {
-							subPostData.image = localToGithubURL({ src: subPostData.image });
+						if (subPostData.image && !dev) {
+							if (
+								typeof subPostData.image === 'string' &&
+								subPostData.image.startsWith('/series')
+							) {
+								subPostData.image = localToGithubURL({ src: subPostData.image });
+							} else if (Array.isArray(subPostData.image)) {
+								subPostData.image = subPostData.image.map((image) => {
+									if (image.startsWith('/series')) {
+										return localToGithubURL({ src: image });
+									}
+									return image;
+								});
+							}
 						}
 
 						!subPostMetadata.draft && subPosts.push(subPostData);
@@ -87,9 +108,19 @@ export const getSeriesPosts = async () => {
 			}
 
 			subPosts = subPosts.sort((first, second) => first.order - second.order);
-			if (metadata.image && !dev && metadata.image.startsWith('/series')) {
-				metadata.image = localToGithubURL({ src: metadata.image });
+			if (metadata.image && !dev) {
+				if (typeof metadata.image === 'string' && metadata.image.startsWith('/series')) {
+					metadata.image = localToGithubURL({ src: metadata.image });
+				} else if (Array.isArray(metadata.image)) {
+					metadata.image = metadata.image.map((image) => {
+						if (image.startsWith('/series')) {
+							return localToGithubURL({ src: image });
+						}
+						return image;
+					});
+				}
 			}
+
 			!metadata.draft &&
 				seriesPosts.push({
 					...metadata,

@@ -56,8 +56,17 @@
 		};
 	});
 
-	if (!dev && meta.image?.startsWith('/posts')) {
-		meta.image = localToGithubURL({ src: meta.image });
+	if (!dev) {
+		if (typeof meta.image === 'string' && meta.image?.startsWith('/posts')) {
+			meta.image = localToGithubURL({ src: meta.image });
+		} else if (Array.isArray(meta.image)) {
+			meta.image = meta.image.map((image: string) => {
+				if (image.startsWith('/posts')) {
+					return localToGithubURL({ src: image });
+				}
+				return image;
+			});
+		}
 	}
 
 	$: {
