@@ -49,7 +49,11 @@
 		{/if}
 	{/if}
 	<div class="flex flex-col justify-between h-full gap-4 p-2.5 pt-0">
-		<div class={cn('flex flex-col justify-between gap-2', keepImage ? '' : 'pt-2')}>
+		<div class={cn('flex flex-col justify-between gap-1', keepImage ? '' : 'pt-2')}>
+			<div class="flex items-center gap-2 text-muted-foreground text-xs">
+				<Calendar class="w-3 h-3" />
+				<h1>{formatDate(post.date)}</h1>
+			</div>
 			<h1 class={`text-lg font-semibold ${hover ? 'underline underline-offset-4' : ''}`}>
 				{post.title}
 			</h1>
@@ -63,12 +67,8 @@
 			<p class="text-muted-foreground">{post.description}</p>
 		</div>
 
-		<div>
+		<!-- <div>
 			<div class="flex items-center justify-between">
-				<div class="flex items-center text-sm gap-2">
-					<Calendar class="w-4 h-4" />
-					<h1>{formatDate(post.date)}</h1>
-				</div>
 				<div>
 					<Button variant="ghost" size="sm" class="px-3 py-0" href={`/blog/${post.slug}`}
 						>read more
@@ -76,7 +76,7 @@
 					>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 	{#if isSeries(post)}
 		<div class="absolute -top-3 right-4 px-2 bg-zinc-200 dark:bg-zinc-800 rounded-lg">

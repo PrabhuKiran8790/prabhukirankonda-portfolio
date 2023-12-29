@@ -2,7 +2,6 @@
 	import ProfilePicture from '$lib/assets/profile_picture.jpg';
 	import { SocialButtons } from '$lib/components/site';
 
-
 	// const ProfilePicture = new URL('../../assets/profile_picture.jpg', import.meta.url).href
 </script>
 

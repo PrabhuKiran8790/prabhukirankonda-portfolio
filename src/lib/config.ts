@@ -34,7 +34,7 @@ export const routes: routesType[] = [
 ];
 
 // social icons with links
-const socials: socialsType[] = [
+export const socials: socialsType[] = [
 	{
 		href: 'https://github.com/prabhukiran8790',
 		icon: Github,
@@ -75,4 +75,11 @@ export const githubConfig = {
 	username: 'PrabhuKiran8790',
 	repo: 'prabhukirankonda-portfolio',
 	branch: 'main'
+};
+
+export const author = {
+	name: 'Prabhu Kiran Konda',
+	tagline: 'I train machines to learn and build software to solve problems.',
+	avatar: `https://github.com/${githubConfig.username}.png`,
+	twt: 'prabhukirantwt'
 };

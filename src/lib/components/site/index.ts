@@ -24,3 +24,5 @@ export { default as SeriesBlogAccordian } from './series-blog-accordian.svelte';
 export { default as Tag } from './tag.svelte';
 export { default as ComboBox } from './combobox.svelte';
 export { default as SeriesPostNavigation } from './series-post-navigation.svelte';
+export { default as Author } from './author.svelte';
+export { default as MobileNav } from './mobile-nav.svelte';

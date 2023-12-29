@@ -33,8 +33,6 @@
 		<div class="hidden md:block">
 			<div class="flex space-x-4">
 				<ul class="flex items-center">
-					<!-- <Search {data} /> -->
-
 					{#each routes as route}
 						<li>
 							<a

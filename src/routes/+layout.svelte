@@ -5,10 +5,9 @@
 	import { browser } from '$app/environment';
 	import { openMobileMenu } from '$lib/stores';
 	import { preparePageTransition } from '$lib/scripts/page-transitions';
-	import { Navbar, Footer, MetaTags } from '$lib/components/site';
+	import { Navbar, Footer, MetaTags, MobileNav } from '$lib/components/site';
 	import { Toaster } from 'svelte-french-toast';
-	import MobileNavbar from '$lib/components/site/mobile-navbar.svelte';
-	import { page } from '$app/stores';
+	// import MobileNavbar from '$lib/components/site/mobile-navbar.svelte';
 
 	onNavigate(() => {
 		if ($openMobileMenu) {
@@ -33,10 +32,7 @@
 <MetaTags />
 <Toaster />
 <Navbar />
-<!-- no-highlight (touch highlights in mobile) -->
-<div class="no-highlight">
-	<MobileNavbar />
-</div>
+
 <div class="flex flex-col min-h-screen md:pt-10">
 	<div class="flex-1 mb-20 md:mb-0">
 		<slot />
@@ -44,4 +40,9 @@
 	<footer class="hidden border-t md:block">
 		<Footer />
 	</footer>
+</div>
+<!-- no-highlight (touch highlights in mobile) -->
+<div class="no-highlight">
+	<!-- <MobileNavbar /> -->
+	<MobileNav />
 </div>
