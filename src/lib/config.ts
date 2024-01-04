@@ -83,3 +83,7 @@ export const author = {
 	avatar: `https://github.com/${githubConfig.username}.png`,
 	twt: 'prabhukirantwt'
 };
+
+export const whatsNew: string = `
+Currently working on 100 Days of AI. A 100 day challenge to learn, teach and build AI.
+`;

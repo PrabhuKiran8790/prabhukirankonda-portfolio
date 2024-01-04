@@ -1,6 +1,8 @@
 <script>
 	import ProfilePicture from '$lib/assets/profile_picture.jpg';
 	import { SocialButtons } from '$lib/components/site';
+	import { whatsNew } from '$lib/config';
+	import { Mailbox } from 'lucide-svelte';
 
 	// const ProfilePicture = new URL('../../assets/profile_picture.jpg', import.meta.url).href
 </script>
@@ -15,6 +17,19 @@
 		/>
 
 		<div class="space-y-3 md:w-1/2 md:mr-4">
+			<div
+				class="flex flex-col gap-4 border border-border p-2 bg-slate-100 dark:bg-zinc-900 rounded-xl mt-6 md:mt-0 text-primary"
+			>
+				<div class="flex items-center gap-4">
+					<Mailbox />
+					<h1 class="font-semibold">What's New?</h1>
+				</div>
+
+				<div>
+					{@html whatsNew}
+				</div>
+			</div>
+
 			<h1 class="font-bold md:text-xl">Hi, I'm</h1>
 			<h1 class="text-2xl font-bold md:text-5xl">Prabhu Kiran Konda</h1>
 			<p>
