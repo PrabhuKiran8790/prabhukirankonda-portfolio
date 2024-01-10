@@ -85,5 +85,5 @@ export const author = {
 };
 
 export const whatsNew: string = `
-Currently working on 100 Days of AI. A 100 day challenge to learn, teach and build AI.
-`;
+Currently working on 100 Days of AI. A 100 day challenge to learn, teach and build AI
+@ <a href='https://neuralchemie.com' class="underline hover:underline-offset-4">Neuralchemie</a>`;
