@@ -45,53 +45,85 @@ const katex_blocks = () => (tree) => {
 			});
 
 			node.type = 'raw';
-			node.value = '{@html `' + str + '`}';
+			node.value = '<span class="text-sm md:text-lg">{@html `' + str + '`}</span>';
 		}
 	});
 };
 
+// const katex_inline = () => (tree) => {
+// 	visit(tree, 'text', (node, index, parent) => {
+// 		const regex = /\$\$(.*?)\$\$/g;
+// 		let match;
+
+// 		while ((match = regex.exec(node.value)) !== null) {
+// 			const equation = match[1].trim();
+
+// 			// Replace double backslashes with single backslashes
+// 			const cleanedEquation = equation.replace(/\\\\/g, '\\');
+
+// 			const str = katex.renderToString(cleanedEquation, {
+// 				throwOnError: true,
+// 				errorColor: '#cc0000',
+// 				strict: 'warn',
+// 				output: 'htmlAndMathml',
+// 				trust: false,
+// 				macros: { '\\f': '#1f(#2)' }
+// 			});
+
+// 			// Escape the HTML for Svelte
+// 			const escapedHTML = escapeSvelte(str);
+
+// 			// Replace the matched portion with the escaped HTML
+// 			const before = node.value.slice(0, match.index);
+// 			const after = node.value.slice(match.index + match[0].length);
+// 			const renderedEquation = '<span class="text-base">{@html `' + escapedHTML + '`}</span>';
+
+// 			// Create a new 'raw' node with the rendered equation
+// 			const rawNode = {
+// 				type: 'raw',
+// 				value: renderedEquation
+// 			};
+
+// 			// Insert the 'raw' node into the parent's children array
+// 			parent.children.splice(
+// 				index,
+// 				1,
+// 				...[{ type: 'text', value: before }, rawNode, { type: 'text', value: after }]
+// 			);
+// 		}
+// 	});
+// };
+
+
 const katex_inline = () => (tree) => {
-	visit(tree, 'text', (node, index, parent) => {
-		const regex = /\$\$(.*?)\$\$/g;
-		let match;
+  visit(tree, 'text', (node, index, parent) => {
+    const regex = /\$\$(.*?)\$\$/g;
+	  let replacedText = node.value;
 
-		while ((match = regex.exec(node.value)) !== null) {
-			const equation = match[1].trim();
+    replacedText = replacedText.replace(regex, (match, equation) => {
+      // Replace double backslashes with single backslashes
+		const cleanedEquation = equation.replace(/\\\\/g, '\\');
 
-			// Replace double backslashes with single backslashes
-			const cleanedEquation = equation.replace(/\\\\/g, '\\');
+      const str = katex.renderToString(cleanedEquation, {
+        throwOnError: true,
+        errorColor: '#cc0000',
+        strict: 'warn',
+        output: 'htmlAndMathml',
+        trust: false,
+        macros: { '\\f': '#1f(#2)' }
+      });
 
-			const str = katex.renderToString(cleanedEquation, {
-				throwOnError: true,
-				errorColor: '#cc0000',
-				strict: 'warn',
-				output: 'htmlAndMathml',
-				trust: false,
-				macros: { '\\f': '#1f(#2)' }
-			});
+      // Escape the HTML for Svelte
+		const escapedHTML = escapeSvelte(str);
 
-			// Escape the HTML for Svelte
-			const escapedHTML = escapeSvelte(str);
 
-			// Replace the matched portion with the escaped HTML
-			const before = node.value.slice(0, match.index);
-			const after = node.value.slice(match.index + match[0].length);
-			const renderedEquation = '<span class="text-base">{@html `' + escapedHTML + '`}</span>';
+      // Wrap the rendered equation in a span
+      return `<span class="text-base">{@html \`${escapedHTML}\`}</span>`;
+    });
 
-			// Create a new 'raw' node with the rendered equation
-			const rawNode = {
-				type: 'raw',
-				value: renderedEquation
-			};
-
-			// Insert the 'raw' node into the parent's children array
-			parent.children.splice(
-				index,
-				1,
-				...[{ type: 'text', value: before }, rawNode, { type: 'text', value: after }]
-			);
-		}
-	});
+    // Replace the original text node with the modified text
+    parent.children[index] = { type: 'text', value: replacedText };
+  });
 };
 
 const prettyCodeOptions = {
