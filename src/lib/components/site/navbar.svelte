@@ -27,7 +27,7 @@
 					/>
 					<span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500" />
 				</span>
-				<a href="mailto:prabhukiran426@gmail.com">Open for work</a>
+				<a href="mailto:prabhukiran426@gmail.com">Open to work</a>
 			</div>
 		</div>
 		<div class="hidden md:block">
