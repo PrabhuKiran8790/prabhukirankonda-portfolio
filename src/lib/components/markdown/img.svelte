@@ -14,7 +14,7 @@
 	}
 </script>
 
-<div>
+<div class="flex items-center justify-center flex-col gap-1">
 	<img {src} {alt} class={cn('rounded-md mt-4', className)} {...$$restProps} loading="lazy" />
 	<p class="text-sm text-center text-muted-foreground">{alt ? alt : ''}</p>
 </div>

@@ -15,10 +15,40 @@
 		li,
 		ol,
 		ul,
-		blockquote
+		blockquote,
+		table,
+		th,
+		tr,
+		td,
+		thead,
+		tfoot,
+		tbody
 	} from '$lib/components/markdown';
 
-	export { pre, a, h1, h2, h3, h4, h5, h6, hr, img, p, li, ol, ul, blockquote };
+	export {
+		pre,
+		a,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		hr,
+		img,
+		p,
+		li,
+		ol,
+		ul,
+		blockquote,
+		table,
+		th,
+		tr,
+		td,
+		thead,
+		tfoot,
+		tbody
+	};
 </script>
 
 <script>

@@ -50,52 +50,34 @@ const katex_blocks = () => (tree) => {
 	});
 };
 
-// const katex_inline = () => (tree) => {
-// 	visit(tree, 'text', (node, index, parent) => {
-// 		const regex = /\$\$(.*?)\$\$/g;
-// 		let match;
 
-// 		while ((match = regex.exec(node.value)) !== null) {
-// 			const equation = match[1].trim();
 
-// 			// Replace double backslashes with single backslashes
-// 			const cleanedEquation = equation.replace(/\\\\/g, '\\');
+const inlineKatexUsingInlineCode = () => (tree) => { 
+	visit(tree, 'inlineCode', (node) => {
+		if (node.value.endsWith('{:eq}')) {
+			node.value = node.value.replace('{:eq}', '')
+			const str = katex.renderToString(node.value, {
+				displayMode: false,
+				leqno: false,
+				fleqn: false,
+				throwOnError: true,
+				errorColor: '#cc0000',
+				strict: 'warn',
+				output: 'htmlAndMathml',
+				trust: false,
+				macros: { '\\f': '#1f(#2)' }
+			});
 
-// 			const str = katex.renderToString(cleanedEquation, {
-// 				throwOnError: true,
-// 				errorColor: '#cc0000',
-// 				strict: 'warn',
-// 				output: 'htmlAndMathml',
-// 				trust: false,
-// 				macros: { '\\f': '#1f(#2)' }
-// 			});
-
-// 			// Escape the HTML for Svelte
-// 			const escapedHTML = escapeSvelte(str);
-
-// 			// Replace the matched portion with the escaped HTML
-// 			const before = node.value.slice(0, match.index);
-// 			const after = node.value.slice(match.index + match[0].length);
-// 			const renderedEquation = '<span class="text-base">{@html `' + escapedHTML + '`}</span>';
-
-// 			// Create a new 'raw' node with the rendered equation
-// 			const rawNode = {
-// 				type: 'raw',
-// 				value: renderedEquation
-// 			};
-
-// 			// Insert the 'raw' node into the parent's children array
-// 			parent.children.splice(
-// 				index,
-// 				1,
-// 				...[{ type: 'text', value: before }, rawNode, { type: 'text', value: after }]
-// 			);
-// 		}
-// 	});
-// };
-
+			node.type = 'raw';
+			node.value = '<span class="text-base mx-1">{@html `' + str + '`}</span>';
+		} 
+	})
+}
 
 const katex_inline = () => (tree) => {
+
+	// using $$ $$ for inline math
+	// 
   visit(tree, 'text', (node, index, parent) => {
     const regex = /\$\$(.*?)\$\$/g;
 	  let replacedText = node.value;
@@ -197,7 +179,7 @@ export const mdsvexOptions = {
 	// highlight: {
 	// 	highlighter: highlightCode
 	// },
-	remarkPlugins: [remarkUnwrapImages, math, katex_blocks, katex_inline, replaceQuotes, remarkGfm],
+	remarkPlugins: [remarkUnwrapImages, math, katex_blocks, katex_inline, replaceQuotes, remarkGfm, inlineKatexUsingInlineCode],
 	rehypePlugins: [
 		rehypeCustomComponents,
 		rehypeComponentPreToPre,
