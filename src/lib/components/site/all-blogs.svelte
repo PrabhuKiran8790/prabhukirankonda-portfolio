@@ -12,4 +12,11 @@
 			<Blogcard {post} shallow={true} />
 		{/each}
 	</Masonry>
+	<!-- <div class="flex flex-wrap gap-4 p-3">
+		{#each posts as post}
+			<div class="max-w-sm">
+				<Blogcard {post} shallow={true} />
+			</div>
+		{/each}
+	</div> -->
 </div>
