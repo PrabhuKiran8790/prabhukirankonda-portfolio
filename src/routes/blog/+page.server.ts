@@ -1,5 +1,6 @@
 import type { SeriesPost, Post } from '$lib/types';
 
+export const prerender = true;
 export const load = async ({ fetch }) => {
 	const data = await fetch('/api/posts');
 	const seriesBlogs = await fetch('api/posts?series=true');
