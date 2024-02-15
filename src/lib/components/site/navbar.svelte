@@ -3,6 +3,8 @@
 	import { routes } from '$lib/config';
 	import { cn } from '$lib/utils';
 	import { ThemeToggle } from '$lib/components/site';
+
+	let openToWork = false;
 </script>
 
 <nav
@@ -20,15 +22,17 @@
 					>P</span
 				>rabhu
 			</a>
-			<div class="flex items-center border border-border rounded-xl px-2 gap-3">
-				<span class="relative flex h-3 w-3">
-					<span
-						class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"
-					/>
-					<span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500" />
-				</span>
-				<a href="mailto:prabhukiran426@gmail.com">Open to work</a>
-			</div>
+			{#if openToWork}
+				<div class="flex items-center border border-border rounded-xl px-2 gap-3">
+					<span class="relative flex h-3 w-3">
+						<span
+							class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"
+						/>
+						<span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500" />
+					</span>
+					<a href="mailto:prabhukiran426@gmail.com">Open to work</a>
+				</div>
+			{/if}
 		</div>
 		<div class="hidden md:block">
 			<div class="flex space-x-4">
