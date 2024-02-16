@@ -71,3 +71,20 @@
 		scroll-behavior: smooth;
 	}
 }
+
+
+::-webkit-scrollbar {
+	@apply w-2;
+	@apply h-2;
+}
+
+::-webkit-scrollbar-track {
+	@apply !bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+	@apply rounded-xl !bg-border;
+}
+
+::-webkit-scrollbar-corner {
+	background: rgba(0, 0, 0, 0);
+}
