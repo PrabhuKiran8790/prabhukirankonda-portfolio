@@ -18,7 +18,7 @@
 			<span class="sr-only">Toggle theme</span>
 		</Button>
 	</DropdownMenu.Trigger>
-	<DropdownMenu.Content class="z-[100]">
+	<DropdownMenu.Content class="z-[100] -ml-7">
 		<DropdownMenu.Item
 			on:click={() => {
 				$theme = 'light';

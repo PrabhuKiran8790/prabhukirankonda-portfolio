@@ -10,7 +10,7 @@
 <nav
 	class="z-50 top-0 left-0 right-0 h-14 md:h-[4.1rem] border-b fixed supports-[backdrop-filter]:bg-background/60 w-full bg-background/95 backdrop-blur hidden md:block"
 >
-	<div class="flex items-center justify-between h-full p-4 max-w-[100rem] mx-auto">
+	<div class="flex items-center justify-between h-full p-4 max-w-[95rem] mx-auto">
 		<div class="flex items-center gap-4">
 			<a
 				href="/"
