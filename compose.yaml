@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5173:5173
+    develop:
+      watch:
+        - path: ./package.json
+          action: rebuild
+        - path: .
+          target: /app
+          action: sync
+    volumes:
+      - ./:/app
