@@ -29,11 +29,7 @@
 </script>
 
 <div class="p-4 mx-auto max-w-7xl">
-	<div class="pb-8 space-y-2 md:pt-12 md:space-y-5">
-		<div>
-			<h1 class="text-4xl font-bold">About Me</h1>
-		</div>
-	</div>
+	<div class="pb-8 space-y-2 md:pt-12 md:space-y-5" />
 	<div class="items-start space-y-14 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
 		<div class="flex flex-col items-center space-x-2 xl:sticky xl:top-24">
 			<img src={ProfilePicture} alt={siteOwner} class="w-56 h-56 rounded-full" />
