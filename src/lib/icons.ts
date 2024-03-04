@@ -1,5 +1,5 @@
 import type { ComponentType, SvelteComponent } from 'svelte';
-import { Drizzle, Streamlit, Svelte, Tailwind } from './components/site/icons';
+import { Drizzle, Streamlit, Svelte, Tailwind, SQL } from './components/site/icons';
 
 function tuple<T extends string[]>(...o: T) {
 	return o;
@@ -7,24 +7,13 @@ function tuple<T extends string[]>(...o: T) {
 
 export const techStackArray = tuple(
 	'Python',
-	'TypeScript',
 	'JavaScript',
-	'Java',
-	'React',
-	'NextJS',
 	'SvelteKit',
-	'TensorFlow',
-	'PyTorch',
 	'Streamlit',
-	'PostgreSQL',
-	'MySQL',
-	'MongoDB',
-	'Firebase',
-	'FastAPI',
+	'SQL',
+	'Flask',
 	'Docker',
-	'Git',
-	'Drizzle',
-	'Tailwind'
+	'Git'
 );
 
 export type TechStack = (typeof techStackArray)[number];
@@ -57,28 +46,13 @@ export const techStackData: TechStackObject = {
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{name}/{filename}.svg" />
     so we can you default ones if not included here. 
     */
-
-	// for nextjs, i want the background to be white so i inlcude nextjs in this
-	NextJS: {
-		className: 'bg-white rounded-full' // that's it.
-	},
-	Firebase: {
-		filename: 'firebase-plain'
+	SQL: {
+		customIcon: SQL
 	},
 	SvelteKit: {
 		customIcon: Svelte
 	},
 	Streamlit: {
 		customIcon: Streamlit
-	},
-	MySQL: {
-		className: 'bg-white',
-		filename: 'mysql-original-wordmark'
-	},
-	Tailwind: {
-		customIcon: Tailwind
-	},
-	Drizzle: {
-		customIcon: Drizzle
 	}
 };
