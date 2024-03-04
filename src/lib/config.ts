@@ -96,5 +96,5 @@ export const author = {
 	twt: 'riturajbasak'
 };
 
-export const whatsNew: string = `
-Currently in search of Internships`;
+export const quote: string = `
+No One Knows What The OutCome Will Be. So, Choose Whatever You'll Regret The Least..`;

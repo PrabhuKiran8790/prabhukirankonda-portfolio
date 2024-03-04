@@ -1,8 +1,8 @@
 <script>
 	import ProfilePicture from '$lib/assets/profile_picture.jpg';
 	import { SocialButtons } from '$lib/components/site';
-	import { siteOwner, whatsNew } from '$lib/config';
-	import { Mailbox } from 'lucide-svelte';
+	import { siteOwner, quote } from '$lib/config';
+	import { QuoteIcon } from 'lucide-svelte';
 
 	// const ProfilePicture = new URL('../../assets/profile_picture.jpg', import.meta.url).href
 </script>
@@ -21,12 +21,12 @@
 				class="flex flex-col gap-4 border border-border p-2 bg-slate-100 dark:bg-zinc-900 rounded-xl mt-6 md:mt-0 text-primary"
 			>
 				<div class="flex items-center gap-4">
-					<Mailbox />
-					<h1 class="font-semibold">What's New?</h1>
+					<QuoteIcon />
+					<h1 class="font-semibold">Quote</h1>
 				</div>
 
 				<div>
-					{@html whatsNew}
+					{@html quote}
 				</div>
 			</div>
 
