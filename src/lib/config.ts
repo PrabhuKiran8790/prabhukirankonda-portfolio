@@ -32,6 +32,10 @@ export const routes: routesType[] = [
 		link: '/tags'
 	},
 	{
+		name: 'RSS',
+		link: '/rss.xml'
+	},
+	{
 		name: 'Projects',
 		link: '/projects'
 	},
