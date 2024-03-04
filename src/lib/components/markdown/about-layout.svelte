@@ -39,7 +39,7 @@
 			<img src={ProfilePicture} alt={siteOwner} class="w-56 h-56 rounded-full" />
 			<h3 class="pt-4 pb-2 text-2xl font-bold tracking-tight leading-8">{siteOwner}</h3>
 			<div class="flex space-x-3">
-				{#each getSocials({ exclude: 'Resume' }) as { icon, display, href }}
+				{#each getSocials() as { icon, display, href }}
 					<Tooltip.Root openDelay={0}>
 						<Tooltip.Trigger>
 							<Button variant="ghost" class="p-2" {href} target="_blank">
