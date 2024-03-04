@@ -16,7 +16,7 @@ Welcome to my first-ever blog post! I am thrilled to embark on this new journey 
 
 ## Why Start a Blog?
 
-I created this site as a catalog for knowledge and experience. I also wanted to create a space where I could connect with other people who are interested in the same things as me.
+I wanted to create a space where I could connect with others who similar interests as me.
 
 Also, I think blogs are better for certain scenarios:
 - Long-form content: Some people prefer reading a long guide or in-depth information rather than watching a lengthy video. For topics that require detailed explanations or step-by-step instructions, blogs provide a better format. David Oragui from Grow Hack Scale mentions that not everyone wants to invest the time in watching a 35-minute video, and they would rather read a comprehensive blog post instead
