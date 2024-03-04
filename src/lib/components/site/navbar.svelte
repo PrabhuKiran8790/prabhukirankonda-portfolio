@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import { mailId, routes } from '$lib/config';
 	import { cn } from '$lib/utils';
-	import { ThemeToggle } from '$lib/components/site';
+	import { ThemeToggle, Logo } from '.';
 
 	let openToWork = false;
 </script>
@@ -12,16 +12,7 @@
 >
 	<div class="flex items-center justify-between h-full p-4 max-w-[95rem] mx-auto">
 		<div class="flex items-center gap-4">
-			<a
-				href="/"
-				class="text-3xl font-semibold tracking-wider md:text-4xl"
-				style="font-family: 'Fuggles', cursive;"
-			>
-				<span
-					class="text-5xl text-transparent bg-gradient-to-r from-primary to-gray-400 bg-clip-text md:text-6xl"
-					>P</span
-				>rabhu
-			</a>
+			<Logo />
 			{#if openToWork}
 				<div class="flex items-center border border-border rounded-xl px-2 gap-3">
 					<span class="relative flex h-3 w-3">

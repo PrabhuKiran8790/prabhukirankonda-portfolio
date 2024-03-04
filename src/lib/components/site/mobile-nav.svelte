@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
 	import { cn } from '$lib/utils';
-	import { ThemeToggle } from '.';
+	import { ThemeToggle, Logo } from '.';
 	import { navigating, page } from '$app/stores';
 	import { Menu, X } from 'lucide-svelte';
 	import { routes } from '$lib/config';
@@ -53,16 +53,7 @@
 		<div class="flex h-full items-center justify-between px-6">
 			<div>
 				<div class="flex items-center justify-center gap-2">
-					<a
-						href="/"
-						class="text-3xl font-semibold tracking-wider md:text-4xl"
-						style="font-family: 'Fuggles', cursive;"
-					>
-						<span
-							class="text-5xl text-transparent bg-gradient-to-r from-primary to-gray-400 bg-clip-text md:text-6xl"
-							>P</span
-						>rabhu
-					</a>
+					<Logo />
 					{#if $page.url.pathname === routes.find((route) => route.link === $page.url.pathname)?.link}
 						{@const name = routes.find((route) => route.link === $page.url.pathname)?.name}
 						<div class="flex items-center justify-center gap-2 mt-3">

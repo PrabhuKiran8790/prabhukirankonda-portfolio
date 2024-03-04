@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Menu, Search, X } from 'lucide-svelte';
-	import { ThemeToggle } from '.';
+	import { ThemeToggle, Logo } from '.';
 	import { Button } from '../ui/button';
 	import { openMobileMenu, searchOpen } from '$lib/stores';
 	import { Toc } from './table-of-contents';
@@ -9,16 +9,7 @@
 
 <div class="items-center h-16 px-2 bg-gray-300 border rounded-lg grid grid-cols-3 dark:bg-zinc-800">
 	<div class="flex">
-		<a
-			href="/"
-			class="text-3xl font-semibold tracking-wider md:text-4xl"
-			style="font-family: 'Fuggles', cursive;"
-		>
-			<span
-				class="text-5xl text-transparent bg-gradient-to-r from-primary to-gray-400 bg-clip-text md:text-6xl"
-				>P</span
-			>rabhu
-		</a>
+		<Logo />
 	</div>
 
 	<div class="mx-auto">
