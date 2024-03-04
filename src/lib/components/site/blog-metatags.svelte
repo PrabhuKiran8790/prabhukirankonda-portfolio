@@ -24,12 +24,4 @@
 		],
 		siteName: siteName
 	}}
-	twitter={{
-		handle: {twitterHandle},
-		cardType: 'summary_large_image',
-		title: meta.title,
-		description: meta.description,
-		image: typeof meta.image === 'string' ? meta.image : meta.image[0],
-		imageAlt: meta.title
-	}}
 />
