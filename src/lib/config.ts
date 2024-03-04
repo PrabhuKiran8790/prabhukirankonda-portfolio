@@ -18,6 +18,8 @@ export const siteName = 'Prabhu Kiran Konda'
 export const siteUrl = 'https://prabhukirankonda.vercel.app/'
 export const siteTitle = 'Prabhu Kiran Konda'
 export const siteImage = `${siteUrl}og.png`
+export const twitterHandle = '@prabhukirantwt'
+export const mailId = 'prabhukiran426@gmail.com'
 
 
 // nav routes
@@ -59,7 +61,7 @@ export const socials: socialsType[] = [
 		class: 'h-4 w-4'
 	},
 	{
-		href: 'mailto:prabhukiran426@gmail.com',
+		href: `mailto:${mailId}`,
 		icon: Mail,
 		display: 'Mail',
 		class: 'h-4 w-4'

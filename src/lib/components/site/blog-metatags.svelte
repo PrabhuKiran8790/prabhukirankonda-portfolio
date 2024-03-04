@@ -25,7 +25,7 @@
 		siteName: siteName
 	}}
 	twitter={{
-		handle: '@prabhukirantwt',
+		handle: {twitterHandle},
 		cardType: 'summary_large_image',
 		title: meta.title,
 		description: meta.description,

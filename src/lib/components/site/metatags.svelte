@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { siteName, siteOwner, siteTitle, siteImage} from '$lib/config';
+	import { siteName, siteOwner, siteTitle, siteImage, twitterHandle} from '$lib/config';
 	import { MetaTags } from 'svelte-meta-tags';
 
 	const og = {
@@ -14,7 +14,7 @@
 		],
 		siteName: {siteName},
 		twitter: {
-			handle: '@prabhukirantwt',
+			handle: {twitterHandle},
 			cardType: 'summary_large_image',
 			image: {siteImage},
 			imageAlt: {siteOwner}
@@ -42,7 +42,7 @@
 				siteName: og.siteName
 			},
 			twitter: {
-				handle: '@prabhukirantwt',
+				handle: {twitterHandle},
 				cardType: 'summary_large_image',
 				title: `${siteTitle} | ${meta.ogTitle || meta.title}`,
 				description: meta.ogDescription || meta.description,

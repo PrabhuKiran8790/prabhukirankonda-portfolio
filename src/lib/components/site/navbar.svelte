@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { routes } from '$lib/config';
+	import { mailId, routes } from '$lib/config';
 	import { cn } from '$lib/utils';
 	import { ThemeToggle } from '$lib/components/site';
 
@@ -30,7 +30,7 @@
 						/>
 						<span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500" />
 					</span>
-					<a href="mailto:prabhukiran426@gmail.com">Open to work</a>
+					<a href="mailto:{mailId}">Open to work</a>
 				</div>
 			{/if}
 		</div>
