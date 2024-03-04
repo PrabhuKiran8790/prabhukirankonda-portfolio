@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { siteName, siteOwner, siteTitle } from '$lib/config';
+	import { siteName, siteOwner, siteTitle, siteImage} from '$lib/config';
 	import { MetaTags } from 'svelte-meta-tags';
 
 	const og = {
 		images: [
 			{
-				url: 'https://prabhukirankonda.vercel.app/og.png',
+				url: {siteImage},
 				width: 800,
 				height: 600,
 				alt: {siteName}
@@ -16,7 +16,7 @@
 		twitter: {
 			handle: '@prabhukirantwt',
 			cardType: 'summary_large_image',
-			image: 'https://prabhukirankonda.vercel.app/og.png',
+			image: {siteImage},
 			imageAlt: {siteOwner}
 		}
 	};
@@ -46,7 +46,7 @@
 				cardType: 'summary_large_image',
 				title: `${siteTitle} | ${meta.ogTitle || meta.title}`,
 				description: meta.ogDescription || meta.description,
-				image: 'https://prabhukirankonda.vercel.app/og.png',
+				image: {siteImage},
 				imageAlt: {siteOwner}
 			}
 		};
