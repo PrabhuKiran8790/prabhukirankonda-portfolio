@@ -1,7 +1,7 @@
 <script>
 	import ProfilePicture from '$lib/assets/profile_picture.jpg';
 	import { SocialButtons } from '$lib/components/site';
-	import { whatsNew } from '$lib/config';
+	import { siteOwner, whatsNew } from '$lib/config';
 	import { Mailbox } from 'lucide-svelte';
 
 	// const ProfilePicture = new URL('../../assets/profile_picture.jpg', import.meta.url).href
@@ -12,7 +12,7 @@
 		<!-- Image for mobile devices -->
 		<img
 			src={ProfilePicture}
-			alt="Prabhu Kiran Konda"
+			alt={siteOwner}
 			class="block mx-auto rounded-full w-52 h-52 md:hidden"
 		/>
 
@@ -31,7 +31,7 @@
 			</div>
 
 			<h1 class="font-bold md:text-xl">Hi, I'm</h1>
-			<h1 class="text-2xl font-bold md:text-5xl">Prabhu Kiran Konda</h1>
+			<h1 class="text-2xl font-bold md:text-5xl">{siteOwner}</h1>
 			<p>
 				a software developer from India. I specialize in Python, Machine Learning, and full stack
 				development. I’m currently seeking software developer roles to further my career. In my free
@@ -43,7 +43,7 @@
 
 		<img
 			src={ProfilePicture}
-			alt="Prabhu Kiran Konda"
+			alt="{siteOwner}"
 			class="hidden rounded-full md:block h-28 w-28 md:h-64 md:w-64 md:self-center"
 		/>
 	</div>

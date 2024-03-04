@@ -13,6 +13,7 @@ type socialsType = {
 	class?: string;
 };
 
+export const siteOwner = 'Prabhu Kiran Konda'
 export const siteName = 'Prabhu Kiran Konda'
 export const siteUrl = 'https://prabhukirankonda.vercel.app/'
 export const siteTitle = 'Prabhu Kiran Konda'
