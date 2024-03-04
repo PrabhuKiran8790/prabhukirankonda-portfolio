@@ -3,7 +3,7 @@ title: First Post
 description: My first ever post.
 date: '2023-06-16'
 tags:
-  - SvelteKit
+  - Casual
 image: https://images.unsplash.com/photo-1500576992153-0271099def59
 draft: false
 ---
