@@ -16,3 +16,4 @@ services:
           action: sync
     volumes:
       - ./:/app
+      - /app/node_modules
