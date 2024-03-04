@@ -33,10 +33,10 @@
 			<h1 class="font-bold md:text-xl">Hi, I'm</h1>
 			<h1 class="text-2xl font-bold md:text-5xl">{siteOwner}</h1>
 			<p>
-				a software developer from India. I specialize in Python, Machine Learning, and full stack
-				development. I’m currently seeking software developer roles to further my career. In my free
-				time, I enjoy writing technical blogs and sharing my journey with others. If you'd like to
-				get in touch, feel free to reach out to me.
+				A software developer and technology enthusiast, who wants to see it evolve to the end.
+				Willing to create a world where regular tasks and labor-intensive jobs, otherwise done by
+				humans, are seamlessly automated, paving the way for a more liberated and fulfilling
+				existence.
 			</p>
 			<SocialButtons />
 		</div>
