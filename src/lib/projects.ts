@@ -10,5 +10,4 @@ export type ProjectType = {
 	techstack: TechStack[];
 };
 
-export const projects: ProjectType[] = [
-];
+export const projects: ProjectType[] = [];

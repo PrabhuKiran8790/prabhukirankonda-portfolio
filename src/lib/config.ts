@@ -13,14 +13,13 @@ type socialsType = {
 	class?: string;
 };
 
-export const siteOwner = 'Rituraj Basak'
-export const siteName = 'Rituraj Basak'
-export const siteUrl = 'https://riturajbasak.vercel.app/'
-export const siteTitle = 'Rituraj Basak'
-export const siteImage = `${siteUrl}og.png`
-export const twitterHandle = '@RiturajBasak'
-export const mailId = 'ycantistudy@gmail.com'
-
+export const siteOwner = 'Rituraj Basak';
+export const siteName = 'Rituraj Basak';
+export const siteUrl = 'https://riturajbasak.vercel.app/';
+export const siteTitle = 'Rituraj Basak';
+export const siteImage = `${siteUrl}og.png`;
+export const twitterHandle = '@RiturajBasak';
+export const mailId = 'ycantistudy@gmail.com';
 
 // nav routes
 export const routes: routesType[] = [

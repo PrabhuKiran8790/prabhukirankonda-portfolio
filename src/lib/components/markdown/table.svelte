@@ -9,7 +9,10 @@
 </script>
 
 <div class="w-full overflow-auto my-5">
-	<table class={cn('w-full caption-bottom text-sm border border-border rounded-lg', className)} {...$$restProps}>
+	<table
+		class={cn('w-full caption-bottom text-sm border border-border rounded-lg', className)}
+		{...$$restProps}
+	>
 		<slot />
 	</table>
 </div>

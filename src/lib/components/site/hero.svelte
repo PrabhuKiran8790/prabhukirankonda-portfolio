@@ -43,7 +43,7 @@
 
 		<img
 			src={ProfilePicture}
-			alt="{siteOwner}"
+			alt={siteOwner}
 			class="hidden rounded-full md:block h-28 w-28 md:h-64 md:w-64 md:self-center"
 		/>
 	</div>

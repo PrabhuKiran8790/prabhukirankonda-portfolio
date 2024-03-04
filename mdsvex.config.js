@@ -50,12 +50,10 @@ const katex_blocks = () => (tree) => {
 	});
 };
 
-
-
-const inlineKatexUsingInlineCode = () => (tree) => { 
+const inlineKatexUsingInlineCode = () => (tree) => {
 	visit(tree, 'inlineCode', (node) => {
 		if (node.value.endsWith('{:eq}')) {
-			node.value = node.value.replace('{:eq}', '')
+			node.value = node.value.replace('{:eq}', '');
 			const str = katex.renderToString(node.value, {
 				displayMode: false,
 				leqno: false,
@@ -70,42 +68,40 @@ const inlineKatexUsingInlineCode = () => (tree) => {
 
 			node.type = 'raw';
 			node.value = '<span class="text-base mx-1">{@html `' + str + '`}</span>';
-		} 
-	})
-}
+		}
+	});
+};
 
 const katex_inline = () => (tree) => {
-
 	// using $$ $$ for inline math
-	// 
-  visit(tree, 'text', (node, index, parent) => {
-    const regex = /\$\$(.*?)\$\$/g;
-	  let replacedText = node.value;
+	//
+	visit(tree, 'text', (node, index, parent) => {
+		const regex = /\$\$(.*?)\$\$/g;
+		let replacedText = node.value;
 
-    replacedText = replacedText.replace(regex, (match, equation) => {
-      // Replace double backslashes with single backslashes
-		const cleanedEquation = equation.replace(/\\\\/g, '\\');
+		replacedText = replacedText.replace(regex, (match, equation) => {
+			// Replace double backslashes with single backslashes
+			const cleanedEquation = equation.replace(/\\\\/g, '\\');
 
-      const str = katex.renderToString(cleanedEquation, {
-        throwOnError: true,
-        errorColor: '#cc0000',
-        strict: 'warn',
-        output: 'htmlAndMathml',
-        trust: false,
-        macros: { '\\f': '#1f(#2)' }
-      });
+			const str = katex.renderToString(cleanedEquation, {
+				throwOnError: true,
+				errorColor: '#cc0000',
+				strict: 'warn',
+				output: 'htmlAndMathml',
+				trust: false,
+				macros: { '\\f': '#1f(#2)' }
+			});
 
-      // Escape the HTML for Svelte
-		const escapedHTML = escapeSvelte(str);
+			// Escape the HTML for Svelte
+			const escapedHTML = escapeSvelte(str);
 
+			// Wrap the rendered equation in a span
+			return `<span class="text-base">{@html \`${escapedHTML}\`}</span>`;
+		});
 
-      // Wrap the rendered equation in a span
-      return `<span class="text-base">{@html \`${escapedHTML}\`}</span>`;
-    });
-
-    // Replace the original text node with the modified text
-    parent.children[index] = { type: 'text', value: replacedText };
-  });
+		// Replace the original text node with the modified text
+		parent.children[index] = { type: 'text', value: replacedText };
+	});
 };
 
 const prettyCodeOptions = {
@@ -150,7 +146,7 @@ const prettyCodeOptions = {
 					'php',
 					'json',
 					'yaml',
-					'swift',
+					'swift'
 				].includes(id);
 			})
 		});
@@ -179,7 +175,15 @@ export const mdsvexOptions = {
 	// highlight: {
 	// 	highlighter: highlightCode
 	// },
-	remarkPlugins: [remarkUnwrapImages, math, katex_blocks, katex_inline, replaceQuotes, remarkGfm, inlineKatexUsingInlineCode],
+	remarkPlugins: [
+		remarkUnwrapImages,
+		math,
+		katex_blocks,
+		katex_inline,
+		replaceQuotes,
+		remarkGfm,
+		inlineKatexUsingInlineCode
+	],
 	rehypePlugins: [
 		rehypeCustomComponents,
 		rehypeComponentPreToPre,

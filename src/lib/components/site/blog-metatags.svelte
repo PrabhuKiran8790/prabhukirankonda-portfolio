@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import type { Post } from '$lib/types';
 	import { MetaTags } from 'svelte-meta-tags';
-	import {siteName} from '$lib/config';
+	import { siteName } from '$lib/config';
 
 	export let meta: Post;
 </script>

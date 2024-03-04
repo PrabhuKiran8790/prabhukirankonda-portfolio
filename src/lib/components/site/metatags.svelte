@@ -1,23 +1,23 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { siteName, siteOwner, siteTitle, siteImage, twitterHandle} from '$lib/config';
+	import { siteName, siteOwner, siteTitle, siteImage, twitterHandle } from '$lib/config';
 	import { MetaTags } from 'svelte-meta-tags';
 
 	const og = {
 		images: [
 			{
-				url: {siteImage},
+				url: { siteImage },
 				width: 800,
 				height: 600,
-				alt: {siteName}
+				alt: { siteName }
 			}
 		],
-		siteName: {siteName},
+		siteName: { siteName },
 		twitter: {
-			handle: {twitterHandle},
+			handle: { twitterHandle },
 			cardType: 'summary_large_image',
-			image: {siteImage},
-			imageAlt: {siteOwner}
+			image: { siteImage },
+			imageAlt: { siteOwner }
 		}
 	};
 
@@ -42,12 +42,12 @@
 				siteName: og.siteName
 			},
 			twitter: {
-				handle: {twitterHandle},
+				handle: { twitterHandle },
 				cardType: 'summary_large_image',
 				title: `${siteTitle} | ${meta.ogTitle || meta.title}`,
 				description: meta.ogDescription || meta.description,
-				image: {siteImage},
-				imageAlt: {siteOwner}
+				image: { siteImage },
+				imageAlt: { siteOwner }
 			}
 		};
 	}

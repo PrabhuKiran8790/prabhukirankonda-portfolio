@@ -11,7 +11,7 @@
 <div class="p-4 mt-4 md:mt-8 flex flex-col gap-10">
 	<div class="flex flex-col items-start md:items-center justify-center gap-8">
 		<h1
-			class="text-5xl  font-bold text-transparent bg-gradient-to-r from-primary to-gray-400 bg-clip-text"
+			class="text-5xl font-bold text-transparent bg-gradient-to-r from-primary to-gray-400 bg-clip-text"
 		>
 			Tags
 		</h1>
