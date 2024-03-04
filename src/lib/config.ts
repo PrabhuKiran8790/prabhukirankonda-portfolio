@@ -1,5 +1,5 @@
 import { LinkedIn, X, CodeBerg } from '$lib/components/site/icons';
-import { FileText, Github, Mail } from 'lucide-svelte';
+import { Github, Mail } from 'lucide-svelte';
 
 type routesType = {
 	name: string;
