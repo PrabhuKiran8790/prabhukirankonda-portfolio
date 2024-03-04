@@ -26,7 +26,6 @@ to get Repo ID, Category ID goto [Giscus](https://giscus.app/) and follow the in
 
 To add a new project, you can start by chaging the `src/lib/projects.ts` file.
 
-
 ```ts title="src/lib/projects.ts"
 import type { TechStack } from './icons';
 
@@ -70,7 +69,7 @@ export const projects: ProjectType[] = [
 		image: '/dall-e-svelte-min.png',
 		techstack: ['SvelteKit', 'TypeScript', 'MySQL', 'Drizzle'],
 		featured: true
-	},
+	}
 ];
 ```
 

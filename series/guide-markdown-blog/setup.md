@@ -5,16 +5,15 @@ date: '2023-12-20'
 order: 1
 draft: false
 ---
+
 <script>
     import { ThemeToggle, Tag } from '$lib/components/site';
 </script>
-
 
 ## Introduction
 
 Welcome, this will guide you through this template and how to use it. This is a SvelteKit + MDsveX Personal website and a blog completely designed with [Shadcn-Svelte](https://shadcn-svelte.com/), it has everything you need get started and you can fully customise it.
 [repo link](https://github.com/PrabhuKiran8790/prabhukirankonda-portfolio.git)
-
 
 ## Features
 
@@ -24,11 +23,10 @@ it's got ton of features that you don't wanna miss out.
 - SvelteKit as meta framework
   - with shallow routing when clicking on tags to instantly see the posts based on tags. Click on the tag to see.  
     <Tag
-          tag="SvelteKit"
-					href={`/tags/sveltekit`}
-					shallow={true}
-				/>
-      
+    tag="SvelteKit"
+    href={`/tags/sveltekit`}
+    shallow={true}
+    />
 - [Shadcn-Svelte](https://shadcn-svelte.com/) for UI Components ([@huntabyte](https://x.com/huntabyte))
 - Light and Dark mode
 - different themes for code blocks based on color scheme.
@@ -69,20 +67,19 @@ it's got ton of features that you don't wanna miss out.
   - Math support using KaTeX
     - examples: `Inline`: $$\nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)$$
     - Block equations (here are my favourite [Maxwells's Equations](https://en.wikipedia.org/wiki/Maxwell%27s_equations#:~:text=Maxwell's%20equations%2C%20or%20Maxwell%E2%80%93Heaviside,classical%20optics%2C%20and%20electric%20circuits.))
-        ```math
-        \nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0}
-        ```
-        ```math
-        \nabla \cdot \mathbf{B} = 0
-        ```
-        ```math
-        \nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}
-        ```
-        ```math
-        \nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)
-        ```
+      ```math
+      \nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0}
+      ```
+      ```math
+      \nabla \cdot \mathbf{B} = 0
+      ```
+      ```math
+      \nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}
+      ```
+      ```math
+      \nabla \times \mathbf{B} = \mu_0 \left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)
+      ```
   - Mobile friendly interface
-
 
 ## How to Use?
 
@@ -95,17 +92,20 @@ To install, clone the repo using
 ```shell
 git clone https://github.com/PrabhuKiran8790/prabhukirankonda-portfolio.git
 ```
+
 install the node modules
 
 ```shell
 cd prabhukirankonda-portfolio && pnpm i
 ```
+
 and start editing the following files
- - `$lib/config.ts` which has all the links
- - `about/about.md` to change the about page
- - `$lib/assets` for favicon and image
- - `$lib/components/site/hero.svelte` to change the home page
- - `$lib/projects.ts` to change your projects.
+
+- `$lib/config.ts` which has all the links
+- `about/about.md` to change the about page
+- `$lib/assets` for favicon and image
+- `$lib/components/site/hero.svelte` to change the home page
+- `$lib/projects.ts` to change your projects.
 
 let's have a look at `$lib/config.ts`
 

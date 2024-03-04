@@ -18,17 +18,17 @@ here's the tree view of the folder structure
 ```md /authjs-sveltekit-prisma/#rb /dimensionality-reduction-using-auto-encoders/#yb /getting-started/#rb {2-10} /page.md/#hi
 ├── about
 ├── posts
-│   ├── authjs-sveltekit-prisma <!-- slug --->
-│   │   └── page.md
-│   ├── dimensionality-reduction-using-auto-encoders <!-- slug --->
-│   │   ├── banner.png
-│   │   └── page.md
-│   └── getting-started <!-- slug --->
-│       ├── PDF_Assistant.png
-│       └── page.md
+│ ├── authjs-sveltekit-prisma <!-- slug --->
+│ │ └── page.md
+│ ├── dimensionality-reduction-using-auto-encoders <!-- slug --->
+│ │ ├── banner.png
+│ │ └── page.md
+│ └── getting-started <!-- slug --->
+│ ├── PDF_Assistant.png
+│ └── page.md
 ├── series
 ├── src
-├── static 
+├── static
 ├── svelte.config.js
 ├── tailwind.config.js
 ├── biome.json
@@ -43,7 +43,6 @@ here's the tree view of the folder structure
 ```
 
 > **Note**: Do not add any spaces, separate the name using `-`
-
 
 ## Frontmatter
 
@@ -74,13 +73,13 @@ To understand Series Blogs, you need to understand the folder structure first.
 ├── about
 ├── posts
 ├── series
-│   └── guide-markdown-blog <!-- cover folder (will be a part of the slug) --->
-│       ├── config.md <!-- Blog post --->
-│       ├── create-new-blog.md <!-- Blog post --->
-│       ├── page.md <!-- not a part of the post but holds information about the series, cover image for the series, tags etc. --->
-│       └── setup.md <!-- Blog post --->
+│ └── guide-markdown-blog <!-- cover folder (will be a part of the slug) --->
+│ ├── config.md <!-- Blog post --->
+│ ├── create-new-blog.md <!-- Blog post --->
+│ ├── page.md <!-- not a part of the post but holds information about the series, cover image for the series, tags etc. --->
+│ └── setup.md <!-- Blog post --->
 ├── src
-├── static 
+├── static
 ├── svelte.config.js
 ├── tailwind.config.js
 ├── biome.json
@@ -110,7 +109,8 @@ image: https://res.cloudinary.com/practicaldev/image/fetch/s--YFzS8yLr--/c_imagg
 draft: false
 ---
 ```
-this is same as the one for individual blog posts and for actual posts in the series, the frontmatter is little different. 
+
+this is same as the one for individual blog posts and for actual posts in the series, the frontmatter is little different.
 
 ```md
 ---
@@ -134,10 +134,11 @@ This blog uses [rehype-pretty-code](https://rehype-pretty-code.netlify.app/) and
 You can create fenced code blocks by placing triple backticks <code>```</code> before and after the code block. Place a blank line before and after code blocks to make the raw formatting easier to read.
 
 ```js
-console.log("Hello")
+console.log('Hello');
 ```
 
 To display triple backticks in a fenced code block, wrap them inside quadruple backticks.
+
 ````py
 ```py
 print("Hello from Python 🐍")
@@ -149,8 +150,9 @@ print("Hello from Python 🐍")
 if you provide a title with an extension, the code block will look like
 
 ```ts title="hello.ts"
-console.log("Hello from TS")
+console.log('Hello from TS');
 ```
+
 for rendering icons, it grabs the extension and maps it to the icon for that language. Again, you can totally change this behaviour in `pre.svelte` which is a custom component.
 
 ### Inline Syntax Highlighting
@@ -180,7 +182,7 @@ return fibonacci(n - 1) + fibonacci(n - 2) # [!code ++]
 ```
 ````
 
-this will become 
+this will become
 
 ```py /fibonacci/1-2#rb {2-3}
 def fibonacci(n):
@@ -196,8 +198,8 @@ for other languages, like js or ts
 ````md
 ```js title="code-diff.js"
 export function foo() {
-  console.log('hewwo') // [!code --] // this should be hello
-  console.log('hello') // [!code ++]
+	console.log('hewwo'); // [!code --] // this should be hello
+	console.log('hello'); // [!code ++]
 }
 ```
 ````
@@ -206,8 +208,8 @@ this will become
 
 ```js title="code-diff.js"
 export function foo() {
-  console.log('hewwo') // [!code --] // this should be hello
-  console.log('hello') // [!code ++]
+	console.log('hewwo'); // [!code --] // this should be hello
+	console.log('hello'); // [!code ++]
 }
 ```
 
@@ -216,6 +218,7 @@ export function foo() {
 for rendering math equations, i gave a detailed explanation [here](/blog/getting-started#math-blocks). Earlier it wasn't possible to add inline equations without using an external component but I created a plugin that allows you to insert inline math equations.
 
 here's the plugin
+
 ```js showLineNumbers {3}
 const katex_inline = () => (tree) => {
 	visit(tree, 'text', (node, index, parent) => {
@@ -267,10 +270,12 @@ to write inline equations use `$$ $$` and wrap your KaTeX inside.
 ```md
 $$(a+b)^2 = a^2 + b^2 + 2ab$$
 ```
+
 this becomes $$(a+b)^2 = a^2 + b^2 + 2ab$$
 
 for block equations
- ````md /math/1#rb title="math.md"
+
+````md /math/1#rb title="math.md"
 ```math
 \\nabla \\times \\mathbf{B} = \\mu_0 \\left(\\mathbf{J} + \\varepsilon_0 \\frac{\\partial \\mathbf{E}}{\\partial t}\\right)
 ```
@@ -285,4 +290,3 @@ this becomes
 in the next part, we'll look at other configurations.
 
 ---
- 
