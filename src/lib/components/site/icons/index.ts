@@ -7,3 +7,4 @@ export { default as MySQL } from './mysql.svelte';
 export { default as Tailwind } from './tailwind.svelte';
 export { default as Drizzle } from './drizzle.svelte';
 export { default as Planet } from './planet.svelte';
+export { default as CodeBerg } from './codeberg.svelte';

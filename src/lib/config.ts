@@ -1,4 +1,4 @@
-import { LinkedIn, X } from '$lib/components/site/icons';
+import { LinkedIn, X, CodeBerg } from '$lib/components/site/icons';
 import { FileText, Github, Mail } from 'lucide-svelte';
 
 type routesType = {
@@ -13,13 +13,13 @@ type socialsType = {
 	class?: string;
 };
 
-export const siteOwner = 'Prabhu Kiran Konda'
-export const siteName = 'Prabhu Kiran Konda'
-export const siteUrl = 'https://prabhukirankonda.vercel.app/'
-export const siteTitle = 'Prabhu Kiran Konda'
+export const siteOwner = 'Rituraj Basak'
+export const siteName = 'Rituraj Basak'
+export const siteUrl = 'https://riturajbasak.vercel.app/'
+export const siteTitle = 'Rituraj Basak'
 export const siteImage = `${siteUrl}og.png`
-export const twitterHandle = '@prabhukirantwt'
-export const mailId = 'prabhukiran426@gmail.com'
+export const twitterHandle = '@RiturajBasak'
+export const mailId = 'ycantistudy@gmail.com'
 
 
 // nav routes
@@ -45,17 +45,22 @@ export const routes: routesType[] = [
 // social icons with links
 export const socials: socialsType[] = [
 	{
-		href: 'https://github.com/prabhukiran8790',
+		href: 'https://codeberg.org/xade',
+		icon: CodeBerg,
+		display: 'CodeBerg'
+	},
+	{
+		href: 'https://github.com/imxade',
 		icon: Github,
 		display: 'GitHub'
 	},
 	{
-		href: 'https://linkedin.com/in/PrabhuKiranKonda',
+		href: 'https://linkedin.com/in/riturajbasak',
 		icon: LinkedIn,
 		display: 'LinkedIn'
 	},
 	{
-		href: 'https://x.com/prabhukirantwt',
+		href: 'https://x.com/RiturajBasak',
 		icon: X,
 		display: 'Twitter',
 		class: 'h-4 w-4'
@@ -65,11 +70,6 @@ export const socials: socialsType[] = [
 		icon: Mail,
 		display: 'Mail',
 		class: 'h-4 w-4'
-	},
-	{
-		href: '/Prabhu Kiran Konda Resume.pdf',
-		icon: FileText,
-		display: 'Resume'
 	}
 ];
 
@@ -81,18 +81,17 @@ export const getSocials = ({ exclude }: { exclude?: string } = {}): socialsType[
 };
 
 export const githubConfig = {
-	username: 'PrabhuKiran8790',
-	repo: 'prabhukirankonda-portfolio',
+	username: 'imxade',
+	repo: 'portfolio',
 	branch: 'main'
 };
 
 export const author = {
-	name: 'Prabhu Kiran Konda',
-	tagline: 'I train machines to learn and build software to solve problems.',
+	name: 'Rituraj Basak',
+	tagline: '"Keep it simple, stupid!"',
 	avatar: `https://github.com/${githubConfig.username}.png`,
-	twt: 'prabhukirantwt'
+	twt: 'riturajbasak'
 };
 
 export const whatsNew: string = `
-Currently working on 100 Days of AI. A 100 day challenge to learn, teach and build AI
-@ <a href='https://neuralchemie.com' class="underline hover:underline-offset-4">Neuralchemie</a>`;
+Currently in search of Internships`;
