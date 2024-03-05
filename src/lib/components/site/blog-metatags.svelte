@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
 	import type { Post } from '$lib/types';
 	import { MetaTags } from 'svelte-meta-tags';
+	import { siteName } from '$lib/config';
 
 	export let meta: Post;
 </script>
@@ -21,14 +22,6 @@
 				alt: meta.title
 			}
 		],
-		siteName: 'Prabhu Kiran Konda'
-	}}
-	twitter={{
-		handle: '@prabhukirantwt',
-		cardType: 'summary_large_image',
-		title: meta.title,
-		description: meta.description,
-		image: typeof meta.image === 'string' ? meta.image : meta.image[0],
-		imageAlt: meta.title
+		siteName: siteName
 	}}
 />

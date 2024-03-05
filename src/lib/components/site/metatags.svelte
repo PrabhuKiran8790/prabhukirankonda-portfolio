@@ -1,22 +1,23 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { siteName, siteOwner, siteTitle, siteImage, twitterHandle } from '$lib/config';
 	import { MetaTags } from 'svelte-meta-tags';
 
 	const og = {
 		images: [
 			{
-				url: 'https://prabhukirankonda.vercel.app/og.png',
+				url: { siteImage },
 				width: 800,
 				height: 600,
-				alt: 'Prabhu Kiran Konda'
+				alt: { siteName }
 			}
 		],
-		siteName: 'Prabhu Kiran Konda',
+		siteName: { siteName },
 		twitter: {
-			handle: '@prabhukirantwt',
+			handle: { twitterHandle },
 			cardType: 'summary_large_image',
-			image: 'https://prabhukirankonda.vercel.app/og.png',
-			imageAlt: 'Prabhu Kiran Konda'
+			image: { siteImage },
+			imageAlt: { siteOwner }
 		}
 	};
 
@@ -31,22 +32,22 @@
 
 	function setPageMeta(meta: Meta) {
 		pageMeta = {
-			title: `Prabhu Kiran Konda | ${meta.title}`,
+			title: `${siteTitle} | ${meta.title}`,
 			description: meta.description,
 			openGraph: {
 				url: $page.url,
-				title: `Prabhu Kiran Konda | ${meta.ogTitle || meta.title}`,
+				title: `${siteTitle} | ${meta.ogTitle || meta.title}`,
 				description: meta.ogDescription || meta.description,
 				images: og.images,
 				siteName: og.siteName
 			},
 			twitter: {
-				handle: '@prabhukirantwt',
+				handle: { twitterHandle },
 				cardType: 'summary_large_image',
-				title: `Prabhu Kiran Konda | ${meta.ogTitle || meta.title}`,
+				title: `${siteTitle} | ${meta.ogTitle || meta.title}`,
 				description: meta.ogDescription || meta.description,
-				image: 'https://prabhukirankonda.vercel.app/og.png',
-				imageAlt: 'Prabhu Kiran Konda'
+				image: { siteImage },
+				imageAlt: { siteOwner }
 			}
 		};
 	}
