@@ -11,7 +11,7 @@ layout: about
 Hello <span class="wave">👋</span>  
 I'm `Rituraj`, a passionate technology enthusiast eager to share and document the knowledge I've accumulated. Recently delving into blogging, I aim to distill complex concepts into simple, modular, and reusable code.
 
-Fascinated by AGIs and their potential .to revolutionize various fields, I'm keen on exploring their development and implications.
+Fascinated by vision of AGIs and their potential .to revolutionize various fields, I'm keen on exploring their development and implications.
 
 Longing for the day when JavaScript and Elixir embrace strong typing :(
 
