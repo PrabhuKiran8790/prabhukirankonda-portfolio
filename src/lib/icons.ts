@@ -1,5 +1,6 @@
 import type { ComponentType, SvelteComponent } from 'svelte';
 import { Drizzle, Streamlit, Svelte, Tailwind, SQL } from './components/site/icons';
+import { MonitorStopIcon, Terminal } from 'lucide-svelte';
 
 function tuple<T extends string[]>(...o: T) {
 	return o;
@@ -13,7 +14,14 @@ export const techStackArray = tuple(
 	'SQL',
 	'Flask',
 	'Docker',
-	'Git'
+	'Git',
+	'Virtualization',
+	'NixOS',
+	'Linux',
+	'Fastify',
+	'Bash',
+	'Shell',
+	'NodeJS'
 );
 
 export type TechStack = (typeof techStackArray)[number];
@@ -48,6 +56,12 @@ export const techStackData: TechStackObject = {
     */
 	SQL: {
 		customIcon: SQL
+	},
+	Shell: {
+		customIcon: Terminal
+	},
+	Virtualization: {
+		customIcon: MonitorStopIcon
 	},
 	SvelteKit: {
 		customIcon: Svelte
