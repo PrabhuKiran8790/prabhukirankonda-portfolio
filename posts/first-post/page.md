@@ -1,6 +1,6 @@
 ---
 title: First Post
-description: My first ever post.
+description: My first ever post, thrilled to embark on this new journey of sharing my thoughts, experiences and insights with all of you.
 date: '2023-06-16'
 tags:
   - Casual
@@ -8,11 +8,9 @@ image: https://images.unsplash.com/photo-1500576992153-0271099def59
 draft: false
 ---
 
-## Table of Contents
-
 ## My First Blog
 
-Welcome to my first-ever blog post! I am thrilled to embark on this new journey of sharing my thoughts, experiences, and insights with all of you.
+Welcome to my first-ever blog post! I am thrilled to embark on this new journey of sharing my thoughts, experiences and insights with all of you.
 
 ## Why Start a Blog?
 
