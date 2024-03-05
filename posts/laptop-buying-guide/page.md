@@ -1,13 +1,16 @@
 ---
 title: A Laptop Selection Guide
 description: Planning to get a new laptop? Here's the comprehensive guide on, which specifications you should be looking at.
-published: '2023-07-30'
-category: guide
+date: '2023-07-30'
+tags:
+  - Guide
+  - Tech
+  - Hardware
+image: https://images.unsplash.com/photo-1593642634315-48f5414c3ad9
+draft: false
 ---
 
 Are you on the hunt for your next laptop? Amidst a bewildering array of options, finding the laptop that perfectly aligns with your needs can be a daunting task. Worry not! We've meticulously dissected the crucial components and features to craft this comprehensive guide, ensuring you're well-prepared for your laptop journey.
-
-## Table of Contents
 
 ## Where to Start ?
 [NotebookCheck's Search](https://www.notebookcheck.net/Search.8222.0.html) would be one of best places to start with.
@@ -30,7 +33,7 @@ At the core of your laptop lies the central processing unit (CPU), a true powerh
 - **Prioritize Threads Over Cores**: Look beyond core count and focus on thread count, as a core doesn't always refer to same number of threads.
 
 ### Intel CPUs
-- Performance Spectrum: i3 < i5 < i7 < i9
+- Performance Spectrum: i3 &amp;lt; i5 &amp;lt; i7 &amp;lt; i9
 
 | Processor Family          | Description |
 |---------------------------|----------|
@@ -40,7 +43,7 @@ At the core of your laptop lies the central processing unit (CPU), a true powerh
 | i9                        | Zenith of performance for professionals and enthusiasts, excels in resource-intensive applications. |
 
 ### AMD CPUs
-- Performance Spectrum: Ryzen 3 < Ryzen 5 < Ryzen 7 < Ryzen 9
+- Performance Spectrum: Ryzen 3 &amp;lt; Ryzen 5 &amp;lt; Ryzen 7 &amp;lt; Ryzen 9
 
 | Processor Family          | Description |
 |---------------------------|----------|
