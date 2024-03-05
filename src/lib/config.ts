@@ -97,4 +97,4 @@ export const author = {
 };
 
 export const quote: string = `
-No One Knows What The OutCome Will Be. So, Choose Whatever You'll Regret The Least..`;
+No One Knows What The OutCome Will Be. So, Choose What You'll Regret The Least..`;
