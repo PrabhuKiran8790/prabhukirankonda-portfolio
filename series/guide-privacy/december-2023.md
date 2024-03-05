@@ -36,7 +36,7 @@ As we reflect on the past year, it's fascinating to look back at the apps and to
 ### NewPipe
 
 - **Description**: NewPipe is an open-source YouTube client that provides a lightweight alternative to the official app. It's designed for users looking to consume YouTube content without the bloat of unnecessary features.
-- **Link**: Not directly provided, but commonly found on GitHub and F-Droid.
+- **Link**: [Newpipe](https://newpipe.net/)
 
 ## Browsers
 
