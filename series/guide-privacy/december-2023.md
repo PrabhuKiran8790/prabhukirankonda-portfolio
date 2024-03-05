@@ -10,13 +10,13 @@ draft: false
 
 ## Introduction
 
-As we reflect on the past year, it's fascinating to look back at the apps and tools that have shaped our digital lives in 2023. This blog post aims to provide a detailed overview of the apps I've been using, categorized by their primary use cases such as app management, productivity, entertainment, and more. Let's dive into the world of tech we've explored together.
+As we reflect on the past year, it's fascinating to look back at the apps and tools that have shaped our digital experience 2023. This blog post aims to provide an overview of the apps I've been using, categorized by their primary use cases such as app management, productivity, entertainment, and more. Mostly apps I've been using are [FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software). Let's dive into the world of tech we've explored together.
 
 ## App Management
 
 ### ApkUpdater
 
-- **Description**: ApkUpdater is a GitHub project that allows users to manage their APK files, ensuring they are always up-to-date. It's particularly useful for developers and tech enthusiasts who prefer managing their apps manually.
+- **Description**: ApkUpdater is a project that allows users to manage their APK files, ensuring they are always up-to-date. It's particularly useful for developers and tech enthusiasts who prefer managing their apps manually and don't want to use google services.
 - **Link**: [GitHub - rumboalla/apkupdater](https://github.com/rumboalla/apkupdater)
 
 ## Productivity
