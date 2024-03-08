@@ -22,6 +22,17 @@
 	let theme_: string | undefined;
 	let commentsSection: HTMLElement | null;
 	let showScrollToTop = false;
+	let folder: string = '';
+	let fileName: string = '';
+	let githubURL: string = `https://github.com/${githubConfig.username}/${githubConfig.repo}/blob/${githubConfig.branch}/posts/${$page.params.slug}/page.md`;
+
+	const pattern: RegExp = /-spn\d+-/; // -spn{order}- is the pattern for series post
+
+	if (pattern.test($page.params.slug)) {
+		folder = $page.params.slug.split(pattern)[0];
+		fileName = $page.params.slug.split(pattern)[1];
+		githubURL = `https://github.com/${githubConfig.username}/${githubConfig.repo}/blob/${githubConfig.branch}/series/${folder}/${fileName}.md`;
+	}
 
 	onMount(() => {
 		theme_ = localStorage.getItem('mode')?.replace(/^"(.*)"$/, '$1');
@@ -98,12 +109,7 @@
 			<Stickybar element={commentsSection} {showScrollToTop} />
 		{/if}
 		<div class="px-2">
-			<Button
-				variant="outline"
-				target="_blank"
-				class="h-8 px-2"
-				href={`https://github.com/${githubConfig.username}/${githubConfig.repo}/blob/${githubConfig.branch}/posts/${$page.params.slug}/page.md`}
-			>
+			<Button variant="outline" target="_blank" class="h-8 px-2" href={githubURL}>
 				<Github class="w-4 h-4 mr-3" />
 				<h1>View on GitHub</h1>
 			</Button>
