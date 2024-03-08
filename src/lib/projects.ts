@@ -50,7 +50,8 @@ export const projects: ProjectType[] = [
 		image: '/project/pacmanStrap.png',
 		techstack: ['Bash', 'Linux'],
 		featured: false
-	}, {
+	},
+	{
 		title: 'Student Portal',
 		description:
 			'User-friendly web interface developed using Flask, Openpyxl, HTML, and Docker, designed to facilitate seamless data entry for students. With intuitive design and functionality, users can effortlessly input their data. Additionally, the entered data can be conveniently downloaded in Excel format, providing a convenient way to access and organize information.',
@@ -59,16 +60,18 @@ export const projects: ProjectType[] = [
 		image: '/project/studentPortal.png',
 		techstack: ['Python', 'Flask', 'Docker'],
 		featured: false
-	}, {
+	},
+	{
 		title: 'FeedBack Visualizer',
 		description:
-			'Tool that utilizes web scraping to gather data from Reddit threads related to a user\'s searched item.This data is then categorized and organized into informative graphs.The application employs a JSON database to store and manage the collected information efficiently.',
+			"Tool that utilizes web scraping to gather data from Reddit threads related to a user's searched item.This data is then categorized and organized into informative graphs.The application employs a JSON database to store and manage the collected information efficiently.",
 		href: 'https://feedit.streamlit.app/',
 		source: 'https://codeberg.org/zz/FeedIt',
 		image: '/project/feedIt.png',
 		techstack: ['Python', 'Streamlit'],
 		featured: false
-	}, {
+	},
+	{
 		title: 'Snake Maze',
 		description:
 			'A nostalgic game inspired by the classic Nokia version, now brought to life as a Progressive Web App (PWA) with offline functionality. Players can enjoy the thrill of navigating the snake through the maze using touch controls (swipe gestures) or arrow keys. With its seamless offline capability.',
