@@ -9,7 +9,6 @@ function tuple<T extends string[]>(...o: T) {
 export const techStackArray = tuple(
 	'Python',
 	'JavaScript',
-	'SvelteKit',
 	'Streamlit',
 	'SQL',
 	'Flask',
