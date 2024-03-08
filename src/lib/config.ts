@@ -24,16 +24,16 @@ export const mailId = 'ycantistudy@gmail.com';
 // nav routes
 export const routes: routesType[] = [
 	{
+		name: 'RSS',
+		link: '/rss.xml'
+	},
+	{
 		name: 'Blog',
 		link: '/blog'
 	},
 	{
 		name: 'Tags',
 		link: '/tags'
-	},
-	{
-		name: 'RSS',
-		link: '/rss.xml'
 	},
 	{
 		name: 'Projects',
