@@ -13,6 +13,12 @@ type socialsType = {
 	class?: string;
 };
 
+export const siteName = 'Prabhu Kiran Konda'
+export const siteUrl = 'https://prabhukirankonda.vercel.app/'
+export const siteTitle = 'Prabhu Kiran Konda'
+export const siteImage = `${siteUrl}og.png`
+
+
 // nav routes
 export const routes: routesType[] = [
 	{
