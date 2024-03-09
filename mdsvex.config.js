@@ -8,7 +8,7 @@ import { fileURLToPath } from 'url';
 import { visit } from 'unist-util-visit';
 import { toHtml } from 'hast-util-to-html';
 import rehypePrettyCode from 'rehype-pretty-code';
-import { BUNDLED_LANGUAGES, getHighlighter } from 'shiki-es';
+import { BUNDLED_LANGUAGES, getHighlighter } from 'shiki';
 import { escapeSvelte } from '@huntabyte/mdsvex';
 import remarkUnwrapImages from 'remark-unwrap-images';
 import rehypeSlug from 'rehype-slug';
