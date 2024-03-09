@@ -73,6 +73,17 @@
 		content = data.content;
 		meta = data.meta;
 	}
+
+	let githubUrl = `https://github.com/${githubConfig.username}/${githubConfig.repo}/blob/${githubConfig.branch}/posts/${$page.params.slug}/page.md`;
+
+	let seriesGithubUrl = '';
+	$: {
+		if (data?.seriesPost?.subPosts) {
+			let currentSlug = $page.params.slug;
+			let splits = currentSlug.split(/-spn\d+-/);
+			seriesGithubUrl = `https://github.com/${githubConfig.username}/${githubConfig.repo}/blob/${githubConfig.branch}/series/${splits[0]}/${splits[1]}.md`;
+		}
+	}
 </script>
 
 <BlogMetatags {meta} />
@@ -102,7 +113,7 @@
 				variant="outline"
 				target="_blank"
 				class="h-8 px-2"
-				href={`https://github.com/${githubConfig.username}/${githubConfig.repo}/blob/${githubConfig.branch}/posts/${$page.params.slug}/page.md`}
+				href={data?.seriesPost?.subPosts ? seriesGithubUrl : githubUrl}
 			>
 				<Github class="w-4 h-4 mr-3" />
 				<h1>View on GitHub</h1>
