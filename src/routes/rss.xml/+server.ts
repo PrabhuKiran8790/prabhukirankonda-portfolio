@@ -1,0 +1,37 @@
+import { getPosts } from '$lib/posts.js'
+import * as config from '$lib/config'
+
+export const prerender = true
+
+export async function GET() {
+    const posts = await getPosts()
+
+    const headers = { 'Content-Type': 'application/xml' }
+
+    const xml = `
+		<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+			<channel>
+				<title>${config.siteName}</title>
+				<link>${config.siteUrl}</link>
+				<atom:link href="${config.siteUrl
+        }rss.xml" rel="self" type="application/rss+xml"/>
+				${posts
+            .reverse()
+            .map(
+                (post) => `
+						<item>
+							<title>${post.title}</title>
+							<description>${post.description}</description>
+							<link>${config.siteUrl}${post.slug}</link>
+							<guid isPermaLink="true">${config.siteUrl}${post.slug}</guid>
+							<pubDate>${new Date(post.date).toUTCString()}</pubDate>
+						</item>
+					`
+            )
+            .join('')}
+			</channel>
+		</rss>
+	`.trim()
+
+    return new Response(xml, { headers })
+}
