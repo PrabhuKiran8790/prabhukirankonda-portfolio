@@ -13,8 +13,6 @@ I'm `Rituraj`, a passionate technology enthusiast eager to share and document th
 
 Fascinated by vision of AGIs and their potential, to revolutionize various fields, I'm keen on exploring their development and implications.
 
-Longing for the day when JavaScript and Elixir embrace strong typing :(
-
 Would like to see functional paradigm becoming mainstream.
 
 Enthusiastic about the transformative potential of technologies like WebAssembly, WebGPU, WebXR, and WebTransport, envisioning a future where the web experience transcends current boundaries.
