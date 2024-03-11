@@ -9,7 +9,7 @@ layout: about
 ## About Me 👨‍💻
 
 Hello <span class="wave">👋</span>  
-I'm `Rituraj`, a passionate technology enthusiast eager to share and document the knowledge I've accumulated. Recently delving into blogging, I aim to distill complex concepts into simple, modular, and reusable code.
+I'm **Rituraj**, a tech enthusiast eager to share and document the knowledge I've accumulated. Recently delving into blogging.
 
 Fascinated by vision of AGIs and their potential, to revolutionize various fields, I'm keen on exploring their development and implications.
 
