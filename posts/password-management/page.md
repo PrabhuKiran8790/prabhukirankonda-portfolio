@@ -1,6 +1,6 @@
 ---
-title: Signin with Google vs Password Managers
-description: Lets explores the debate between using "Sign in with Google" and relying on password managers for authentication.
+title: Single Sign On vs Password Managers
+description: Lets explores the debate between using "Single Sign On" and relying on "Password Managers" for authentication.
 date: '2024-03-12'
 tags:
   - Privacy
