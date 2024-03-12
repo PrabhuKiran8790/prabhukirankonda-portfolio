@@ -10,7 +10,7 @@ image: https://www.svgrepo.com/show/194005/password.svg
 draft: false
 ---
 
-As a self-proclaimed privacy enthusiast, I recently found myself embroiled in a heated discussion on Reddit. The topic? My decision to continue using Google's "Signin with Google" feature despite my privacy concerns. The responses were varied, but the majority seemed to advocate for the use of password managers instead. While I appreciated the input, I couldn't help but wonder: had I truly escaped unscathed by the alternatives?
+As a self-proclaimed privacy enthusiast, I recently found myself embroiled in a heated discussion on Reddit. The topic? My decision to continue using Google's "Signin with Google" feature despite my privacy concerns. The responses were varied, but the majority seemed to advocate for the use of password managers instead.
 
 ## The Great Password Manager Debate
 
