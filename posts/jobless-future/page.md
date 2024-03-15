@@ -42,7 +42,7 @@ Some argue that AI will merely assist humans and enhance productivity, but this 
 
 ### Should We Still Learn to Code?
 
-The answer is yes, Even if coding ceases to be a profession in the future, preserving the ability to code remains crucial.
+The answer is yes, even if coding ceases to be a profession in the future, preserving the ability to code remains crucial.
 
 Many subjects in our academic curriculum aren't directly tied to specific professions, yet we still deem them essential. Coding, which has shaped our digital future, should be no exception.
 
@@ -50,6 +50,6 @@ Many subjects in our academic curriculum aren't directly tied to specific profes
 <div style="text-align: center;">
 <br>
 
-***"Ability will grant us a sense of control and independence in a dependent future"***
+***Ability grants us a sense of control and independence in a dependent future***
 
 </div>
