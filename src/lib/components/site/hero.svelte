@@ -33,7 +33,7 @@
 			<h1 class="font-bold md:text-xl">Hi, I'm</h1>
 			<h1 class="text-2xl font-bold md:text-5xl">{siteOwner}</h1>
 			<p>
-				A software developer and technology enthusiast, who wants to see it evolve to the end.
+				A technology enthusiast determined to witness its evolution to the fullest.
 				Willing to create a world where regular tasks and labor-intensive jobs, otherwise done by
 				humans, are seamlessly automated, paving the way for a more liberated and fulfilling
 				existence.
