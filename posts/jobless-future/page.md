@@ -18,7 +18,9 @@ draft: false
 
 ## Coding, A Dying Profession
 
-Conveyed by the CEO of Nvidia. While considering his expertise is important, it's not enough to justify such a statement. Right ? Currently, **trained models are marketed as AI**, though the original intent of AI was to augment or replace human intelligence more effectively. If that becomes a reality someday, then the statement about coding's demise gains weight, especially for those whose livelihoods depend on coding.
+Conveyed by the CEO of Nvidia. While considering his expertise is important, it's not enough to justify such a statement. Right ? 
+
+Currently, **trained models are marketed as AI**, though the original intent of AI was to augment or replace human intelligence more effectively. If that becomes a reality someday, then the statement about coding's demise gains weight, especially for those whose livelihoods depend on coding.
 
 ### A Historical Perspective
 
