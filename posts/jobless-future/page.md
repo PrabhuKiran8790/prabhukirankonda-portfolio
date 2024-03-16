@@ -18,7 +18,7 @@ draft: false
 
 ## Coding, A Dying Profession
 
-The CEO of Nvidia conveyed that coding is a dying profession. While considering his position in the industry, it's not enough to justify such a statement. Right ? 
+The CEO of Nvidia conveyed that coding is a dying profession. While considering his position in the industry, it's not enough to justify such a statement. Right? 
 
 Currently, **trained models are marketed as AI**, though the original intent of AI was to augment or replace human intelligence more effectively. If that becomes a reality someday, then the statement about coding's demise gains weight, especially for those whose livelihoods depend on coding.
 
@@ -26,13 +26,13 @@ Currently, **trained models are marketed as AI**, though the original intent of 
 
 The discourse on technological unemployment isn't new. 
 
-In 1930, economist John Maynard Keynes warned of technological unemployment, noting that labor-saving advances were surpassing our ability to find new uses for labor. This raised widespread concerns about job displacement.
+In 1930, British economist John Maynard Keynes warned of technological unemployment with [his writing](http://www.econ.yale.edu/smith/econ116a/keynes1.pdf). His insights highlighted the concerns about labor-saving advances outpacing the creation of new jobs.
 
-Karl T. Compton, a prominent scientist of that era, contributed to this discussion by questioning whether machines would serve humanity or become destructive forces. His 1938 essay framed the debate over jobs and technological progress, a debate that remains relevant today in light of advancements in AI, robotics, and automation.
+Karl T. Compton, the president of MIT from 1930 to 1948, contributed significantly to the discussion on the impact of technology on employment, particularly in his 1938 article titled ["The Bogey of Technological Unemployment."](https://wp.technologyreview.com/wp-content/uploads/2012/10/MIT-Technology-Review-1938-12.pdf) Compton questioned whether machines would serve humanity or become destructive forces, framing the debate over jobs and technological progress.
 
 Over time, we've witnessed the gradual replacement of human physical labor, particularly tasks not requiring constant decision-making, with machinery. This transition has led to higher precision and effectiveness at reduced costs.
 
-Despite these benefits, concerns persist about a future where AI dominates every aspect of work, further intensifying concerns about job security and societal impact.
+Compton's perspective remains relevant today, especially in the context of contemporary fears surrounding Artificial Intelligence (AI) and automation, as it emphasizes the importance of understanding the broader economic impacts of technological change.
 
 ### Vision: A Jobless Future
 
@@ -48,7 +48,7 @@ Some argue that AI will merely assist humans and enhance productivity, but this 
 
 ### Should We Still Learn to Code?
 
-The answer is yes, even if coding ceases to be a profession in the future, preserving the ability to code remains crucial.
+The answer is yes. Even if coding ceases to be a profession in the future, preserving the ability to code remains crucial.
 
 Many subjects in our academic curriculum aren't directly tied to specific professions, yet we still deem them essential. Coding, which has shaped our digital future, should be no exception.
 
