@@ -14,6 +14,8 @@ Nvidia CEO Jensen Huang recently made a controversial statement at the World Gov
 
 Coming from a reputable figure is enough to justify such a statement?
 
+<img align="right" width="20%" src="https://images.unsplash.com/photo-1520563683082-7ef74b616a89" alt="AI" style="padding: 2%;">
+
 ### Present Scenario
 
 Currently, **trained models are marketed as AI**, though the original intent of AI was to augment or replace human intelligence more effectively. If that becomes a reality someday, then the statement about coding's demise gains weight, especially for those whose livelihoods depend on coding.
@@ -21,6 +23,9 @@ Currently, **trained models are marketed as AI**, though the original intent of 
 ### A Historical Perspective
 
 The discourse on technological unemployment isn't new. 
+
+
+<img align="left" width="60%" src="https://plus.unsplash.com/premium_photo-1664392454707-8eaddba734ca" alt="Manual Call Operator" style="padding: 2%;">
 
 In 1930, British economist John Maynard Keynes warned of technological unemployment with [his writing](http://www.econ.yale.edu/smith/econ116a/keynes1.pdf). His insights highlighted concerns about labor-saving advances outpacing the creation of new jobs.
 
@@ -31,6 +36,8 @@ Over time, we've witnessed the gradual replacement of human physical labor, part
 Compton's perspective remains relevant today, especially in the context of contemporary fears surrounding Artificial Intelligence (AI) and automation, as it emphasizes the importance of understanding the broader economic impacts of technological change.
 
 ### Vision: A Jobless Future
+
+<img align="right" width="40%" src="https://images.unsplash.com/photo-1512078718055-8ffaad296044" alt="Future" style="padding: 2%;">
 
 Imagine a future where:
 - Jobs don't define one's status.
