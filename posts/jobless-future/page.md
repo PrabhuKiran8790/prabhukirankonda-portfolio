@@ -1,5 +1,5 @@
 ---
-title: AI, A Jobless Future
+title: AI, A Jobless Future ?
 description: Delve into the evolving landscape of artificial intelligence and its potential impact on the job market.
 date: '2024-03-14'
 tags:
@@ -10,15 +10,7 @@ image: https://cdn.mos.cms.futurecdn.net/BWPBQYAy2DjS4ABFS4QZCT-650-80.jpg.webp
 draft: false
 ---
 
-<div style="text-align: center;">
-
-***Passion Doesn't Obey Opinions***
-
-</div>
-
-## Coding, A Dying Profession
-
-Nvidia CEO Jensen Huang recently made a controversial statement at the World Government Summit in Dubai, suggesting that the need for individuals to learn how to code is diminishing due to advancements in artificial intelligence. Huang argued that with AI taking over programming tasks, it's no longer necessary for young people to learn computer science or programming. Instead, he believes that the focus should shift towards developing expertise in fields like biology, education, manufacturing, and farming. Huang's perspective is that AI will make everyone a programmer, as it will replace the need for traditional programming languages with human language prompts, making coding accessible to everyone.
+Nvidia CEO Jensen Huang recently made a controversial statement at the World Government Summit in Dubai, suggesting that the need for individuals to learn how to code is diminishing due to advancements in artificial intelligence. Huang argued that with AI taking over programming tasks, **it's no longer necessary for young people to learn computer science or programming.** Instead, he believes that the focus should shift towards developing expertise in fields like biology, education, manufacturing, and farming. Huang's perspective is that AI will make everyone a programmer, as it will replace the need for traditional programming languages with human language prompts, making coding accessible to everyone.
 
 Coming from a reputable figure is enough to justify such a statement?
 
