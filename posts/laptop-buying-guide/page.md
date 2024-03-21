@@ -108,7 +108,7 @@ The graphics processing unit (GPU) is pivotal for visuals and gaming.
 
 - **Nvidia** is not recommended for platform other than **Windows**.
 
-## RAM - Powering Your Multitasking Adventures
+## RAM 
 
 Random access memory (RAM) serves as your laptop's short-term memory hub. Here are pivotal considerations:
 
@@ -122,12 +122,12 @@ Random access memory (RAM) serves as your laptop's short-term memory hub. Here a
 | Recommended                    | 2GB per job i.e. 2GB per thread for complete utilization of CPU |
 | Intensive tasks like rendering | Benefits from higher RAM capacities                             |
 
-## Storage - Swift and Responsive
+## Storage 
 
 - Embrace the future: bid farewell to mechanical drives.
 - Opt for the revolutionized speed of NVMe or SSDs.
 
-## Display - Elevating Visual Elegance
+## Display
 
 Your laptop's display is your primary portal. Consider the following factors.
 
@@ -142,16 +142,16 @@ Your laptop's display is your primary portal. Consider the following factors.
   
 - **Refresh Rate**: Elevated rates translate to smoother visuals. For gaming, prioritize refresh rate if your GPU sustains that much FPS. A 120Hz minimum is recommended for laptop gaming.
 
-## Battery - A Pivotal Lifesaver
+## Battery
 
 **Swift Degradation**: Contemporary batteries degrade more rapidly than other components.<br>
 Battery life profoundly impacts portability and usability. If possible, select a model with a swappable battery.
 
-## Webcam - Visual Connectivity Perfected
+## Webcam
 
 Seamless video communication hinges on a high-quality laptop webcam.
 
-## Ports - Forging Connectivity Bridges
+## Ports
 
 A laptop's port selection forms a critical nexus. Consider these essential ports:
 
@@ -162,46 +162,46 @@ A laptop's port selection forms a critical nexus. Consider these essential ports
 | **Headphone Jack**         | For connecting audio devices.                                                |
 | **SD Card Reader**         | Beneficial for photographers and content creators.                           |
 
-## Cooling System - Mastering Temperature Control
+## Cooling System
 
 Efficient cooling is vital for sustained laptop performance and longevity.
 
 - **Vent Placement**: Strategic vent layout fosters heat dissipation.
 - **Multiple Fans**: Enhance heat dissipation and counter thermal throttling.
 
-## Build - Robustness and Aesthetic Panache
+## Build
 
 A robust build ensures your laptop withstands daily rigors while reflecting your personal style.
 
-## WiFi Card - Seamless Connectivity
+## WiFi Card
 
 Your laptop's WiFi card shapes internet connectivity. Consider cards featuring **Open-Source Drivers** for OS compatibility. 
 - Security enthusiast may opt for cards featuring Monitor Mode & Packet Injection.
 - In mostly cases these cards can be switched later. So, these points could be ignored while selecting.
 *For a list of wireless cards with OS support, refer [here](https://en.wikipedia.org/wiki/Comparison_of_open-source_wireless_drivers).*
 
-## TPM - Hardware Fortification
+## TPM
 
 - Trusted Platform Module (TPM) heightens security by safeguarding encryption keys in hardware.
 - Even if your primary drive falls into unauthorized hands, booting remains an impossibility.
 
-## Slots & Upgradability - Future-Proof Potential
+## Slots & Upgradability
 
-Assess for multiple RAM and PCIe slots, enabling future upgrades to keep your laptop relevant.
+Assess for multiple RAM and PCIe slots, enabling future upgrades.
 
-## Innovations - Embrace the Cutting-Edge
+## Innovations
 
 Search for innovative features that elevate your experience, such as:
 
 - **Framework**: Embrace a modular design approach.
 - **Asus**: Explore the ROG Flow lineup, boasting compatibility with external GPUs via a proprietary port.
 
-## Hands-On Testing - Validate Before Acquisition
+## Hands-On Testing
 
 - It's essential to test and validate the performance and features before making a decision.
 - If possible try out **Operating System** of your choice via Live-USB to ensure it's compatibility with your intended device. This will not affect the already existing Operating System on that device.
 
-## Accessories - For Enhanced Expreience
+## Accessories
 
 - **Mechanical Keyboard**: Elevate your typing satisfaction.
 - **UFS Card**: Compact like an SD-Card, with SSD-like speeds.
