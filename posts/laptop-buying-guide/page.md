@@ -196,8 +196,8 @@ Assess for multiple RAM and PCIe slots, enabling future upgrades.
 
 Search for innovative features that elevate your experience, such as:
 
-- **Framework**: Embrace a modular design approach.
-- **Asus**: Explore the ROG Flow lineup, boasting compatibility with external GPUs via a proprietary port.
+- **[Framework](https://frame.work/)**: Embrace a modular design approach.
+- **[Asus](https://rog.asus.com/us/laptops/rog-flow-series/)**: ROG Flow lineup, boasts compatibility with external GPUs via a proprietary port.
 
 ## Hands-On Testing
 
