@@ -145,7 +145,7 @@ Your laptop's display is your primary portal. Consider the following factors.
 ## Battery - A Pivotal Lifesaver
 
 **Swift Degradation**: Contemporary batteries degrade more rapidly than other components.<br>
-Battery life profoundly impacts portability and usability. If possible, select a model with a hot-swappable battery.
+Battery life profoundly impacts portability and usability. If possible, select a model with a swappable battery.
 
 ## Webcam - Visual Connectivity Perfected
 
