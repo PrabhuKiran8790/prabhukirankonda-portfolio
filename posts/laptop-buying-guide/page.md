@@ -176,8 +176,11 @@ A robust build ensures your laptop withstands daily rigors while reflecting your
 ## WiFi Card
 
 Your laptop's WiFi card shapes internet connectivity. Consider cards featuring **Open-Source Drivers** for OS compatibility. 
-- Security enthusiast may opt for cards featuring Monitor Mode & Packet Injection.
-- In mostly cases these cards can be switched later. So, these points could be ignored while selecting.
+
+Security enthusiast may opt for cards featuring Monitor Mode & Packet Injection.
+
+In mostly cases these cards can be switched later. So, these points could be ignored while selecting.
+
 *For a list of wireless cards with OS support, refer [here](https://en.wikipedia.org/wiki/Comparison_of_open-source_wireless_drivers).*
 
 ## TPM
