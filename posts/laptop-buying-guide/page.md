@@ -101,8 +101,8 @@ The graphics processing unit (GPU) is pivotal for visuals and gaming.
 
 | Factors                        |                                                                                             |
 | ------------------------------ | ------------------------------------------------------------------------------------------- |
-| **VRAM**                       | Opt for 6GB VRAM or more for seamless experience.                                           |
-| **Generation Impact**          | Prioritize newer GPU generations for features.                                              |
+| **VRAM**                       | Opt for 6GB VRAM or more for future-proofing.                                           |
+| **Generation Impact**          | Prioritize newer GPU generations.                                              |
 | **TGP (Total Graphics Power)** | Affects performance and thermals. Higher is better, consuming more power.                   |
 | **Strategic Bottlenecking**    | Optimal performance results when the dGPU is the bottleneck, ensuring full GPU utilization. |
 
@@ -133,11 +133,13 @@ Your laptop's display is your primary portal. Consider the following factors.
 
 - **Touch Screen**: Intuitive engagement with the system.
 - **LED**: Say goodbye to LCDs
-  | **Type** | **Advantages** |
-  |--------------|----------------|
-  | OLED | Exceptional contrast, advancements curbing burn-in concerns. |
-  | Mini LED | Great contrast but not as good as OLED, no burn-in concerns. |
-  | Micro LED | Cutting-edge, harboring various refinements. |
+
+| **Type** | **Advantages** |
+|--------------|----------------|
+| OLED | Exceptional contrast, advancements curbing burn-in concerns. |
+| Mini LED | Great contrast but not as good as OLED, no burn-in concerns. |
+| Micro LED | Cutting-edge, harboring various refinements. |
+  
 - **Refresh Rate**: Elevated rates translate to smoother visuals. For gaming, prioritize refresh rate if your GPU sustains that much FPS. A 120Hz minimum is recommended for laptop gaming.
 
 ## Battery - A Pivotal Lifesaver
