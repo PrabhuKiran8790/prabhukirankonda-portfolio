@@ -175,16 +175,10 @@ A robust build ensures your laptop withstands daily rigors while reflecting your
 
 ## WiFi Card - Seamless Connectivity
 
-Your laptop's WiFi card shapes internet connectivity. Consider cards featuring these:
-
-| Feature                 |                                                                                                           |
-| ----------------------- | --------------------------------------------------------------------------------------------------------- |
-| **Monitor Mode**        | Even though many cards support it, Windows often disables this feature for a so called better experience. |
-| **Packet Injection**    | Swift network analysis facilitated.                                                                       |
-| **Open-Source Drivers** | Opt for cards with open-source drivers for heightened OS compatibility.                                   |
-
+Your laptop's WiFi card shapes internet connectivity. Consider cards featuring **Open-Source Drivers** for OS compatibility. 
+- Security enthusiast may opt for cards featuring Monitor Mode & Packet Injection.
 - In mostly cases these cards can be switched later. So, these points could be ignored while selecting.
-- For a list of wireless cards with OS support, refer [here](https://en.wikipedia.org/wiki/Comparison_of_open-source_wireless_drivers).
+*For a list of wireless cards with OS support, refer [here](https://en.wikipedia.org/wiki/Comparison_of_open-source_wireless_drivers).*
 
 ## TPM - Hardware Fortification
 
