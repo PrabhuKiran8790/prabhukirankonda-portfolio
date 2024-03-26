@@ -1,13 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { fade, fly } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 	import { cn } from '$lib/utils';
 	import { ThemeToggle } from '.';
 	import { navigating, page } from '$app/stores';
 	import { Menu, X } from 'lucide-svelte';
 	import { routes } from '$lib/config';
 	import * as Drawer from '$lib/components/ui/drawer';
-	import { browser } from '$app/environment';
 
 	let showScrollToTop = true;
 	let prevScrollY = 0;
@@ -29,20 +28,6 @@
 	$: {
 		if ($navigating) {
 			showDrawer = false;
-			document.body.classList.remove('overflow-hidden');
-			document.body.style.overflow = 'auto';
-		}
-	}
-
-	$: {
-		if (browser) {
-			if (showDrawer) {
-				document.body.classList.add('overflow-hidden');
-				document.body.style.overflow = 'hidden';
-			} else {
-				document.body.classList.remove('overflow-hidden');
-				document.body.style.overflow = 'auto';
-			}
 		}
 	}
 </script>
