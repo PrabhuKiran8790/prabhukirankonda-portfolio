@@ -83,8 +83,8 @@
 	</div>
 {/if}
 
-<Drawer.Root bind:open={showDrawer} shouldScaleBackground>
-	<Drawer.Content class="mb-16">
+<Drawer.Root bind:open={showDrawer} shouldScaleBackground backgroundColor="">
+	<Drawer.Content class="mb-16 dark:bg-zinc-900">
 		<div class="w-full gap-4 flex flex-col p-6">
 			<div>
 				<div class="flex flex-col items-center gap-5">
