@@ -33,7 +33,7 @@
 <Toaster />
 <Navbar />
 
-<div class="flex flex-col min-h-screen md:pt-10">
+<div class="flex flex-col min-h-screen md:pt-10" data-vaul-drawer-wrapper>
 	<div class="flex-1 mb-20 md:mb-0">
 		<slot />
 	</div>
