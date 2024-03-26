@@ -9,7 +9,7 @@ layout: about
 ## About Me 👨‍💻
 
 Hello <span class="wave">👋</span>  
-I'm **Rituraj**, a passionate tech enthusiast dedicated to sharing and documenting the knowledge I've accumulated, with a recent foray into blogging.
+I'm **Rituraj**, a tech enthusiast dedicated to sharing and documenting the knowledge I've accumulated, with a recent foray into blogging.
 
 My fascination lies in the potential of Artificial General Intelligence (AGI) and its transformative impact across various domains. I'm particularly interested in exploring the development and implications of AGIs.
 
