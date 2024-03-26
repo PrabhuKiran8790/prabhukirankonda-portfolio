@@ -9,16 +9,18 @@ layout: about
 ## About Me 👨‍💻
 
 Hello <span class="wave">👋</span>  
-I'm **Rituraj**, a tech enthusiast eager to share and document the knowledge I've accumulated. Recently delving into blogging.
+I'm **Rituraj**, a passionate tech enthusiast dedicated to sharing and documenting the knowledge I've accumulated, with a recent foray into blogging.
 
-Fascinated by vision of AGIs and their potential, to revolutionize various fields, I'm keen on exploring their development and implications.
+My fascination lies in the potential of Artificial General Intelligence (AGI) and its transformative impact across various domains. I'm particularly interested in exploring the development and implications of AGIs.
 
-Would like to see functional paradigm becoming mainstream.
+I aspire to see functional programming paradigms gaining traction and becoming mainstream, driven by their elegance and efficiency.
 
-Enthusiastic about the transformative potential of technologies like WebAssembly, WebGPU, WebXR, and WebTransport, envisioning a future where the web experience transcends current boundaries.
+I'm deeply enthusiastic about cutting-edge technologies such as WebAssembly, WebGPU, WebXR, and WebTransport, envisioning a future where the web experience transcends current boundaries and offers immersive, seamless interactions.
 
-Keen to explore the realms of GPGPUs and microkernels, while eagerly anticipating the evolution of RISC-V architecture. Embracing XR as the inevitable future, I'm poised to navigate the exciting journey ahead.
+My curiosity extends to exploring the potential of General-Purpose Graphics Processing Units (GPGPUs) and microkernels, while eagerly anticipating the evolution of RISC-V architecture, which holds promise for open, customizable computing.
 
-## Tech Stack I've Touched:
+Embracing Extended Reality (XR) as the future, I'm excited to navigate the ever-evolving landscape and contribute to its advancement.
+
+## Technologies I've Worked With:
 
 <FamiliarTechStack />
