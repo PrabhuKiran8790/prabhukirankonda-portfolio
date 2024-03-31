@@ -1,13 +1,12 @@
 import { PromptTemplate } from '@langchain/core/prompts';
-import type { Config } from '@sveltejs/kit';
 import { StreamingTextResponse } from 'ai';
 import { BytesOutputParser } from '@langchain/core/output_parsers';
 import { ChatGroq } from '@langchain/groq';
 import { GROQ_API_KEY } from '$env/static/private';
 
-export const config: Config = {
-	runtime: 'edge'
-};
+// export const config = {
+// 	runtime: 'edge'
+// };
 
 const TEMPLATE = `
 <instructions>
