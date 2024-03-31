@@ -126,7 +126,7 @@
 	{#if !title__}
 		<button
 			on:click={handleCopy}
-			class="absolute z-10 inline-flex items-center justify-center w-6 h-6 p-0 text-sm font-medium no-highlight rounded-md transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-slate-200 dark:hover:bg-zinc-700 right-2 top-2"
+			class="absolute inline-flex items-center justify-center w-6 h-6 p-0 text-sm font-medium no-highlight rounded-md transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-slate-200 dark:hover:bg-zinc-700 right-2 top-2"
 		>
 			{#if copyState}
 				<span in:fly={{ y: -4, delay: 50 }}>
