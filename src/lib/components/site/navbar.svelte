@@ -4,7 +4,7 @@
 	import { cn } from '$lib/utils';
 	import { ThemeToggle } from '$lib/components/site';
 
-	let openToWork = false;
+	let openToWork = true;
 </script>
 
 <nav
