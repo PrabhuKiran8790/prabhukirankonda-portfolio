@@ -1,8 +1,0 @@
-{
-	"runtime": "edge",
-	"entrypoint": "index.js",
-	"framework": {
-		"slug": "sveltekit",
-		"version": "2.5.5"
-	}
-}
