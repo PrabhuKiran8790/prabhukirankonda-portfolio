@@ -4,9 +4,9 @@ import { BytesOutputParser } from '@langchain/core/output_parsers';
 import { ChatGroq } from '@langchain/groq';
 import { GROQ_API_KEY } from '$env/static/private';
 
-// export const config = {
-// 	runtime: 'edge'
-// };
+export const config = {
+	runtime: 'edge'
+};
 
 const TEMPLATE = `
 <instructions>
