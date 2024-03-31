@@ -73,8 +73,22 @@
 		},
 		{
 			role: 'assistant',
-			content:
-				'Hello, how can I help you? I am Jarvis, your assistant. I can help you with anything you want. Just ask me anything. I am here to help you. Helo Jarvis, how are you doing today?, I am doing great, thank you for asking. How can I help you today?,Hello, how can I help you? I am Jarvis, your assistant. I can help you with anything you want. Just ask me anything. I am here to help you. Helo Jarvis, how are you doing today?, I am doing great, thank you for asking. How can I help you today?,Hello, how can I help you? I am Jarvis, your assistant. I can help you with anything you want. Just ask me anything. I am here to help you. Helo Jarvis, how are you doing today?, I am doing great, thank you for asking. How can I help you today?,Hello, how can I help you? I am Jarvis, your assistant. I can help you with anything you want. Just ask me anything. I am here to help you. Helo Jarvis, how are you doing today?, I am doing great, thank you for asking. How can I help you today?,Hello, how can I help you? I am Jarvis, your assistant. I can help you with anything you want. Just ask me anything. I am here to help you. Helo Jarvis, how are you doing today?, I am doing great, thank you for asking. How can I help you today?,Hello, how can I help you? I am Jarvis, your assistant. I can help you with anything you want. Just ask me anything. I am here to help you. Helo Jarvis, how are you doing today?, I am doing great, thank you for asking. How can I help you today?,Hello, how can I help you? I am Jarvis, your assistant. I can help you with anything you want. Just ask me anything. I am here to help you. Helo Jarvis, how are you doing today?, I am doing great, thank you for asking. How can I help you today?,Hello, how can I help you? I am Jarvis, your assistant. I can help you with anything you want. Just ask me anything. I am here to help you. Helo Jarvis, how are you doing today?, I am doing great, thank you for asking. How can I help you today?,Hello, how can I help you? I am Jarvis, your assistant. I can help you with anything you want. Just ask me anything. I am here to help you. Helo Jarvis, how are you doing today?, I am doing great, thank you for asking. How can I help you today?,Hello, how can I help you? I am Jarvis, your assistant. I can help you with anything you want. Just ask me anything. I am here to help you. Helo Jarvis, how are you doing today?, I am doing great, thank you for asking. How can I help you today?,Hello, how can I help you? I am Jarvis, your assistant. I can help you with anything you want. Just ask me anything. I am here to help you. Helo Jarvis, how are you doing today?, I am doing great, thank you for asking. How can I help you today?,Hello, how can I help you? I am Jarvis, your assistant. I can help you with anything you want. Just ask me anything. I am here to help you. Helo Jarvis, how are you doing today?, I am doing great, thank you for asking. How can I help you today?,Hello, how can I help you? I am Jarvis, your assistant. I can help you with anything you want. Just ask me anything. I am here to help you. Helo Jarvis, how are you doing today?, I am doing great, thank you for asking. How can I help you today?,Hello, how can I help you? I am Jarvis, your assistant. I can help you with anything you want. Just ask me anything. I am here to help you. Helo Jarvis, how are you doing today?, I am doing great, thank you for asking. How can I help you today?'
+			content: `
+Sure, I'd be happy to provide information about Prabhu Kiran Konda's publications. Here they are:
+Paper 1:
+Title: A Platform Independent Web-Application for Short-Term Electric Power Load Forecasting on a 33/11 kV Substation Using Regression Model
+Journal: Advances in Electrical & Electronics Engineering
+Link: http://advances.utc.sk/index.php/AEEE/article/view/4561
+Paper 2:
+Title: Weather Forecasting Using Radial Basis Function Neural Network in Warangal, India.
+Journal: MDPI Urban Science
+Link: https://www.mdpi.com/2413-8851/7/3/68
+Paper 3:
+Title: Active Power Load Data Dimensionality Reduction Using Autoencoder
+Journal: Springer
+Link: https://link.springer.com/chapter/10.1007/978-981-99-2066-2_22
+Please let me know if you need information on any other topic related to Prabhu Kiran Konda.
+				`
 		}
 	];
 
@@ -118,9 +132,13 @@
 									<UserCircle2 class="h-6 w-6" />
 								</div>
 							{:else}
-								<div class="my-1 mr-auto flex items-start justify-start gap-3">
+								<div
+									class="my-1 mr-auto flex items-start justify-start gap-3 overflow-x-scroll pr-4 min-w-full"
+								>
 									<Bot class="h-6 w-6" />
-									<div class="w-fit rounded-lg bg-zinc-300 dark:bg-zinc-700 text-primary p-3">
+									<div
+										class="w-full rounded-lg bg-zinc-300 dark:bg-zinc-700 text-primary p-3 overflow-x-scroll"
+									>
 										{#key message.content}
 											<SvelteMarkdown source={message.content} />
 										{/key}
