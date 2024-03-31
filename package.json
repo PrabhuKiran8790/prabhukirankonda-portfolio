@@ -16,7 +16,7 @@
 		"@huntabyte/mdsvex": "^0.16.8",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/adapter-vercel": "^5.2.0",
-		"@sveltejs/kit": "^2.5.5",
+		"@sveltejs/kit": "^2.5.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@types/hast": "^3.0.3",
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
