@@ -154,9 +154,6 @@ devDependencies:
   shiki:
     specifier: ^0.14.5
     version: 0.14.7
-  shiki-es:
-    specifier: ^0.14.0
-    version: 0.14.0
   svelte:
     specifier: ^4.0.5
     version: 4.2.12
@@ -1313,6 +1310,7 @@ packages:
 
   /@rollup/rollup-android-arm-eabi@4.13.2:
     resolution: {integrity: sha512-3XFIDKWMFZrMnao1mJhnOT1h2g0169Os848NhhmGweEcfJ4rCi+3yMCOLG4zA61rbJdkcrM/DjVZm9Hg5p5w7g==}
+    cpu: [arm]
     os: [android]
     requiresBuild: true
     dev: true
@@ -1352,6 +1350,7 @@ packages:
 
   /@rollup/rollup-linux-arm64-gnu@4.13.2:
     resolution: {integrity: sha512-L1+D8/wqGnKQIlh4Zre9i4R4b4noxzH5DDciyahX4oOz62CphY7WDWqJoQ66zNR4oScLNOqQJfNSIAe/6TPUmQ==}
+    cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
@@ -4913,11 +4912,6 @@ packages:
   /shebang-regex@3.0.0:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
-
-  /shiki-es@0.14.0:
-    resolution: {integrity: sha512-e+/aueHx0YeIEut6RXC6K8gSf0PykwZiHD7q7AHtpTW8Kd8TpFUIWqTwhAnrGjOyOMyrwv+syr5WPagMpDpVYQ==}
-    deprecated: Please migrate to https://github.com/antfu/shikiji
-    dev: true
 
   /shiki@0.14.7:
     resolution: {integrity: sha512-dNPAPrxSc87ua2sKJ3H5dQ/6ZaY8RNnaAqK+t0eG7p0Soi2ydiqbGOTaZCqaYvA/uZYfS1LJnemt3Q+mSfcPCg==}
