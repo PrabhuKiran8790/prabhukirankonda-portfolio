@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { fade, fly } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 	import { cn } from '$lib/utils';
 	import { ThemeToggle, Logo } from '.';
 	import { navigating, page } from '$app/stores';
 	import { Menu, X } from 'lucide-svelte';
 	import { routes } from '$lib/config';
-	// import { Label } from '$lib/components/ui/label';
+	import * as Drawer from '$lib/components/ui/drawer';
 
 	let showScrollToTop = true;
 	let prevScrollY = 0;
@@ -25,19 +25,9 @@
 		prevScrollY = scrollY;
 	}
 
-	function toggleDrawer() {
-		showDrawer = !showDrawer;
-		if (showDrawer) {
-			document.body.classList.add('no-scroll');
-		} else {
-			document.body.classList.remove('no-scroll');
-		}
-	}
-
 	$: {
 		if ($navigating) {
 			showDrawer = false;
-			document.body.classList.remove('no-scroll');
 		}
 	}
 </script>
@@ -67,7 +57,12 @@
 			</div>
 			<div class="flex items-center justify-between gap-2">
 				<ThemeToggle />
-				<button on:click={toggleDrawer} class="flex items-center justify-center">
+				<button
+					on:click={() => {
+						showDrawer = !showDrawer;
+					}}
+					class="flex items-center justify-center"
+				>
 					{#if !showDrawer}
 						<Menu class="h-6 w-6" />
 					{:else}
@@ -79,9 +74,29 @@
 	</div>
 {/if}
 
-{#if showDrawer}
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<!-- svelte-ignore a11y-no-static-element-interactions -->
+<Drawer.Root bind:open={showDrawer} shouldScaleBackground backgroundColor="">
+	<Drawer.Content class="mb-16 dark:bg-zinc-900">
+		<div class="w-full gap-4 flex flex-col p-6">
+			<div>
+				<div class="flex flex-col items-center gap-5">
+					{#each routes as route}
+						<a
+							href={route.link}
+							class={cn(
+								'group relative inline-block w-full rounded-lg px-3 py-1 text-lg tracking-wider hover:bg-accent hover:text-accent-foreground',
+								$page.url.pathname.startsWith(route.link) && 'bg-accent text-accent-foreground'
+							)}
+						>
+							{route.name}
+						</a>
+					{/each}
+				</div>
+			</div>
+		</div></Drawer.Content
+	>
+</Drawer.Root>
+
+<!-- {#if showDrawer}
 	<div
 		class="fixed inset-0 z-[70] bg-background/50 backdrop-blur-sm md:hidden"
 		on:click={toggleDrawer}
@@ -108,4 +123,4 @@
 			</div>
 		</div>
 	</div>
-{/if}
+{/if} -->
